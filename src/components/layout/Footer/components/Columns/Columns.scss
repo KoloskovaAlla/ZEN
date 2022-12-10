@@ -1,0 +1,16 @@
+@import 'styles/settings/breakpoints.scss';
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  @media (min-width: $breakpoint_md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: $breakpoint_lg) {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 110px;
+  }
+}

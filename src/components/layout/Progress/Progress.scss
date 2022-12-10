@@ -1,0 +1,32 @@
+.progress {
+  position: fixed;
+  top: var(--header-height);
+  height: 3px;
+  width: 100%;
+  z-index: 2;
+  background: rgb(24, 142, 155);
+}
+
+
+
+
+progress::-webkit-progress-bar {
+  position: fixed;
+  top: var(--header-height);
+  height: 3px;
+  width: 100%;
+  z-index: 2;
+}
+
+progress::-webkit-progress-value {
+  background: rgb(24, 142, 155);
+}
+
+progress::-moz-progress-bar {
+  position: fixed;
+  top: var(--header-height);
+  height: 3px;
+  width: 100%;
+  z-index: 2;
+  background: rgb(24, 142, 155);
+}

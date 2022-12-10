@@ -1,0 +1,35 @@
+/* Settings/fonts.scss */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+// @font-face {
+//   font-family: "Nunito";
+//   font-style: normal;
+//   font-weight: 400;
+//   font-display: swap;
+//   src: url("../../assets/fonts/Nunito/Nunito-Regular.woff2") format("woff2");
+//   src: url("../../assets/fonts/Nunito/Nunito-Regular.woff") format("woff");  
+// }
+// @font-face {
+//   font-family: "Nunito";
+//   font-style: normal;
+//   font-weight: 700;
+//   font-display: swap;
+//   src: url("../../assets/fonts/Nunito/Nunito-Bold.woff2") format("woff2");
+//   src: url("../../assets/fonts/Nunito/Nunito-Bold.woff") format("woff");  
+// }
+
+// @include font_face(
+//   '../../assets/fonts/Nunito',
+//   'Nunito-Regular',
+//   'Nunito',
+//   400,
+//   normal
+// );
+
+// @include font_face(
+//   '../../assets/fonts/Nunito',
+//   'Nunito-Bold',
+//   'Nunito',
+//   700,
+//   normal
+// );

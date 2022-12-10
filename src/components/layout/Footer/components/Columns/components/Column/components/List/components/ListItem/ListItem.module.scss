@@ -1,0 +1,18 @@
+  @import 'styles/settings/breakpoints';
+
+  .item {
+    margin-top: 10px;
+
+    @media (min-width: $breakpoint_lg) {
+      margin-top: 15px;
+      font-size: 16px;
+    }
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    img {
+      width: 40px;
+    }
+  }

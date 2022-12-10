@@ -1,0 +1,10 @@
+.policy {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+
+  & a {
+    margin-left: 5px;
+    text-decoration: underline;
+  }
+}

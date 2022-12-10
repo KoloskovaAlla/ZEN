@@ -1,0 +1,29 @@
+/* settings/mixins.scss */
+
+@mixin title-font {
+  font-size: 30px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+@mixin img {
+  border: 1px solid $color_border;
+  border-radius: 20px;
+}
+
+@mixin font_face (
+  $font_path,
+  $file_name,
+  $font_name,
+  $font_weight,
+  $font_style
+) {
+  @font-face {
+    src: url('#{$font_path}/#{$file_name}.woff2') format('woff2');
+    src: url('#{$font_path}/#{$file_name}.woff') format('woff');   
+    font-family: $font_name;
+    font-weight: $font_weight;
+    font-style: $font_style;
+    font-display: swap;
+  }
+}

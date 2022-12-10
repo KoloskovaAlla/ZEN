@@ -1,0 +1,13 @@
+@import 'styles/settings/breakpoints';
+
+.footer {
+  background: #484848;
+  color: #FFFFFF;
+  padding: var(--section-padding);
+}
+
+
+.wrapper {
+  margin: 0 auto;
+  max-width: var(--container-max-width);
+}

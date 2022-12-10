@@ -1,0 +1,29 @@
+@import 'styles/settings/breakpoints.scss';
+
+.menu {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  right: 0;
+  height: 100%; // растяг-ся на viewport из-за pos: abs
+  display: flex;
+  flex-direction: column;
+  color: var(--color);
+  background: var(--bg-color);
+  transition: top 0.5s, visibility 0.5s;
+  visibility: hidden;
+
+  @media (min-width: $breakpoint_lg) {
+    flex-direction: row;
+    margin-left: auto;
+    top: 0;
+    position: relative;
+    z-index: 1;
+    visibility: visible;
+  }
+
+  &.active {
+    top: var(--height-header-xs);
+    visibility: visible;
+  }
+}

@@ -1,0 +1,35 @@
+@import 'styles/settings/breakpoints.scss';
+
+.item {
+  font-size: 24px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  color: currentColor;
+
+  @media (min-width: $breakpoint_lg) {
+    border: none;
+    font-size: 18px;
+    margin-left: 40px;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+
+  @media (min-width: $breakpoint_lg) {
+    font-size: 20px;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    padding: 25px 15px;
+    display: flex;
+    justify-content: flex-start;
+
+    @media (min-width: $breakpoint_lg) {
+      padding: 0;
+    }
+  }
+
+}

@@ -1,0 +1,33 @@
+@import 'styles/settings/breakpoints';
+
+.footer {
+  background: #484848;
+  color: #FFFFFF;
+  padding: var(--section-padding);
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: var(--container-max-width);
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+
+    @media (min-width: $breakpoint_lg) {
+      font-size: 20px;
+    }
+  }
+
+  &__copy {
+    margin-top: 10px;
+
+    @media (min-width: $breakpoint_md) {
+      max-width: 500px;
+    }
+
+    @media (min-width: $breakpoint_lg) {
+      max-width: 650px;
+    }
+  }
+}

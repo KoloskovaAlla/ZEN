@@ -1,0 +1,19 @@
+@import 'styles/settings/breakpoints.scss';
+
+.developer {
+  display: block;
+  margin: 10px auto 0;
+  width: 130px;
+
+  @media (min-width: $breakpoint_md) {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    right: 0;
+    width: 160px;
+  }
+
+  img {
+    width: 100%;
+  }
+}

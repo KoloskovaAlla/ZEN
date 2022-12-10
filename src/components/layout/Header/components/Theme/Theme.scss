@@ -1,0 +1,23 @@
+@import 'styles/settings/breakpoints.scss';
+
+.theme {
+  margin-left: 20px;
+  width: 30px;
+  height: 30px;
+  color: currentColor;
+  z-index: 1;
+
+  @media (min-width: $breakpoint_md) {
+    margin-left: 30px;
+  }
+
+  @media (min-width: $breakpoint_lg) {
+    height: 40px; //!!
+  }
+
+  svg {
+    height: 100%;
+    width: 100%;
+    fill: currentColor;
+  }
+}

@@ -1,0 +1,62 @@
+.description {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  font-size: 18px;
+  flex-direction: column;
+  z-index: 3;
+
+  span {
+    color: #fff;
+    position: relative;
+    display: block;
+    width: fit-content;
+    padding-right: 5px;
+    white-space: nowrap;
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   right: -5px;
+    //   display: block;
+    //   height: 20px;
+    //   width: 2px;
+    //   background: red;
+    // } 
+
+
+
+
+  }
+
+  .cursor {
+    border-right: 2px solid yellow;
+  }
+
+  .cursorBlink {
+    border-right: 2px solid yellow;
+
+
+    animation-name: blink;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    @keyframes blink {
+      0% {
+        border-color: yellow;
+      }
+
+      50% {
+        border-color: transparent;
+      }
+
+      100% {
+        border-color: yellow;
+      }
+    }
+  }
+}

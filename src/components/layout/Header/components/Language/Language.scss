@@ -1,0 +1,59 @@
+    @import '../../../../../styles/settings/breakpoints';
+
+    .language {
+      margin-left: auto;
+      width: 50px;
+      height: 30px;
+      border: 1px solid currentColor;
+      border-radius: 4px;
+      z-index: 1;
+      position: relative;
+      color: currentColor;
+
+      // &::after {
+      //   content: '';
+      //   position: absolute;
+      //   background-image: url('data:image/svg+xml,\
+      //     <svg \
+      //       width="9" \
+      //       height="6" \ viewBox="0 0 9 6"  xmlns="http://www.w3.org/2000/svg"> \
+      //         <path d="M4.5 6L0 1.49973L1.50071 0L4.5 3.00053L7.49929 0L9 1.49973L4.5 6Z" \
+      //     > \
+      //     </svg>\
+      //   ');   
+      //   background-repeat: no-repeat;
+      //   display: block;
+      //   width: 9px;
+      //   height: 6px;
+      //   right: 8px;
+      //   bottom: 11px;
+      //   //background: violet;
+      // }
+
+      @media (min-width: $breakpoint_lg) {
+        margin-left: 40px;
+        height: 40px;
+      }
+
+      select {
+        width: 100%;
+        height: 100%;
+        appearance: none;
+        padding: 6px;
+        color: currentColor;
+        position: relative;
+        background: inherit;
+      }
+
+      svg {
+        position: absolute;
+        top: 11px;
+        right: 5px;
+        z-index: -1;
+        fill: currentColor;
+
+        @media (min-width: $breakpoint_lg) {
+          top: 16px;
+        }
+      }
+    }

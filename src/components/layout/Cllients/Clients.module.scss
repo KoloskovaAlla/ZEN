@@ -1,0 +1,41 @@
+@import '../../../styles/settings/breakpoints';
+
+.clients {
+  padding: 30px 15px;
+
+  @media (min-width: $breakpoint_md) {
+    padding: 30px 0;
+  }
+
+  @media (min-width: $breakpoint_lg) {
+    padding: 40px 0;
+  }
+
+  @media (min-width: $breakpoint_xl) {
+    padding: 50px 0;
+  }
+}
+
+.wrapper {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  @media (min-width: $breakpoint_md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: $breakpoint_lg) {
+    gap: 40px;
+  }
+
+  @media (min-width: $breakpoint_xl) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px
+  }
+}

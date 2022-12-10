@@ -1,0 +1,52 @@
+@import '../../../styles/settings/breakpoints';
+
+.cashback {
+  padding: var(--section-padding);
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: var(--container-max-width);
+  display: flex;
+  justify-content: center;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint_md) {
+    max-width: 460px;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (min-width: $breakpoint_lg) {
+    max-width: 500px;
+  }
+
+  @media (min-width: $breakpoint_xl) {
+    max-width: 580px;
+  }
+}
+
+.title {
+  font-size: 26px;
+  font-size: var(--title-fz);
+  font-weight: 700;
+}
+
+.copy {
+  margin-top: var(--copy-margin-top);
+  font-size: var(--copy-font-size);
+
+  &:first-of-type {
+    margin-top: 20px;
+
+    @media (min-width: $breakpoint_xl) {
+      margin-top: 30px;
+    }
+  }
+}

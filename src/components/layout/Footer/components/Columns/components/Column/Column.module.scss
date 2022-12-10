@@ -1,0 +1,10 @@
+@import 'styles/settings/breakpoints.scss';
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+
+  @media (min-width: $breakpoint_lg) {
+    font-size: 20px;
+  }
+}

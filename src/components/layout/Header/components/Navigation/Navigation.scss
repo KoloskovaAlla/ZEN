@@ -1,0 +1,9 @@
+@import 'styles/settings/breakpoints.scss';
+
+.navigation {
+  @media (min-width: $breakpoint_lg) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+}
