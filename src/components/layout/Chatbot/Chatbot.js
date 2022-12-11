@@ -18,6 +18,7 @@ const Chatbot = () => {
         <div className={classNamesChat}>
           <header className={classes.header}>
             <div className={classes.logo}>{Logo()}</div>
+            <div> className={classes.notie}</div>
           </header>
           <div className={classes.body}></div>
           <footer className={classes.footer}></footer>
