@@ -14,6 +14,7 @@ import handleWindowScroll from './utils/handleWindowScroll'
 // import Slider from './components/layout/Slider'
 import PreviewContext from 'contexts/PreviewContext'
 import ModalSlider from 'components/layout/ModalSlider/ModalSlider'
+import Chatbot from 'components/layout/Chatbot'
 
 const App = () => {
   useDocumentTitle('ZEN | Home')
@@ -51,6 +52,7 @@ const App = () => {
       {data?.footer && <Footer data={data.footer} />}
       {/* {previewDetails && <Slider />} */}
       {previewDetails && <ModalSlider />}
+      {<Chatbot />}
     </div>
   )
 }
