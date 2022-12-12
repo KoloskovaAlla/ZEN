@@ -23,6 +23,19 @@
     transform: translate(-50%, -50%);
     z-index: -1;
   }
+  .chat {
+    position: fixed;
+    right: 0;
+    bottom: 0; // поменять на -100vh
+    visibility: visible; // поменять на hidden
+    display: grid;
+    ;
+  }
+  
+  .open {
+    bottom: 0;
+    visibility: visible;
+  }
 }
 
 .header {
@@ -40,16 +53,19 @@
   padding-left: 10px;
 }
 
-.chat {
-  position: fixed;
-  right: 0;
-  bottom: 0; // поменять на -100vh
-  visibility: visible; // поменять на hidden
-  display: grid;
-  ;
+.notice {}
+
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+
+  svg {
+    fill: currentColor;  
+    height: 20px;
+    width: 20px;
+  }
 }
 
-.open {
-  bottom: 0;
-  visibility: visible;
-}

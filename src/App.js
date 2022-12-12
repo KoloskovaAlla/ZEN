@@ -38,6 +38,8 @@ const App = () => {
 
   const { previewDetails } = useContext(PreviewContext)
 
+  console.log({data})
+
   return (
     <div className={`app ${theme}`}>
       {!data && <Preloader />}
@@ -52,7 +54,7 @@ const App = () => {
       {data?.footer && <Footer data={data.footer} />}
       {/* {previewDetails && <Slider />} */}
       {previewDetails && <ModalSlider />}
-      {<Chatbot />}
+      {data?.chatBot && <Chatbot data={data.chatBot} />}
     </div>
   )
 }
