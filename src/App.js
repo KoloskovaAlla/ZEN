@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
-import { useDocumentTitle} from 'hooks'
+import { useDocumentTitle } from 'hooks'
 import ThemeContext from './contexts/ThemeContext'
 import LangContext from './contexts/LangContext'
 import Header from './components/layout/Header'
@@ -13,7 +13,8 @@ import Progress from './components/layout/Progress'
 import handleWindowScroll from './utils/handleWindowScroll'
 // import Slider from './components/layout/Slider'
 import PreviewContext from 'contexts/PreviewContext'
-import ModalSlider from 'components/layout/ModalSlider/ModalSlider'
+import ModalSlider from 'components/layout/ModalSlider'
+import Chatbot from 'components/layout/Chatbot'
 
 const App = () => {
   useDocumentTitle('ZEN | Home')
@@ -35,7 +36,9 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleWindowScroll)
   }, [])
 
-  const { previewDetails } = useContext(PreviewContext)  
+  const { previewDetails } = useContext(PreviewContext)
+
+  console.log({data})
 
   return (
     <div className={`app ${theme}`}>
@@ -51,6 +54,7 @@ const App = () => {
       {data?.footer && <Footer data={data.footer} />}
       {/* {previewDetails && <Slider />} */}
       {previewDetails && <ModalSlider />}
+      {data?.chatBot && <Chatbot data={data.chatBot} />}
     </div>
   )
 }
