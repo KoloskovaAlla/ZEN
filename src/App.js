@@ -38,8 +38,6 @@ const App = () => {
 
   const { previewDetails } = useContext(PreviewContext)
 
-  console.log({data})
-
   return (
     <div className={`app ${theme}`}>
       {!data && <Preloader />}
