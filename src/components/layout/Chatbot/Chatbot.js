@@ -5,7 +5,7 @@ import { classNames } from 'utils/helpers'
 import { ReactComponent as Logo } from './assets/logo.svg'
 import { ReactComponent as Close } from './assets/close.svg'
 import { ReactComponent as Arrow } from './assets/arrow.svg'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 
 const Chatbot = ({ data }) => {
@@ -31,10 +31,21 @@ const Chatbot = ({ data }) => {
     [classes.disabled]: true
   }, [])
 
+  const chatbotRef = useRef(null)
+
+
   useEffect(() => {
     const printMessage = () => {
+      console.log(firstMessageRef.current.style)
+      firstMessageRef.current.style.top = "50px"
+      console.log(firstMessageRef.current.top)
+
+      setTimeout(() => {
+        // firstMessageRef.current.style.top = '10px'
+      }, 1000)
 
     }
+    printMessage()
   }, [])
 
   return (
@@ -72,7 +83,7 @@ const Chatbot = ({ data }) => {
               <label className={classes.input}>
                 <input type="text" placeholder="Message..." ></input>
               </label>
-              <button class={classNamesSubmit}>
+              <button className={classNamesSubmit}>
                 <Arrow />
               </button>
             </form>
