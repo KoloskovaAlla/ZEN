@@ -104,14 +104,85 @@
   }
 }
 
-.body {}
+.body {
+  padding: 10px;
+  overflow-y: scroll;
+}
 
-.messageBot {}
+.message {
+  margin-top: 10px;
+  padding: 10px;
+  width: 80%;
+
+  &:first-of-type {
+    margin-top: 30px;
+  }
+
+  &.bot {
+    background: #f1f0f6;
+    border-radius: 10px 10px 10px 0;
+    color: #000;
+  }
+
+  &.user {}
+}
+
+.list {}
+
+.item {
+  display: flex;
+  margin-top: 5px;
+
+  button {
+    margin-left: 5px;
+    text-align: left;
+    color: #1facf7;
+    text-decoration: underline;
+  }
+}
 
 .messageDate {}
 
-.footer {}
+.footer {
+  padding: 5px 10px;
+  background: #f4f4f4;
+  border-top: 1px solid hsla(0, 0%, 67%, .5);
+}
 
-.form {}
+.form {
+  display: grid;
+  grid-template-columns: auto 36px;
+  grid-gap: 5px;
+  gap: 5px;
+  height: 100%;
+}
 
-.input {}
+.input {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 3px 10px;
+  background: #fff;
+  overflow: hidden;
+  border: 1px solid #aaa;
+  border-radius: 30px;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  width: 36px;
+  background: #1facf7;
+  border-radius: 50%;
+  color: #fff;
+  transition: all .3s;
+
+  &.disabled {
+    background: transparent;
+    border: 1px solid;
+    color: currentColor;
+    opacity: .5;
+  }
+}
