@@ -33,7 +33,6 @@ export const useDescription = (description, previewDetails, descriptionRef, clas
     nextWordNode.style.position = 'fixed'
     nextWordNode.style.top = '-100vh'
     $description.append(nextWordNode)
-
     let stringNodeWidth = 0
     $description.style.width = `${DESCRIPTION_MAX_WIDTH}px`
     $description.style.border = '1px solid '
@@ -55,7 +54,7 @@ export const useDescription = (description, previewDetails, descriptionRef, clas
           stringNode.className = classes.cursor
         }
 
-        printWord(stringNode, words[wordIndex], TIME_PER_LETTER)        
+        printWord(stringNode, words[wordIndex], TIME_PER_LETTER)
 
         timerID = setTimeout(() => {
           stringNodeWidth = stringNode.offsetWidth
@@ -65,10 +64,10 @@ export const useDescription = (description, previewDetails, descriptionRef, clas
 
           console.log('------------')
           console.log(words[wordIndex + 1])
-          console.log({DESCRIPTION_MAX_WIDTH})
-          console.log({stringNodeWidth})
-          console.log({freeWidth})
-          console.log({nextWordWidth})
+          console.log({ DESCRIPTION_MAX_WIDTH })
+          console.log({ stringNodeWidth })
+          console.log({ freeWidth })
+          console.log({ nextWordWidth })
 
           stringNode.className = ''
 
