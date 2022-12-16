@@ -43,6 +43,7 @@ const Form = ({ form, isDataSent, setIsDataSent }) => {
   } = form
 
   const handleNameChange = ({ target }) => {
+    console.log(target.value)
     const value = target.value
     setName(value)
     setIsValidName(validateName(value))
@@ -111,15 +112,15 @@ const Form = ({ form, isDataSent, setIsDataSent }) => {
       .catch((error) => { console.error(error.message) })
   }
 
-  for (let index = 0; index < name.length; index++) {   
-   
-    if (name[index] === name[index].toLowerCase() && index === 0 ) {  
-      setName(name.replace(name[index], name[index].toUpperCase()))        
+  for (let index = 0; index < name.length; index++) {
+
+    if (name[index] === name[index].toLowerCase() && index === 0) {
+      setName(name.replace(name[index], name[index].toUpperCase()))
     }
-    if (name[index] === name[index].toLowerCase() && index!==0 && name[index-1]===' ') {
-      setName(name.replace(name[index], name[index].toUpperCase())) 
+    if (name[index] === name[index].toLowerCase() && index !== 0 && name[index - 1] === ' ') {
+      setName(name.replace(name[index], name[index].toUpperCase()))
     }
-  } 
+  }
 
   return (
 

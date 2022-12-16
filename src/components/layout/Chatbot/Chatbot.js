@@ -32,24 +32,55 @@ const Chatbot = ({ data }) => {
   }, [])
 
   const chatbotRef = useRef(null)
+  const [userQuestion, setUserQuestion] = useState('')
 
   let messages = []
 
+  const handleQuestionChange = (event) => {
+    console.log(event.target.value)
+  }
+
+  const handleChatOpenClick = () => { setIsChatActive(true) }
 
   useEffect(() => {
-    const printMessage = () => {   
+    const printMessage = () => {
+
+
       const helloMessage = document.createElement('div')
       helloMessage.textContent = data.firstMessage
-      messages.push(helloMessage)
-      console.log(messages)
+      helloMessage.className = classNamesMessage
 
-      const questiosnMessage = document.createElement('div')
-      
+      messages.push(helloMessage)
+
+      const questionsMessage = document.createElement('div')
+      questionsMessage.className = classNamesMessage
+      const questionList = document.createElement('ol')
+      questionList.className = classes.list
+      questionsMessage.append(questionList)
+      data.faqs.map((faq) => {
+        const questionItem = document.createElement('li')
+        questionItem.className = classes.item
+        const number = document.createElement('span')
+        number.textContent = `${faq.id}. `
+        const question = document.createElement('button')
+        question.textContent = faq.question
+        questionItem.append(number)
+        questionItem.append(question)
+        questionList.append(questionItem)
+
+      })
+      console.log(questionList)
+      messages.push(questionsMessage)
+
 
 
       setTimeout(() => {
-     
-      }, 1000)
+        chatbotRef.current.append(helloMessage)
+      }, 3000)
+
+      setTimeout(() => {
+        chatbotRef.current.append(questionsMessage)
+      }, 5000)
 
     }
     printMessage()
@@ -58,7 +89,7 @@ const Chatbot = ({ data }) => {
   return (
     <div className={classNamesChatbot}>
       <div>
-        <button onClick={() => { setIsChatActive(true) }} className={classes.chatbotOpen}>
+        <button onClick={handleChatOpenClick} className={classes.chatbotOpen}>
           <img src={chatbot} alt='' />
         </button>
         <div className={classNamesChat}>
@@ -69,8 +100,8 @@ const Chatbot = ({ data }) => {
               <Close />
             </button>
           </header>
-          <div className={classes.body}>
-            <div className={classNamesMessage}>
+          <div ref={chatbotRef} className={classes.body}>
+            {/* <div className={classNamesMessage}>
               {data.firstMessage}
             </div>
             <div className={classNamesMessage}>
@@ -83,12 +114,13 @@ const Chatbot = ({ data }) => {
                 )}
               </ol>
               <span className={classes.messageDate}></span>
-            </div>
+            </div> */}
+
           </div>
           <footer className={classes.footer}>
             <form className={classes.form}>
               <label className={classes.input}>
-                <input type="text" placeholder="Message..." ></input>
+                <input onChange={handleQuestionChange} type="text" placeholder="Message..." value={userQuestion}></input>
               </label>
               <button className={classNamesSubmit}>
                 <Arrow />
