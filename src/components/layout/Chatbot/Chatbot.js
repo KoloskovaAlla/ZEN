@@ -33,15 +33,22 @@ const Chatbot = ({ data }) => {
 
   const chatbotRef = useRef(null)
 
+  let messages = []
+
 
   useEffect(() => {
-    const printMessage = () => {
-      console.log(firstMessageRef.current.style)
-      firstMessageRef.current.style.top = "50px"
-      console.log(firstMessageRef.current.top)
+    const printMessage = () => {   
+      const helloMessage = document.createElement('div')
+      helloMessage.textContent = data.firstMessage
+      messages.push(helloMessage)
+      console.log(messages)
+
+      const questiosnMessage = document.createElement('div')
+      
+
 
       setTimeout(() => {
-        // firstMessageRef.current.style.top = '10px'
+     
       }, 1000)
 
     }
