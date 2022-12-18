@@ -121,7 +121,12 @@
     color: #000;
   }
 
-  &.user {}
+  &.user {
+    background: #1facf7;
+    border-radius: 10px 10px 0 10px;
+    color: #fff;
+    margin-left: auto;
+  }
 }
 
 .list {
