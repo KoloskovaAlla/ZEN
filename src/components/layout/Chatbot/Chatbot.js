@@ -1,14 +1,14 @@
 import classes from './Chatbot.module.scss'
 import chatbot from './assets/chatbot.gif'
-import {classNames} from 'utils/helpers'
+import { classNames } from 'utils/helpers'
 // import Logo from './components/Logo/Logo.js'
-import {ReactComponent as Logo} from './assets/logo.svg'
-import {ReactComponent as Close} from './assets/close.svg'
-import {ReactComponent as Arrow} from './assets/arrow.svg'
-import {useEffect, useState, useRef} from 'react'
+import { ReactComponent as Logo } from './assets/logo.svg'
+import { ReactComponent as Close } from './assets/close.svg'
+import { ReactComponent as Arrow } from './assets/arrow.svg'
+import { useEffect, useState, useRef } from 'react'
 
 
-const Chatbot = ({data}) => {
+const Chatbot = ({ data }) => {
 
   let isStart = true
 
@@ -38,6 +38,7 @@ const Chatbot = ({data}) => {
   }, [])
 
   const chatbotRef = useRef(null)
+  const chatbotHeaderRef = useRef(null)
   const [userQuestion, setUserQuestion] = useState('')
 
   const [messages, setMessages] = useState([])
@@ -89,8 +90,24 @@ const Chatbot = ({data}) => {
   }
 
 
+  let botIsPrinting
+
+  botIsPrinting = document.createElement('span')
+  const notice = (typingText) => {
+    botIsPrinting.textContent = typingText
+    chatbotHeaderRef.current.append(botIsPrinting)
+
+  }
+
 
   const firstMessages = () => {
+    console.log(messages.length)
+
+    if (messages.length === 0) { notice('...typing') } else { notice('') }
+
+
+
+
     const helloMessage = document.createElement('div')
     helloMessage.textContent = data.firstMessage
     helloMessage.className = classNamesMessage
@@ -134,6 +151,7 @@ const Chatbot = ({data}) => {
       }
     }, 1000)
 
+
     setTimeout(() => {
       if (isChatActive) {
         chatbotRef.current.append(questionsMessage)
@@ -156,13 +174,12 @@ const Chatbot = ({data}) => {
     }
 
     if (isMessageBot) {
-      console.log('test2')
       data.faqs.map((faq) => {
         if (message.content === faq.question) {
           const targetQuestion = faq.question
           const currentID = faq.id
-      
-          const currentAnswer = faq.answer         
+
+          const currentAnswer = faq.answer
 
           const answerMessages = document.createElement('div')
           answerMessages.textContent = currentAnswer
@@ -175,7 +192,7 @@ const Chatbot = ({data}) => {
   }
 
   useEffect(() => {
-    console.log(messages.length)
+
 
     const printMessage = () => {
       if (messages.length === 0 || messages.length === 2) firstMessages()
@@ -188,13 +205,13 @@ const Chatbot = ({data}) => {
   return (
     <div className={classNamesChatbot}>
       <div>
-        <button onClick={() => {setIsChatActive(true)}} className={classes.chatbotOpen}>
+        <button onClick={() => { setIsChatActive(true) }} className={classes.chatbotOpen}>
           <img src={chatbot} alt='' />
         </button>
         <div className={classNamesChat}>
           <header className={classes.header}>
             <div className={classes.logo}><Logo /></div>
-            <div className={classes.notice}></div>
+            <div ref={chatbotHeaderRef} className={classes.notice}></div>
             <button className={classes.close}>
               <Close />
             </button>
