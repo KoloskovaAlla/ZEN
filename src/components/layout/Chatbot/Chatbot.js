@@ -46,30 +46,98 @@ const Chatbot = ({ data }) => {
   const handleClickQuestion = (event) => {
     setIsMessageBot(false)
     setIsMessageUser(true)
-    currentQuestion = event.target.innerHTML  
+    currentQuestion = event.target.innerHTML
     setMessage({
       author: 'user',
       content: currentQuestion
     })
-    setMessages((messages) => [...messages, message])
-  }
-  const firstMessages = () => {
-    const helloMessage = document.createElement('div')
-    helloMessage.textContent = data.firstMessage
-    helloMessage.className = classNamesMessage
-    setMessage({
+    setMessages((messages) => [...messages, {
+      author: 'user',
+      content: currentQuestion
+    }])
+    setMessages((messages) => [...messages, {
       author: 'bot',
-      content: data.firstMessage
-    })
-    setMessages((messages) => [...messages, message])
+      content: currentQuestion
+    }])
+  }
+  // const firstMessages = () => {
+  //   const helloMessage = document.createElement('div')
+  //   helloMessage.textContent = data.firstMessage
+  //   helloMessage.className = classNamesMessage
 
+  //   setMessages((messages) => [...messages, {
+  //     author: 'bot',
+  //     content: data.firstMessage
+  //   }])
+
+  //   const questionsMessage = document.createElement('div')
+  //   questionsMessage.className = classNamesMessage
+  //   const questionList = document.createElement('ol')
+  //   questionList.className = classes.list
+  //   questionsMessage.append(questionList)
+
+  //   data.faqs.map((faq) => {
+  //     const questionItem = document.createElement('li')
+  //     questionItem.className = classes.item
+  //     const number = document.createElement('span')
+  //     number.textContent = `${faq.id}. `
+  //     const question = document.createElement('button')
+  //     question.addEventListener('click', handleClickQuestion)
+  //     question.textContent = faq.question
+  //     questionItem.append(number)
+  //     questionItem.append(question)
+  //     questionList.append(questionItem)
+  //   })
+
+
+  //   setMessages((messages) => [...messages, {
+  //     author: 'bot',
+  //   }])
+
+  //   setTimeout(() => {
+  //     if (isChatActive) chatbotRef.current.append(helloMessage)
+  //   }, 1000)
+
+  //   setTimeout(() => {
+  //     if (isChatActive) chatbotRef.current.append(questionsMessage)
+
+  //   }, 2000)
+
+  //   // setTimeout(() => {
+  //   //   if (isChatActive) setIsTyping(false)
+  //   // }, 2050)
+
+
+
+
+  // }
+
+  const firstMessage = () => {
+    setIsTyping(true)
+    if (isChatActive) {
+
+      const helloMessage = document.createElement('div')
+      helloMessage.textContent = data.firstMessage
+      helloMessage.className = classNamesMessage
+
+      setTimeout(() => {
+        setMessages((messages) => [...messages, {
+          author: 'bot',
+          content: data.firstMessage
+        }])
+        if (isChatActive) chatbotRef.current.append(helloMessage)
+      }, 1000)
+    }
+  }
+
+  const questionsListMesssage = () => {
     const questionsMessage = document.createElement('div')
     questionsMessage.className = classNamesMessage
     const questionList = document.createElement('ol')
     questionList.className = classes.list
     questionsMessage.append(questionList)
 
-    data.faqs.map((faq) => {     
+    data.faqs.map((faq) => {
       const questionItem = document.createElement('li')
       questionItem.className = classes.item
       const number = document.createElement('span')
@@ -82,53 +150,49 @@ const Chatbot = ({ data }) => {
       questionList.append(questionItem)
     })
 
-    setMessage({
-      author: 'bot',
-    })
-
-    setMessages((messages) => [...messages, message])
-
     setTimeout(() => {
-      if (isChatActive) chatbotRef.current.append(helloMessage)      
-    }, 1000)
-
-    setTimeout(() => {
+      setMessages((messages) => [...messages, {
+        author: 'bot',
+      }])
       if (isChatActive) chatbotRef.current.append(questionsMessage)
-      
-    }, 2000)  
-    setTimeout(() => {
-      if (isChatActive) setIsTyping(false)      
-    }, 2050)  
+
+    }, 2000)
+
+
   }
 
   const otherMessage = () => {
+
     if (isMessageUser) {
       const questionsMessage = document.createElement('div')
-      console.log(message.content)
       questionsMessage.textContent = message.content
       questionsMessage.className = classNamesMessage
       chatbotRef.current.append(questionsMessage)
       setIsMessageBot(true)
       setIsMessageUser(false)
-      console.log('test1')
+      setIsTyping(true)
     }
 
     if (isMessageBot) {
       data.faqs.map((faq) => {
-        setIsTyping(true)
-        if (message.content === faq.question) {   
+        if (message.content === faq.question) {
           const currentAnswer = faq.answer
           const answerMessages = document.createElement('div')
           answerMessages.textContent = currentAnswer
           answerMessages.className = classNamesMessage
-          setTimeout(() => {
-            chatbotRef.current.append(answerMessages)
-          }, 2000)  
 
           setTimeout(() => {
+            // setMessages((messages) => [...messages, {
+            //   author: 'bot',
+            // }])
+            chatbotRef.current.append(answerMessages)
             setIsTyping(false)
-          }, 2050)  
-         
+          }, 2000)
+
+          // setTimeout(() => {
+          //   setIsTyping(false)
+          // }, 2050)
+
         }
       })
 
@@ -136,16 +200,27 @@ const Chatbot = ({ data }) => {
   }
 
   useEffect(() => {
-    console.log(isTyping)
-    if (messages.length === 0 || messages.length === 2) {setIsTyping(true)}
+
 
     const printMessage = () => {
-      if (messages.length === 0 || messages.length === 2) firstMessages()          
-     
+      if (messages.length === 0) firstMessage()
+
+      if (messages.length === 1) questionsListMesssage()
+
+      if (messages.length === 2) {
+        setIsTyping(false)
+        console.log('test')
+      }
+
       otherMessage()
+      console.log('-------')
+      console.log(messages.length)
+      console.log(isTyping)
     }
     printMessage()
-  }, [isChatActive, isMessageUser])
+  }, [isChatActive, isMessageUser, messages])
+
+
 
   return (
     <div className={classNamesChatbot}>
