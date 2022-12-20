@@ -1,7 +1,6 @@
 import classes from './Chatbot.module.scss'
 import chatbot from './assets/chatbot.gif'
 import { classNames } from 'utils/helpers'
-// import Logo from './components/Logo/Logo.js'
 import { ReactComponent as Logo } from './assets/logo.svg'
 import { ReactComponent as Close } from './assets/close.svg'
 import { ReactComponent as Arrow } from './assets/arrow.svg'
@@ -10,12 +9,8 @@ import { useEffect, useState, useRef } from 'react'
 
 const Chatbot = ({ data }) => {
 
-  let isStart = true
-
+  const [isTyping, setIsTyping] = useState(true)
   const [isChatActive, setIsChatActive] = useState(null)
-
-  const [isPrinting, setIsPrinting] = useState(false)
-
   const [isMessageBot, setIsMessageBot] = useState(true)
   const [isMessageUser, setIsMessageUser] = useState(false)
 
@@ -32,7 +27,6 @@ const Chatbot = ({ data }) => {
     [classes.user]: isMessageUser
   }, [])
 
-
   const classNamesSubmit = classNames(classes.submit, {
     [classes.disabled]: true
   }, [])
@@ -40,10 +34,7 @@ const Chatbot = ({ data }) => {
   const chatbotRef = useRef(null)
   const chatbotHeaderRef = useRef(null)
   const [userQuestion, setUserQuestion] = useState('')
-
   const [messages, setMessages] = useState([])
-
-  let currentFaqID
 
   const handleQuestionChange = (event) => {
     console.log(event.target.value)
@@ -52,62 +43,17 @@ const Chatbot = ({ data }) => {
   let currentQuestion
   const [message, setMessage] = useState({})
 
-
   const handleClickQuestion = (event) => {
     setIsMessageBot(false)
     setIsMessageUser(true)
-    currentQuestion = event.target.innerHTML
-    // message = {
-    //   author: 'user',
-    //   content: currentQuestion
-    // }    
+    currentQuestion = event.target.innerHTML  
     setMessage({
       author: 'user',
       content: currentQuestion
     })
-
     setMessages((messages) => [...messages, message])
-
-    // data.faqs.map((faq) => {
-    //   if (currentQuestion === faq.question) {
-    //     const targetQuestion = faq.question
-    //     const currentID = faq.id
-    //     console.log(currentID)
-    //     const currentAnswer = faq.answer
-    //     const questionsMessage = document.createElement('div')
-    //     questionsMessage.textContent = targetQuestion
-
-    //     questionsMessage.className = classNamesMessage
-    //     chatbotRef.current.append(questionsMessage)
-
-    //     console.log(classNamesMessage)
-    //     const answerMessages = document.createElement('div')
-    //     answerMessages.textContent = currentAnswer
-    //     answerMessages.className = classNamesMessage
-    //     chatbotRef.current.append(answerMessages)
-    //   }
-    // })  
   }
-
-
-  let botIsPrinting
-
-  botIsPrinting = document.createElement('span')
-  const notice = (typingText) => {
-    botIsPrinting.textContent = typingText
-    chatbotHeaderRef.current.append(botIsPrinting)
-
-  }
-
-
   const firstMessages = () => {
-    console.log(messages.length)
-
-    if (messages.length === 0) { notice('...typing') } else { notice('') }
-
-
-
-
     const helloMessage = document.createElement('div')
     helloMessage.textContent = data.firstMessage
     helloMessage.className = classNamesMessage
@@ -115,7 +61,6 @@ const Chatbot = ({ data }) => {
       author: 'bot',
       content: data.firstMessage
     })
-
     setMessages((messages) => [...messages, message])
 
     const questionsMessage = document.createElement('div')
@@ -124,8 +69,7 @@ const Chatbot = ({ data }) => {
     questionList.className = classes.list
     questionsMessage.append(questionList)
 
-    data.faqs.map((faq) => {
-      currentFaqID = faq.id
+    data.faqs.map((faq) => {     
       const questionItem = document.createElement('li')
       questionItem.className = classes.item
       const number = document.createElement('span')
@@ -144,21 +88,17 @@ const Chatbot = ({ data }) => {
 
     setMessages((messages) => [...messages, message])
 
-
     setTimeout(() => {
-      if (isChatActive) {
-        chatbotRef.current.append(helloMessage)
-      }
+      if (isChatActive) chatbotRef.current.append(helloMessage)      
     }, 1000)
 
-
     setTimeout(() => {
-      if (isChatActive) {
-        chatbotRef.current.append(questionsMessage)
-      }
-    }, 2000)
-
-    isStart = false
+      if (isChatActive) chatbotRef.current.append(questionsMessage)
+      
+    }, 2000)  
+    setTimeout(() => {
+      if (isChatActive) setIsTyping(false)      
+    }, 2050)  
   }
 
   const otherMessage = () => {
@@ -175,16 +115,20 @@ const Chatbot = ({ data }) => {
 
     if (isMessageBot) {
       data.faqs.map((faq) => {
-        if (message.content === faq.question) {
-          const targetQuestion = faq.question
-          const currentID = faq.id
-
+        setIsTyping(true)
+        if (message.content === faq.question) {   
           const currentAnswer = faq.answer
-
           const answerMessages = document.createElement('div')
           answerMessages.textContent = currentAnswer
           answerMessages.className = classNamesMessage
-          chatbotRef.current.append(answerMessages)
+          setTimeout(() => {
+            chatbotRef.current.append(answerMessages)
+          }, 2000)  
+
+          setTimeout(() => {
+            setIsTyping(false)
+          }, 2050)  
+         
         }
       })
 
@@ -192,11 +136,12 @@ const Chatbot = ({ data }) => {
   }
 
   useEffect(() => {
-
+    console.log(isTyping)
+    if (messages.length === 0 || messages.length === 2) {setIsTyping(true)}
 
     const printMessage = () => {
-      if (messages.length === 0 || messages.length === 2) firstMessages()
-
+      if (messages.length === 0 || messages.length === 2) firstMessages()          
+     
       otherMessage()
     }
     printMessage()
@@ -211,7 +156,10 @@ const Chatbot = ({ data }) => {
         <div className={classNamesChat}>
           <header className={classes.header}>
             <div className={classes.logo}><Logo /></div>
-            <div ref={chatbotHeaderRef} className={classes.notice}></div>
+            <div ref={chatbotHeaderRef} className={classes.notice}>
+              {isTyping && <span>...typing</span>}
+              {!isTyping && <span>online</span>}
+            </div>
             <button className={classes.close}>
               <Close />
             </button>
