@@ -6,7 +6,6 @@ import { ReactComponent as Close } from './assets/close.svg'
 import { ReactComponent as Arrow } from './assets/arrow.svg'
 import { useEffect, useState, useRef } from 'react'
 
-
 const Chatbot = ({ data }) => {
 
   const [isTyping, setIsTyping] = useState(true)
@@ -60,62 +59,10 @@ const Chatbot = ({ data }) => {
       content: currentQuestion
     }])
   }
-  // const firstMessages = () => {
-  //   const helloMessage = document.createElement('div')
-  //   helloMessage.textContent = data.firstMessage
-  //   helloMessage.className = classNamesMessage
-
-  //   setMessages((messages) => [...messages, {
-  //     author: 'bot',
-  //     content: data.firstMessage
-  //   }])
-
-  //   const questionsMessage = document.createElement('div')
-  //   questionsMessage.className = classNamesMessage
-  //   const questionList = document.createElement('ol')
-  //   questionList.className = classes.list
-  //   questionsMessage.append(questionList)
-
-  //   data.faqs.map((faq) => {
-  //     const questionItem = document.createElement('li')
-  //     questionItem.className = classes.item
-  //     const number = document.createElement('span')
-  //     number.textContent = `${faq.id}. `
-  //     const question = document.createElement('button')
-  //     question.addEventListener('click', handleClickQuestion)
-  //     question.textContent = faq.question
-  //     questionItem.append(number)
-  //     questionItem.append(question)
-  //     questionList.append(questionItem)
-  //   })
-
-
-  //   setMessages((messages) => [...messages, {
-  //     author: 'bot',
-  //   }])
-
-  //   setTimeout(() => {
-  //     if (isChatActive) chatbotRef.current.append(helloMessage)
-  //   }, 1000)
-
-  //   setTimeout(() => {
-  //     if (isChatActive) chatbotRef.current.append(questionsMessage)
-
-  //   }, 2000)
-
-  //   // setTimeout(() => {
-  //   //   if (isChatActive) setIsTyping(false)
-  //   // }, 2050)
-
-
-
-
-  // }
 
   const firstMessage = () => {
     setIsTyping(true)
     if (isChatActive) {
-
       const helloMessage = document.createElement('div')
       helloMessage.textContent = data.firstMessage
       helloMessage.className = classNamesMessage
@@ -137,7 +84,7 @@ const Chatbot = ({ data }) => {
     questionList.className = classes.list
     questionsMessage.append(questionList)
 
-    data.faqs.map((faq) => {
+    data.faqs.forEach((faq) => { 
       const questionItem = document.createElement('li')
       questionItem.className = classes.item
       const number = document.createElement('span')
@@ -147,7 +94,7 @@ const Chatbot = ({ data }) => {
       question.textContent = faq.question
       questionItem.append(number)
       questionItem.append(question)
-      questionList.append(questionItem)
+      questionList.append(questionItem)      
     })
 
     setTimeout(() => {
@@ -157,12 +104,9 @@ const Chatbot = ({ data }) => {
       if (isChatActive) chatbotRef.current.append(questionsMessage)
 
     }, 2000)
-
-
   }
 
   const otherMessage = () => {
-
     if (isMessageUser) {
       const questionsMessage = document.createElement('div')
       questionsMessage.textContent = message.content
@@ -174,7 +118,7 @@ const Chatbot = ({ data }) => {
     }
 
     if (isMessageBot) {
-      data.faqs.map((faq) => {
+      data.faqs.forEach((faq) => {
         if (message.content === faq.question) {
           const currentAnswer = faq.answer
           const answerMessages = document.createElement('div')
@@ -200,24 +144,20 @@ const Chatbot = ({ data }) => {
   }
 
   useEffect(() => {
-
-
     const printMessage = () => {
       if (messages.length === 0) firstMessage()
 
       if (messages.length === 1) questionsListMesssage()
 
-      if (messages.length === 2) {
-        setIsTyping(false)
-        console.log('test')
-      }
+      if (messages.length === 2) setIsTyping(false)          
 
-      otherMessage()
-      console.log('-------')
-      console.log(messages.length)
-      console.log(isTyping)
+      otherMessage()   
+      
+
+      console.dir(chatbotRef.current)
+      chatbotRef.current.scrollTo(0, chatbotRef.current.scrollHeight)
     }
-    printMessage()
+    printMessage()   
   }, [isChatActive, isMessageUser, messages])
 
 
