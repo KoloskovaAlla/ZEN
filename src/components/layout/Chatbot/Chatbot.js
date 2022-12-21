@@ -84,7 +84,7 @@ const Chatbot = ({ data }) => {
     questionList.className = classes.list
     questionsMessage.append(questionList)
 
-    data.faqs.forEach((faq) => { 
+    data.faqs.forEach((faq) => {
       const questionItem = document.createElement('li')
       questionItem.className = classes.item
       const number = document.createElement('span')
@@ -94,7 +94,7 @@ const Chatbot = ({ data }) => {
       question.textContent = faq.question
       questionItem.append(number)
       questionItem.append(question)
-      questionList.append(questionItem)      
+      questionList.append(questionItem)
     })
 
     setTimeout(() => {
@@ -130,6 +130,7 @@ const Chatbot = ({ data }) => {
             //   author: 'bot',
             // }])
             chatbotRef.current.append(answerMessages)
+            chatbotRef.current.scrollTo(0, scrollHeight + answerMessages.scrollHeight, { behavior: 'smooth' })
             setIsTyping(false)
           }, 2000)
 
@@ -142,6 +143,7 @@ const Chatbot = ({ data }) => {
 
     }
   }
+  let scrollHeight
 
   useEffect(() => {
     const printMessage = () => {
@@ -149,16 +151,16 @@ const Chatbot = ({ data }) => {
 
       if (messages.length === 1) questionsListMesssage()
 
-      if (messages.length === 2) setIsTyping(false)          
+      if (messages.length === 2) setIsTyping(false)
 
-      otherMessage()   
-      
+      otherMessage()
 
-      console.dir(chatbotRef.current)
-      chatbotRef.current.scrollTo(0, chatbotRef.current.scrollHeight)
+      scrollHeight = chatbotRef.current.scrollHeight
+      console.dir(chatbotRef.current.scrollHeight)
+      chatbotRef.current.scrollTo(0, scrollHeight, { behavior: 'smooth' })
     }
-    printMessage()   
-  }, [isChatActive, isMessageUser, messages])
+    printMessage()
+  }, [isChatActive, isMessageUser, messages, scrollHeight])
 
 
 
