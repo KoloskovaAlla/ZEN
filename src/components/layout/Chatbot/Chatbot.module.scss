@@ -36,20 +36,6 @@
     transform: translate(-50%, -50%);
     z-index: -1;
   }
-
-  .chat {
-    position: fixed;
-    right: 0;
-    bottom: 0; // поменять на -100vh
-    visibility: visible; // поменять на hidden
-    display: grid;
-    ;
-  }
-
-  .open {
-    bottom: 0;
-    visibility: visible;
-  }
 }
 
 .chat {
@@ -63,6 +49,15 @@
   background: #fff;
   visibility: hidden;
   z-index: 3;
+
+  @media (min-width: 770px) {
+    right: 10vw;
+    overflow: hidden;
+    height: 70vh;
+    width: 380px;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 25px hsl(0deg 0% 100% / 30%);
+  }
 
   &.open {
     bottom: 0;
