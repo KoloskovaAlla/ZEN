@@ -125,19 +125,11 @@ const Chatbot = ({ data }) => {
           answerMessages.textContent = currentAnswer
           answerMessages.className = classNamesMessage
 
-          setTimeout(() => {
-            // setMessages((messages) => [...messages, {
-            //   author: 'bot',
-            // }])
+          setTimeout(() => {  
             chatbotRef.current.append(answerMessages)
             chatbotRef.current.scrollTo(0, scrollHeight + answerMessages.scrollHeight, { behavior: 'smooth' })
             setIsTyping(false)
           }, 2000)
-
-          // setTimeout(() => {
-          //   setIsTyping(false)
-          // }, 2050)
-
         }
       })
 
