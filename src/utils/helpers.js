@@ -22,6 +22,7 @@ export const scrollToSection = (sectionName) => {
   const headerHeight = $header.offsetHeight
   const $section = document.querySelector(`#${sectionName}`)
 
+
   const sectionTopPosition = $section.offsetTop
   const targetTopPosition = sectionTopPosition - headerHeight
 
@@ -87,7 +88,7 @@ export const validateTel = (tel) => {
   return regex.test(String(tel))
 }
 
-export const validateEmail = (email) => { 
+export const validateEmail = (email) => {
   const regex = /[a-z0-9]+@[a-z]+\.(ru|com)/gi
   return regex.test(String(email))
 }
