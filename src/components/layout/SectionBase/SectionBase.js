@@ -5,17 +5,19 @@ import Preview from '../../common/Preview/Preview'
 import BrandLink from './components/BrandLink'
 import classes from './SectionBase.module.scss'
 import { classNames } from 'utils/helpers'
+import { useRef } from 'react'
+
 
 const SectionBase = ({ data, reverse }) => {
   const classNameBody = classNames(classes.body, {
     [classes.reverse]: reverse,
   }, [])
 
-  const { title } = data
+  const { title, name } = data
+  // console.log(name)
 
   return (
-
-    <section className={classes.section}>
+    <section id={name} className={classes.section}>
       <div className={classes.wrapper}>
         <div className={classNameBody}>
 

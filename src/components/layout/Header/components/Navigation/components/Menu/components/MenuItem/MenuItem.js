@@ -1,7 +1,7 @@
 import { scrollToSection } from 'utils/helpers'
 import classes from './MenuItem.module.scss'
 
-const MenuItem = ({ menuItem, setIsMenuActive }) => { 
+const MenuItem = ({ menuItem, setIsMenuActive }) => {
 
   const handleMenuItemClick = (event) => {
     event.preventDefault()
