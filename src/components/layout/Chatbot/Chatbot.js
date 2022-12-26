@@ -1,13 +1,13 @@
 import classes from './Chatbot.module.scss'
 import chatbot from './assets/chatbot.gif'
-import {classNames} from 'utils/helpers'
-import {ReactComponent as Logo} from './assets/logo.svg'
-import {ReactComponent as Close} from './assets/close.svg'
-import {ReactComponent as Arrow} from './assets/arrow.svg'
-import {useEffect, useState, useRef} from 'react'
+import { classNames } from 'utils/helpers'
+import { ReactComponent as Logo } from './assets/logo.svg'
+import { ReactComponent as Close } from './assets/close.svg'
+import { ReactComponent as Arrow } from './assets/arrow.svg'
+import { useEffect, useState, useRef } from 'react'
 import Message from './components/Message'
 
-const Chatbot = ({data}) => {
+const Chatbot = ({ data }) => {
 
   const [isTyping, setIsTyping] = useState(true)
   const [isChatActive, setIsChatActive] = useState(null)
@@ -136,7 +136,7 @@ const Chatbot = ({data}) => {
 
           setTimeout(() => {
             chatbotRef.current.append(answerMessages)
-            chatbotRef.current.scrollTo(0, scrollHeight + answerMessages.scrollHeight, {behavior: 'smooth'})
+            chatbotRef.current.scrollTo(0, scrollHeight + answerMessages.scrollHeight, { behavior: 'smooth' })
             setIsTyping(false)
           }, 2000)
         }
@@ -157,9 +157,8 @@ const Chatbot = ({data}) => {
   useEffect(() => {
     const printMessage = () => {
       let list = []
-      list = data.faqs.map((faq) => [...list, faq.question])
-
-      console.log(list)
+      list = data.faqs.map((faq) => faq.question)
+      // list = data.faqs.map((faq) => list.push(faq.question))      
 
       if (messages.length === 0) addMessage('bot', data.firstMessage, 'text')
 
@@ -170,7 +169,7 @@ const Chatbot = ({data}) => {
       otherMessage()
 
       scrollHeight = chatbotRef.current.scrollHeight
-      chatbotRef.current.scrollTo(0, scrollHeight, {behavior: 'smooth'})
+      chatbotRef.current.scrollTo(0, scrollHeight, { behavior: 'smooth' })
     }
     printMessage()
   }, [isChatActive, isMessageUser, messages, scrollHeight])
@@ -180,7 +179,7 @@ const Chatbot = ({data}) => {
   return (
     <div className={classNamesChatbot}>
       <div>
-        <button onClick={() => {setIsChatActive(true)}} className={classes.chatbotOpen}>
+        <button onClick={() => { setIsChatActive(true) }} className={classes.chatbotOpen}>
           <img src={chatbot} alt='' />
         </button>
         <div className={classNamesChat}>
