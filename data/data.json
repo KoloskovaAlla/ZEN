@@ -1,0 +1,951 @@
+{
+  "en": {
+    "care": {
+      "image": {
+        "alternate": "Until something you buy, proves to be faulty, missing or a totally wrong item, you’re in for long product return",
+        "id": 3,
+        "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F3.jpg?alt=media&token=85414255-0e38-49bf-bbc7-7d4e21a51e97"
+      },
+      "name": "care",
+      "texts": [
+        "Shopping online is usually a delightful experience. Until it's not.",
+        "Until something you buy, proves to be faulty, missing or a totally wrong item, you’re in for long product return procedures.",
+        "But, here comes ZEN Care: a free, built-in shopping protection."
+      ],
+      "title": {
+        "content": "ZEN Care",
+        "priority": 2
+      }
+    },
+    "cashback": {
+      "buttonText": "Order a consultation",
+      "name": "cashback",
+      "texts": [
+        "It saves a little bit of money while you’re shopping, but in many cases it takes ages to get anything out of it.",
+        "We gave it a thought and made cashback way more friendly.",
+        "Up to 14% of what you spend using ZEN Mastercard ® will materialize on your account right after the purchase."
+      ],
+      "title": {
+        "content": "and cashback!",
+        "priority": 2
+      }
+    },
+    "clients": {
+      "darkThemeClients": [
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F1.svg?alt=media&token=f9b39015-6f77-4a42-b4e7-c5c5f7a783b1"
+        },
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F2.svg?alt=media&token=4b5fac14-7cac-4ee9-89ef-8f000191c8ca"
+        },
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F3.svg?alt=media&token=e15ac5cd-2654-4861-8eaa-64d7a7ee5066"
+        },
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F4.svg?alt=media&token=b96fb3e2-6bf4-4776-8eb3-13eaecce78b4"
+        },
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F5.svg?alt=media&token=b090dd89-f5e5-4fa6-a585-91d6f82f3632"
+        },
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F6.svg?alt=media&token=8938de39-cee2-4daa-8eb7-863bb6d1365c"
+        },
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F7.svg?alt=media&token=05c1e365-7eb3-4c11-9e9c-e51411eb99fe"
+        },
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F8.svg?alt=media&token=c12b1a8c-9126-4112-8edb-e16a6badf300"
+        }
+      ],
+      "lightThemeClients": [
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F1.svg?alt=media&token=c916619f-8d50-4a57-84f7-1b1057af18c5"
+        },
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F2.svg?alt=media&token=9104abf8-bd76-4d84-878b-7cd175cd92a3"
+        },
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F3.svg?alt=media&token=9c207280-3d34-4969-905f-945c199b54df"
+        },
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F4.svg?alt=media&token=d92b6e80-7cf3-41c4-a887-f4abcf37e372"
+        },
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F5.svg?alt=media&token=9ea46f26-7620-4531-b7de-28e0d6d7b70e"
+        },
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F6.svg?alt=media&token=bc0e6336-a9e9-4619-bbf7-af93a2a11412"
+        },
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F7.svg?alt=media&token=3e09734a-6920-4798-b72b-af3bc58fc913"
+        },
+        {
+          "alternate": "some description image",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F8.svg?alt=media&token=ad18f91f-4563-4780-ac1e-d5da046f58e1"
+        }
+      ],
+      "name": "clients"
+    },
+    "download": {
+      "image": {
+        "alternate": "We can help with making your shopping experience and money management more ZEN.",
+        "id": 1,
+        "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F1.jpg?alt=media&token=dac92c5e-ea63-4a55-83bb-19adb0820761"
+      },
+      "links": [
+        {
+          "name": "apple",
+          "url": "https://apple.com"
+        },
+        {
+          "name": "google",
+          "url": "https://google.com"
+        }
+      ],
+      "name": "download",
+      "texts": [
+        "See how we can help with making your shopping experience and money management more ZEN."
+      ],
+      "title": {
+        "content": "Peaceful shopping mindful money",
+        "priority": 1
+      }
+    },
+    "footer": {
+      "columns": [
+        {
+          "links": [
+            {
+              "content": {
+                "text": "Help center"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Join ZEN team"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Privacy Policy"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Cookies"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Terms of use"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            }
+          ],
+          "name": "learn",
+          "title": {
+            "content": "Learn",
+            "priority": 3
+          }
+        },
+        {
+          "links": [
+            {
+              "content": {
+                "text": "For developers"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Apple Pay"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Google Pay"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            }
+          ],
+          "name": "discover",
+          "title": {
+            "content": "Discover",
+            "priority": 3
+          }
+        },
+        {
+          "links": [
+            {
+              "content": {
+                "text": "Business"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Personal"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            }
+          ],
+          "name": "offer",
+          "title": {
+            "content": "Offer",
+            "priority": 3
+          }
+        },
+        {
+          "links": [
+            {
+              "content": {
+                "text": "English"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Polish"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            }
+          ],
+          "name": "language",
+          "title": {
+            "content": "Language",
+            "priority": 3
+          }
+        },
+        {
+          "links": [
+            {
+              "content": {
+                "image": {
+                  "alternate": "linked",
+                  "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fin.svg?alt=media&token=8068d6f7-aa70-4cf9-b0c3-bbf1142d418a"
+                }
+              },
+              "type": "image",
+              "url": "https://google.com"
+            }
+          ],
+          "name": "follow",
+          "title": {
+            "content": "Follow",
+            "priority": 3
+          }
+        },
+        {
+          "links": [
+            {
+              "content": {
+                "email": "hello@zen.com"
+              },
+              "type": "email",
+              "url": "mailto:hello@zen.com"
+            }
+          ],
+          "name": "contact",
+          "title": {
+            "content": "Contact",
+            "priority": 3
+          }
+        }
+      ],
+      "infoData": {
+        "developer": {
+          "content": {
+            "image": {
+              "alternate": "developer",
+              "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fcopyright.svg?alt=media&token=82697360-eef4-4d84-b370-6ab22bff27a2"
+            }
+          },
+          "url": "https://google.com"
+        },
+        "texts": [
+          "ZEN.COM is a licensed financial institution under the supervision of the Central Bank of Lithuania approved by European Banking Authority for 31 countries.",
+          "Registration number of the company 304749651, VAT ID LT100011714916.",
+          "License of electronic money institutions number LB000457.",
+          "Share capital 2.185.000,00 EUR.",
+          "Company address: Mėsinių g. 5, LT-01133, Vilnius, Lithuania.",
+          "Sales Office: ul. Emilii Plater 53, 00-113 Warsaw, Poland."
+        ]
+      },
+      "name": "footer"
+    },
+    "header": {
+      "languages": [
+        {
+          "text": "RU",
+          "value": "ru"
+        },
+        {
+          "text": "EN",
+          "value": "en"
+        }
+      ],
+      "menuItems": [
+        {
+          "target": "download",
+          "text": "Download"
+        },
+        {
+          "target": "warranty",
+          "text": "Warranty"
+        },
+        {
+          "target": "care",
+          "text": "Care"
+        },
+        {
+          "target": "cashback",
+          "text": "Cashback"
+        },
+        {
+          "target": "clients",
+          "text": "Clients"
+        }
+      ],
+      "name": "header"
+    },
+    "modal": {
+      "buttonText": "Submit",
+      "connection": {
+        "label": "Connection",
+        "options": [
+          {
+            "content": "WhatsApp",
+            "value": "whatsapp"
+          },
+          {
+            "content": "Telegram",
+            "value": "telegram"
+          },
+          {
+            "content": "Phone",
+            "value": "phone"
+          },
+          {
+            "content": "Email",
+            "value": "email"
+          }
+        ]
+      },
+      "inputEmail": {
+        "name": "email",
+        "placeholder": "E-mail",
+        "type": "email\""
+      },
+      "inputName": {
+        "name": "name",
+        "placeholder": "Name",
+        "type": "text"
+      },
+      "inputPolicy": {
+        "content": "Privacy policy",
+        "type": "checkbox",
+        "url": "https://www.google.com/"
+      },
+      "inputTel": {
+        "name": "tel",
+        "placeholder": "Tel.",
+        "type": "tel"
+      },
+      "title": {
+        "content": "Order a consultation",
+        "priority": 3
+      }
+    },
+    "orders": {
+      "-NCGQ6LUuTBILwue5E4y": {
+        "connection": "whatsapp",
+        "date": "18.09.2022, 19:26:42",
+        "email": "allakoloskova86@yandex.ru",
+        "name": "Алла",
+        "policy": true,
+        "tel": "2432343243242"
+      }
+    },
+    "warranty": {
+      "image": {
+        "alternate": "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing. ",
+        "id": 2,
+        "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F2.jpg?alt=media&token=3703da7c-3f50-4ba6-ae95-3a829dd1c4fa"
+      },
+      "name": "warranty",
+      "texts": [
+        "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing after the standard warranty ends, which is pretty common.",
+        "When you buy any electronics with your ZEN shopping Mastercard, their warranty gets extended by one year. How does it work? It simply does. Automatically."
+      ],
+      "title": {
+        "content": "1-year warranty boost",
+        "priority": 2
+      }
+    },
+    "chatBot": {
+      "firstMessage": "Hello, i'm a Chatbot.I'll help you get the answer to your question.",
+      "faqs": [
+        {
+          "id": 1,
+          "question": "How to protect yourself?",
+          "answer": "Do not install remote device management applications, never share payment information, verify trade and investment offers, read online reviews about the company."
+        },
+        {
+          "id": 2,
+          "question": "Top-up didn't arrive, what happened?",
+          "answer": "Top-up transactions may take up to 2 business days to process due to the settlement procedure. Unfortunately, even though ZEN sends your money instantly, we're not able to speed up settlement."
+        },
+        {
+          "id": 3,
+          "question": "Where can I find the account numbers?",
+          "answer": "ZEN provides account numbers that can be used to make a money transfers to your ZEN account. To check the account number, log in to ZEN app, and then go to the account view. Select the currency “bubble” you are interested for, and your account number for selected currency will be visible there."
+        },
+        {
+          "id": 4,
+          "question": "What currencies are available in ZEN?",
+          "answer": "ZEN gives you a multicurrency account for individual or business use. 30 currencies allows you to make a payments or money transfers to or out of ZEN account."
+        },
+        {
+          "id": 5,
+          "question": "What happens if the balance is negative?",
+          "answer": "You can make transactions within your balance. In rare cases, the balance may be negative, in which case the difference will be covered by the next deposit."
+        }
+      ],
+      "keywords": [
+        "download",
+        "warranty",
+        "care",
+        "cashback",
+        "clients",
+        "money",
+        "cards",
+        "electronic",
+        "devices",
+        "mastercard",
+        "contact"
+      ],
+      "articles": [
+        "article about download",
+        "article about warranty",
+        "article about care",
+        "article about cashback",
+        "clients",
+        "money",
+        "cards",
+        "electronic",
+        "devices",
+        "mastercard",
+        "contact"
+      ],
+      "posts": [
+        {
+          "title": "warranty",
+          "keywords": [
+            "electronic",
+            "devices",
+            "device",
+            "electronic devices",
+            "extended",
+            "one year"
+          ],
+          "article": "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing after the standard warranty ends, which is pretty common. When you buy any electronics with your ZEN shopping Mastercard, their warranty gets extended by one year. How does it work? It simply does. Automatically."
+        },
+        {
+          "title": "cashback",
+          "keywords": [
+            "save",
+            "%",
+            "perchase"
+          ],
+          "article": "It saves a little bit of money while you’re shopping, but in many cases it takes ages to get anything out of it. We gave it a thought and made cashback way more friendly. Up to 14% of what you spend using ZEN Mastercard ® will materialize on your account right after the purchase."
+        },
+        {
+          "title": "care",
+          "keywords": [
+            "return",
+            "refund"
+          ],
+          "article": "You can return defective goods"
+        }
+      ]
+    }
+  },
+  "ru": {
+    "care": {
+      "image": {
+        "alternate": "ZEN поможет, когда купленная вами вещь окажется бракованной или совершенно не той, которую вы купили",
+        "id": 3,
+        "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F3.jpg?alt=media&token=85414255-0e38-49bf-bbc7-7d4e21a51e97"
+      },
+      "name": "care",
+      "texts": [
+        "Обычно покупки в интернете доставляют удовольствие, пока...",
+        "...Пока вам не придет бракованный товар или совсем не тот, что Вы заказывали, или вообще не затеряется по пути ",
+        "Для того, чтобы защитить Вас, и разработана ZEN-помощь."
+      ],
+      "title": {
+        "content": "ZEN-помощь",
+        "priority": 2
+      }
+    },
+    "cashback": {
+      "buttonText": "Заказать консультацию",
+      "name": "cashback",
+      "texts": [
+        "Иногда требуется достаточно много времени, чтобы получить кэшбек",
+        "Мы постарались сделать кэшбек более дружелюбным для Вас",
+        "До 14% от суммы, портаченной при помощи ZEN Mastercard ®, сразу же появится на вашем счете."
+      ],
+      "title": {
+        "content": "И кэшбек!",
+        "priority": 2
+      }
+    },
+    "clients": {
+      "darkThemeClients": [
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F1.svg?alt=media&token=f9b39015-6f77-4a42-b4e7-c5c5f7a783b1"
+        },
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F2.svg?alt=media&token=4b5fac14-7cac-4ee9-89ef-8f000191c8ca"
+        },
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F3.svg?alt=media&token=e15ac5cd-2654-4861-8eaa-64d7a7ee5066"
+        },
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F4.svg?alt=media&token=b96fb3e2-6bf4-4776-8eb3-13eaecce78b4"
+        },
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F5.svg?alt=media&token=b090dd89-f5e5-4fa6-a585-91d6f82f3632"
+        },
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F6.svg?alt=media&token=8938de39-cee2-4daa-8eb7-863bb6d1365c"
+        },
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F7.svg?alt=media&token=05c1e365-7eb3-4c11-9e9c-e51411eb99fe"
+        },
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F8.svg?alt=media&token=c12b1a8c-9126-4112-8edb-e16a6badf300"
+        }
+      ],
+      "lightThemeClients": [
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F1.svg?alt=media&token=c916619f-8d50-4a57-84f7-1b1057af18c5"
+        },
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F2.svg?alt=media&token=9104abf8-bd76-4d84-878b-7cd175cd92a3"
+        },
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F3.svg?alt=media&token=9c207280-3d34-4969-905f-945c199b54df"
+        },
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F4.svg?alt=media&token=d92b6e80-7cf3-41c4-a887-f4abcf37e372"
+        },
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F5.svg?alt=media&token=9ea46f26-7620-4531-b7de-28e0d6d7b70e"
+        },
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F6.svg?alt=media&token=bc0e6336-a9e9-4619-bbf7-af93a2a11412"
+        },
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F7.svg?alt=media&token=3e09734a-6920-4798-b72b-af3bc58fc913"
+        },
+        {
+          "alternate": "клиент, который нам доверяет",
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F8.svg?alt=media&token=ad18f91f-4563-4780-ac1e-d5da046f58e1"
+        }
+      ],
+      "name": "Клиенты"
+    },
+    "download": {
+      "image": {
+        "alternate": "Мы можем помочь сделать ваш опыт покупки и управления деньгами более совершенным c ZEN.",
+        "id": 1,
+        "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F1.jpg?alt=media&token=dac92c5e-ea63-4a55-83bb-19adb0820761"
+      },
+      "links": [
+        {
+          "name": "apple",
+          "url": "https://apple.com"
+        },
+        {
+          "name": "google",
+          "url": "https://google.com"
+        }
+      ],
+      "name": "download",
+      "texts": [
+        "Взгляните, как ваши покупки и траты станут более осознанными."
+      ],
+      "title": {
+        "content": "Комфортный шопинг с разумными тратами",
+        "priority": 1
+      }
+    },
+    "footer": {
+      "columns": [
+        {
+          "links": [
+            {
+              "content": {
+                "text": "Центр поддержки"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Присоединиться к команде ZEN"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Политика конфиденциальности"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Cookies"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Условия пользования"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            }
+          ],
+          "name": "learn",
+          "title": {
+            "content": "Изучить",
+            "priority": 3
+          }
+        },
+        {
+          "links": [
+            {
+              "content": {
+                "text": "Разработчикам"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Apple Pay"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Google Pay"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            }
+          ],
+          "name": "discover",
+          "title": {
+            "content": "Откройте",
+            "priority": 3
+          }
+        },
+        {
+          "links": [
+            {
+              "content": {
+                "text": "Юридическим лицам"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Физическим лицам"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            }
+          ],
+          "name": "offer",
+          "title": {
+            "content": "Предложения",
+            "priority": 3
+          }
+        },
+        {
+          "links": [
+            {
+              "content": {
+                "text": "Английский"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            },
+            {
+              "content": {
+                "text": "Русский"
+              },
+              "type": "text",
+              "url": "https://google.com"
+            }
+          ],
+          "name": "language",
+          "title": {
+            "content": "Язык",
+            "priority": 3
+          }
+        },
+        {
+          "links": [
+            {
+              "content": {
+                "image": {
+                  "alternate": "Следите",
+                  "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fin.svg?alt=media&token=8068d6f7-aa70-4cf9-b0c3-bbf1142d418a"
+                }
+              },
+              "type": "image",
+              "url": "https://google.com"
+            }
+          ],
+          "name": "follow",
+          "title": {
+            "content": "Следите",
+            "priority": 3
+          }
+        },
+        {
+          "links": [
+            {
+              "content": {
+                "email": "hello@zen.com"
+              },
+              "type": "email",
+              "url": "mailto:hello@zen.com"
+            }
+          ],
+          "name": "contact",
+          "title": {
+            "content": "Контакты",
+            "priority": 3
+          }
+        }
+      ],
+      "infoData": {
+        "developer": {
+          "content": {
+            "image": {
+              "alternate": "Разработчик",
+              "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fcopyright.svg?alt=media&token=82697360-eef4-4d84-b370-6ab22bff27a2"
+            }
+          },
+          "url": "https://google.com"
+        },
+        "texts": [
+          "ZEN.COM является лицензированным финансовым учреждением под надзором Центрального банка Литвы, утвержденным Европейским банковским управлением для 31 страны.",
+          "Регистрационный номер компании 304749651, НДС ID LT100011714916.",
+          "Лицензия электронных денежных учреждений номер LB000457",
+          "Акционерный капитал 2.185.000.00 EUR.",
+          "Адрес компании: Mėsinių g. 5, LT-01133, Вильнюс, Литва.",
+          "Офис продаж: ul. Emilii Plater 53, 00-113 Варшава, Польша."
+        ]
+      },
+      "name": "footer"
+    },
+    "header": {
+      "languages": [
+        {
+          "text": "RU",
+          "value": "ru"
+        },
+        {
+          "text": "EN",
+          "value": "en"
+        }
+      ],
+      "menuItems": [
+        {
+          "target": "download",
+          "text": "Скачать"
+        },
+        {
+          "target": "warranty",
+          "text": "Гарантии"
+        },
+        {
+          "target": "care",
+          "text": "Помощь"
+        },
+        {
+          "target": "cashback",
+          "text": "Кэшбек"
+        },
+        {
+          "target": "clients",
+          "text": "Клиенты"
+        }
+      ],
+      "name": "header"
+    },
+    "modal": {
+      "buttonText": "Подтвердить",
+      "connection": {
+        "label": "способо связи",
+        "options": [
+          {
+            "content": "WhatsApp",
+            "value": "whatsapp"
+          },
+          {
+            "content": "Telegram",
+            "value": "telegram"
+          },
+          {
+            "content": "Телефон",
+            "value": "phone"
+          },
+          {
+            "content": "Электронная почта",
+            "value": "email"
+          }
+        ]
+      },
+      "inputEmail": {
+        "name": "email",
+        "placeholder": "Электронная почта",
+        "type": "email\""
+      },
+      "inputName": {
+        "name": "name",
+        "placeholder": "Имя",
+        "type": "text"
+      },
+      "inputPolicy": {
+        "content": "Политика конфиденциальности",
+        "type": "checkbox",
+        "url": "https://www.google.com/"
+      },
+      "inputTel": {
+        "name": "tel",
+        "placeholder": "Телефон",
+        "type": "tel"
+      },
+      "title": {
+        "content": "Заказать консультацию",
+        "priority": 3
+      }
+    },
+    "orders": {
+      "-NCGQ6LUuTBILwue5E4y": {
+        "connection": "whatsapp",
+        "date": "18.09.2022, 19:26:42",
+        "email": "allakoloskova86@yandex.ru",
+        "name": "Алла",
+        "policy": true,
+        "tel": "2432343243242"
+      }
+    },
+    "warranty": {
+      "image": {
+        "alternate": "Карты ZEN имеют очень удобную функцию, которая поможет, когда ваше устройство выйдет из строя.",
+        "id": 2,
+        "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F2.jpg?alt=media&token=3703da7c-3f50-4ba6-ae95-3a829dd1c4fa"
+      },
+      "name": "warranty",
+      "texts": [
+        "Карта ZEN придет на помощь даже тогда, когда законончился гарантийный срок обслуживания вышедшего из строя гаджета",
+        "Когда вы оплачиваете гаджет картой ZEN, гарантийный срок автоматически продлевается на год"
+      ],
+      "title": {
+        "content": "Увеличение гарантийного срока на один год",
+        "priority": 2
+      }
+    },
+    "chatBot": {
+      "firstMessage": "Здравствуйте, я чат-бот. Я помогу вам получить ответ на ваш вопрос.",
+      "faqs": [
+        {
+          "id": 1,
+          "question": "Как обезопасить себя?",
+          "answer": "Не устанавливайте приложения для удаленного управления устройствами, никогда не сообщайте платежную информацию, проверяйте торговые и инвестиционные предложения, читайте отзывы о компании в Интернете."
+        },
+        {
+          "id": 2,
+          "question": "Где я могу найти номера счетов?",
+          "answer": "ZEN предоставляет номера счетов, которые можно использовать для осуществления денежных переводов на ваш счёт ZEN. Чтобы проверить номер счёта, войдите в приложение ZEN, а затем перейдите к просмотру счёта. Выберите интересующую вас валюту, и там будет виден номер вашего счёта в выбранной валюте."
+        },
+        {
+          "id": 3,
+          "question": "Где я могу найти номера счетов?",
+          "answer": "ZEN предоставляет номера счетов, которые можно использовать для осуществления денежных переводов на ваш счёт ZEN. Чтобы проверить номер счёта, войдите в приложение ZEN, а затем перейдите к просмотру счёта. Выберите интересующую вас валюту, и там будет виден номер вашего счёта в выбранной валюте.18: 45"
+        },
+        {
+          "id": 4,
+          "question": "Какие валюты доступны в ZEN?",
+          "answer": "ZEN предоставляет вам мультивалютный счёт для индивидуального или делового использования. 30 валют позволяют вам осуществлять платежи или денежные переводы на счёт ZEN или с него."
+        },
+        {
+          "id": 5,
+          "question": "Что произойдет, если баланс будет отрицательным?",
+          "answer": "Можно совершать транзакции в пределах своего баланса. В редких случаях баланс может быть отрицательным, в этом случае разница будет покрыта следующим депозитом."
+        }
+      ]
+    }
+  }
+}
