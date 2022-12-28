@@ -1,10 +1,10 @@
 import './Email.scss'
 
 const Email = ({
-  placeholder, 
-  email,  
+  placeholder,
+  email,
   onEmailChange,
-  isValidEmail 
+  isValidEmail
 }) => {
   const className = 'email'
 
