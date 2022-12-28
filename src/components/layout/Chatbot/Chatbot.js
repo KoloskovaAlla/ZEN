@@ -14,7 +14,7 @@ const Chatbot = ({ data }) => {
   const [isQuestionAsked, setIsQuestionAsked] = useState(false)
   const [askedQuestion, setAskedQuestion] = useState('')
   const [isLastMessageUser, setIsLastMessageUser] = useState(false)
-  const [answer, setAnswer] = useState('')
+  const [typedQuestion, setTypedQuestion] = useState([])
 
   const classNamesChatbot = classNames(classes.chatbot, {
     [classes.active]: isChatActive
@@ -34,9 +34,12 @@ const Chatbot = ({ data }) => {
   const [messages, setMessages] = useState([])
 
   const handleQuestionChange = (event) => {
-    console.log(event.target.value)
-    setUserQuestion(event.target.value)
+    setUserQuestion(event.target.value)       
   }
+
+
+  
+
 
   //   //       setTimeout(() => {
   //   //         chatbotRef.current.append(answerMessages)
@@ -55,11 +58,23 @@ const Chatbot = ({ data }) => {
     }])
   }
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault();   
+    setIsLastMessageUser(true)
+    console.log(userQuestion)
+    // setAskedQuestion(event.target.innerHTML) 
+    setIsQuestionAsked(true)  
+    setAskedQuestion(userQuestion) 
+ 
+
+    
+ 
+  }
+
   useEffect(() => {
     const printMessage = () => {
       let list = []
       list = data.faqs.map((faq) => faq.question)
-
 
       if (messages.length === 0) addMessage('bot', data.firstMessage, 'text')
 
@@ -71,8 +86,7 @@ const Chatbot = ({ data }) => {
 
       if (isLastMessageUser) {
         data.faqs.forEach((faq) => {
-          if (faq.question === askedQuestion) {
-            setAnswer(faq.answer)
+          if (faq.question === askedQuestion) {          
             addMessage('bot', faq.answer, 'text')
           }
         })
@@ -80,11 +94,13 @@ const Chatbot = ({ data }) => {
         setIsLastMessageUser(false)
       }
 
+
+
       scrollHeight = chatbotRef.current.scrollHeight
       chatbotRef.current.scrollTo(0, scrollHeight, { behavior: 'smooth' })
     }
     printMessage()
-  }, [isChatActive, messages, scrollHeight, isQuestionAsked, askedQuestion, answer])
+  }, [isChatActive, messages, scrollHeight, isQuestionAsked, askedQuestion, isLastMessageUser])
 
 
 
@@ -117,7 +133,7 @@ const Chatbot = ({ data }) => {
             )}
           </div>
           <footer className={classes.footer}>
-            <form className={classes.form}>
+            <form onSubmit={handleFormSubmit} className={classes.form}>
               <label className={classes.input}>
                 <input onChange={handleQuestionChange} type="text" placeholder="Message..." value={userQuestion}></input>
               </label>
