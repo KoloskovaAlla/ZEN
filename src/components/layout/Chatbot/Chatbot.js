@@ -9,6 +9,8 @@ import Message from './components/Message'
 
 const Chatbot = ({ data }) => {
 
+  const { posts } = data
+
   const [isTyping, setIsTyping] = useState(true)
   const [isChatActive, setIsChatActive] = useState(null)
   const [isQuestionAsked, setIsQuestionAsked] = useState(false)
@@ -33,14 +35,6 @@ const Chatbot = ({ data }) => {
   const [userQuestion, setUserQuestion] = useState('')
   const [messages, setMessages] = useState([])
 
-  const handleQuestionChange = (event) => {
-    setUserQuestion(event.target.value)       
-  }
-
-
-  
-
-
   //   //       setTimeout(() => {
   //   //         chatbotRef.current.append(answerMessages)
   //   //         chatbotRef.current.scrollTo(0, scrollHeight + answerMessages.scrollHeight, {behavior: 'smooth'})
@@ -58,17 +52,26 @@ const Chatbot = ({ data }) => {
     }])
   }
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();   
-    setIsLastMessageUser(true)
-    console.log(userQuestion)
-    // setAskedQuestion(event.target.innerHTML) 
-    setIsQuestionAsked(true)  
-    setAskedQuestion(userQuestion) 
- 
+  const handleQuestionChange = (event) => {
+    setUserQuestion(event.target.value)
+  }
 
-    
- 
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    setIsLastMessageUser(true)
+
+    setIsQuestionAsked(true)
+    setAskedQuestion(userQuestion)
+
+    const userKeywords = userQuestion.split(' ')
+
+    userKeywords.forEach((userKeyword) => {
+
+      posts.forEach((post) => {
+        const postKeywordString = post.keywords.join(' ')
+        if (postKeywordString.includes(userKeyword)) console.log('we have answer for you')
+      })
+    })
   }
 
   useEffect(() => {
@@ -86,7 +89,7 @@ const Chatbot = ({ data }) => {
 
       if (isLastMessageUser) {
         data.faqs.forEach((faq) => {
-          if (faq.question === askedQuestion) {          
+          if (faq.question === askedQuestion) {
             addMessage('bot', faq.answer, 'text')
           }
         })

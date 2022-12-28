@@ -92,6 +92,10 @@ export const validateEmail = (email) => {
   const regex = /[a-z0-9]+@[a-z]+\.(ru|com)/gi
   return regex.test(String(email))
 }
+// export const validateEmail = (email) => {
+//   const regex = /[a-z0-9]+@gmail/gi
+//   return regex.test(String(email))
+// }
 
 export const validateConnect = (connect) => {
   return connect ? true : false

@@ -15,6 +15,7 @@ const FieldEmail = ({
         onChange={onEmailChange}
       />
       {!isValidEmail && email && <span>Некорректная почта</span>}
+      {/* {email && isValidEmail && <span>Если вы не увидели письмо от нас, проверьте, пожалуйста папку "спам"</span>} */}
     </label>
   )
 }
