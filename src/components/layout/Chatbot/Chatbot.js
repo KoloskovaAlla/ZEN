@@ -1,22 +1,23 @@
 import classes from './Chatbot.module.scss'
 import chatbot from './assets/chatbot.gif'
-import { classNames } from 'utils/helpers'
-import { ReactComponent as Logo } from './assets/logo.svg'
-import { ReactComponent as Close } from './assets/close.svg'
-import { ReactComponent as Arrow } from './assets/arrow.svg'
-import { useEffect, useState, useRef } from 'react'
+import {classNames} from 'utils/helpers'
+import {ReactComponent as Logo} from './assets/logo.svg'
+import {ReactComponent as Close} from './assets/close.svg'
+import {ReactComponent as Arrow} from './assets/arrow.svg'
+import {useEffect, useState, useRef} from 'react'
 import Message from './components/Message'
 
-const Chatbot = ({ data }) => {
+const Chatbot = ({data}) => {
 
-  const { posts } = data
+  const {posts, faqs} = data
+
 
   const [isTyping, setIsTyping] = useState(true)
   const [isChatActive, setIsChatActive] = useState(null)
   const [isQuestionAsked, setIsQuestionAsked] = useState(false)
   const [askedQuestion, setAskedQuestion] = useState('')
   const [isLastMessageUser, setIsLastMessageUser] = useState(false)
-  const [typedQuestion, setTypedQuestion] = useState([])
+  const [isTypedQuestion, setIsTypedQuestion] = useState(false)
 
   const classNamesChatbot = classNames(classes.chatbot, {
     [classes.active]: isChatActive
@@ -61,17 +62,25 @@ const Chatbot = ({ data }) => {
     setIsLastMessageUser(true)
 
     setIsQuestionAsked(true)
+    setIsTypedQuestion(true)
     setAskedQuestion(userQuestion)
 
-    const userKeywords = userQuestion.split(' ')
+    // const userKeywords = userQuestion.split(' ')
 
-    userKeywords.forEach((userKeyword) => {
+    // userKeywords.forEach((userKeyword) => {
+    //   posts.forEach((post) => {     
+    //     const postKeywordString = post.keywords.join(' ')
+    //     if (postKeywordString.includes(userKeyword)) {         
+    //       console.log(`это слово ${userKeyword}, пост с id=${post.id}`)
+    //       const link = `https://zenproject-ce905.web.app/posts/${post.id}`
+    //       console.log(link)
 
-      posts.forEach((post) => {
-        const postKeywordString = post.keywords.join(' ')
-        if (postKeywordString.includes(userKeyword)) console.log('we have answer for you')
-      })
-    })
+    //       setIsLastMessageUser(true)
+
+    //       // setIsQuestionAsked(false)
+    //     }
+    //   })
+    // })
   }
 
   useEffect(() => {
@@ -85,10 +94,13 @@ const Chatbot = ({ data }) => {
 
       if (messages.length === 2) setIsTyping(false)
 
-      if (isQuestionAsked) addMessage('user', askedQuestion, 'text')
+      if (isQuestionAsked) {
+        addMessage('user', askedQuestion, 'text')
+        setIsQuestionAsked(false)
+      }
 
-      if (isLastMessageUser) {
-        data.faqs.forEach((faq) => {
+      if (!isTypedQuestion && isLastMessageUser) {
+        faqs.forEach((faq) => {
           if (faq.question === askedQuestion) {
             addMessage('bot', faq.answer, 'text')
           }
@@ -97,20 +109,40 @@ const Chatbot = ({ data }) => {
         setIsLastMessageUser(false)
       }
 
+      if (isTypedQuestion && isLastMessageUser) {
+        const userKeywords = userQuestion.split(' ')
+        let link
+        userKeywords.forEach((userKeyword) => {
+          posts.forEach((post) => {
+            const postKeywordString = post.keywords.join(' ')
+            if (postKeywordString.includes(userKeyword)) {
+              console.log(`это слово ${userKeyword}, пост с id=${post.id}`)
+              link = `https://zenproject-ce905.web.app/posts/${post.id}`
+              console.log(link)
 
+
+
+              // setIsQuestionAsked(false)
+            }
+          })
+        })
+
+        addMessage('bot', link, 'text')
+        setIsLastMessageUser(false)
+      }
 
       scrollHeight = chatbotRef.current.scrollHeight
-      chatbotRef.current.scrollTo(0, scrollHeight, { behavior: 'smooth' })
+      chatbotRef.current.scrollTo(0, scrollHeight, {behavior: 'smooth'})
     }
     printMessage()
-  }, [isChatActive, messages, scrollHeight, isQuestionAsked, askedQuestion, isLastMessageUser])
+  }, [isChatActive, messages, scrollHeight, isQuestionAsked, askedQuestion, isLastMessageUser,])
 
 
 
   return (
     <div className={classNamesChatbot}>
       <div>
-        <button onClick={() => { setIsChatActive(true) }} className={classes.chatbotOpen}>
+        <button onClick={() => {setIsChatActive(true)}} className={classes.chatbotOpen}>
           <img src={chatbot} alt='' />
         </button>
         <div className={classNamesChat}>
@@ -132,6 +164,7 @@ const Chatbot = ({ data }) => {
                 setAskedQuestion={setAskedQuestion}
                 setIsLastMessageUser={setIsLastMessageUser}
                 askedQuestion={askedQuestion}
+                setIsTypedQuestion={setIsTypedQuestion}
               />
             )}
           </div>
