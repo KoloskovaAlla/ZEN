@@ -471,6 +471,7 @@
       ],
       "posts": [
         {
+          "id": 1,
           "title": "warranty",
           "keywords": [
             "electronic",
@@ -479,6 +480,7 @@
           "article": "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing after the standard warranty ends, which is pretty common. When you buy any electronics with your ZEN shopping Mastercard, their warranty gets extended by one year. How does it work? It simply does. Automatically."
         },
         {
+          "id": 2,
           "title": "cashback",
           "keywords": [
             "save",
@@ -487,6 +489,7 @@
           "article": "It saves a little bit of money while you’re shopping, but in many cases it takes ages to get anything out of it. We gave it a thought and made cashback way more friendly. Up to 14% of what you spend using ZEN Mastercard ® will materialize on your account right after the purchase."
         },
         {
+          "id": 3,
           "title": "care",
           "keywords": [
             "return",

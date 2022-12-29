@@ -1,7 +1,7 @@
 import classes from './Message.module.scss'
 import {classNames} from 'utils/helpers'
 
-const Message = ({message, setIsQuestionAsked, setAskedQuestion, setIsLastMessageUser, askedQuestion}) => {
+const Message = ({message, setIsQuestionAsked, setAskedQuestion, setIsLastMessageUser, setIsTypedQuestion}) => {
   const {author, content, type} = message
   const classNamesMessage = classNames(classes.message, {
     [classes.bot]: author === 'bot',
@@ -17,9 +17,9 @@ const Message = ({message, setIsQuestionAsked, setAskedQuestion, setIsLastMessag
   }
   const handleQuestionClick = (event) => {
     setIsQuestionAsked(true)
-    setIsLastMessageUser(true)  
-    console.log()
+    setIsLastMessageUser(true)   
     setAskedQuestion(event.target.innerHTML)  
+    setIsTypedQuestion(false)
   }
   let id = 0
   if (author === 'bot' && type === 'list') {
