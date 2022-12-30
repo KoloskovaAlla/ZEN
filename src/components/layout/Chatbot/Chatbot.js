@@ -64,23 +64,6 @@ const Chatbot = ({data}) => {
     setIsQuestionAsked(true)
     setIsTypedQuestion(true)
     setAskedQuestion(userQuestion)
-
-    // const userKeywords = userQuestion.split(' ')
-
-    // userKeywords.forEach((userKeyword) => {
-    //   posts.forEach((post) => {     
-    //     const postKeywordString = post.keywords.join(' ')
-    //     if (postKeywordString.includes(userKeyword)) {         
-    //       console.log(`это слово ${userKeyword}, пост с id=${post.id}`)
-    //       const link = `https://zenproject-ce905.web.app/posts/${post.id}`
-    //       console.log(link)
-
-    //       setIsLastMessageUser(true)
-
-    //       // setIsQuestionAsked(false)
-    //     }
-    //   })
-    // })
   }
 
   useEffect(() => {
@@ -117,12 +100,7 @@ const Chatbot = ({data}) => {
             const postKeywordString = post.keywords.join(' ')
             if (postKeywordString.includes(userKeyword)) {
               console.log(`это слово ${userKeyword}, пост с id=${post.id}`)
-              link = `https://zenproject-ce905.web.app/posts/${post.id}`
-              console.log(link)
-
-
-
-              // setIsQuestionAsked(false)
+              link = `https://zenproject-ce905.web.app/posts/${post.id}`              
             }
           })
         })
@@ -136,8 +114,6 @@ const Chatbot = ({data}) => {
     }
     printMessage()
   }, [isChatActive, messages, scrollHeight, isQuestionAsked, askedQuestion, isLastMessageUser,])
-
-
 
   return (
     <div className={classNamesChatbot}>
@@ -173,7 +149,7 @@ const Chatbot = ({data}) => {
               <label className={classes.input}>
                 <input onChange={handleQuestionChange} type="text" placeholder="Message..." value={userQuestion}></input>
               </label>
-              <button className={classNamesSubmit}>
+              <button type="submit" className={classNamesSubmit}>
                 <Arrow />
               </button>
             </form>
