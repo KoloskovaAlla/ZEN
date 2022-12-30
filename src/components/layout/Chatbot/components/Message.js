@@ -26,9 +26,9 @@ const Message = ({message, setIsQuestionAsked, setAskedQuestion, setIsLastMessag
     return (
       <div className={classNamesMessage}>
         <ol>
-          {content.map((question) => {        
+          {content.map((question, index) => {        
             id++
-            return <li onClick={handleQuestionClick} className={classes.item} key={id}>
+            return <li onClick={handleQuestionClick} className={classes.item} key={index}>
               <span>{`${id}. `}</span>
               <button>{question}</button>
             </li>
