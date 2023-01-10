@@ -1,5 +1,5 @@
-import { useState, useEffect, useContext } from 'react'
-import { useDocumentTitle } from 'hooks'
+import {useState, useEffect, useContext} from 'react'
+import {useDocumentTitle} from 'hooks'
 import ThemeContext from './contexts/ThemeContext'
 import LangContext from './contexts/LangContext'
 import Header from './components/layout/Header'
@@ -8,18 +8,22 @@ import Cashback from './components/layout/Cashback'
 import Clients from './components/layout/Cllients'
 import Footer from './components/layout/Footer'
 import Modal from './components/layout/Modal'
-import Preloader from './components/layout/Preloader/Preloader'
-import Progress from './components/layout/Progress'
-import handleWindowScroll from './utils/handleWindowScroll'
+// import Preloader from './components/layout/Preloader/Preloader'
+// import Progress from './components/layout/Progress'
+// import handleWindowScroll from './utils/handleWindowScroll'
 // import Slider from './components/layout/Slider'
 import PreviewContext from 'contexts/PreviewContext'
 import ModalSlider from 'components/layout/ModalSlider'
 import Chatbot from 'components/layout/Chatbot'
+import HomePage from 'components/layout/HomePage'
+import Posts from 'components/layout/Posts/Posts'
+import Post from 'components/layout/Post'
+import {Routes, Route} from 'react-router-dom'
 
 const App = () => {
   useDocumentTitle('ZEN | Home')
-  const { theme } = useContext(ThemeContext)
-  const { lang } = useContext(LangContext)
+  const {theme} = useContext(ThemeContext)
+  const {lang} = useContext(LangContext)
   const [data, setData] = useState(null)
 
   useEffect(() => {
@@ -31,23 +35,51 @@ const App = () => {
       .catch()
   }, [lang])
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleWindowScroll)
-    return () => window.removeEventListener('scroll', handleWindowScroll)
-  }, [])
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleWindowScroll)
+  //   return () => window.removeEventListener('scroll', handleWindowScroll)
+  // }, [])
 
-  const { previewDetails } = useContext(PreviewContext)
+  const {previewDetails} = useContext(PreviewContext)
 
   return (
     <div className={`app ${theme}`}>
-      {!data && <Preloader />}
-      {data && <Progress />}
       {data?.header && <Header data={data.header} />}
-      {data?.download && <SectionBase data={data.download} />}
-      {data?.warranty && <SectionBase data={data.warranty} reverse />}
-      {data?.care && <SectionBase data={data.care} />}
-      {data?.cashback && <Cashback data={data.cashback} />}
-      {data?.clients && <Clients data={data.clients} />}
+      <Routes>
+        <Route
+          path='/'
+          element={<HomePage />}
+        />
+        <Route
+          path='/download'
+          element={data?.download && <SectionBase data={data.download} />}
+        />
+        <Route
+          path='/warranty'
+          element={data?.warranty && <SectionBase data={data.warranty} reverse />}
+        />
+        <Route
+          path='/care'
+          element={data?.care && <SectionBase data={data.care} />}
+        />
+        <Route
+          path='/cashback'
+          element={data?.cashback && <Cashback data={data.cashback} />}
+        />
+        <Route
+          path='/clients'
+          element={data?.clients && <Clients data={data.clients} />}
+        />
+        <Route
+          path='/posts'
+          element={data?.chatBot.posts && <Posts data={data.chatBot.posts} />}
+        >
+          <Route
+            path='/posts/:id'
+            element={<Post />}
+          />
+        </Route>
+      </Routes>
       {data?.modal && <Modal data={data.modal} />}
       {data?.footer && <Footer data={data.footer} />}
       {/* {previewDetails && <Slider />} */}
@@ -58,3 +90,17 @@ const App = () => {
 }
 
 export default App
+
+// {!data && <Preloader />}
+// {data && <Progress />}
+// {data?.header && <Header data={data.header} />}
+// {data?.download && <SectionBase data={data.download} />}
+// {data?.warranty && <SectionBase data={data.warranty} reverse />}
+// {data?.care && <SectionBase data={data.care} />}
+// {data?.cashback && <Cashback data={data.cashback} />}
+// {data?.clients && <Clients data={data.clients} />}
+// {data?.modal && <Modal data={data.modal} />}
+// {data?.footer && <Footer data={data.footer} />}
+// {/* {previewDetails && <Slider />} */}
+// {previewDetails && <ModalSlider />}
+// {data?.chatBot && <Chatbot data={data.chatBot} />}

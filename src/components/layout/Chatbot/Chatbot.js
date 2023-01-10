@@ -14,10 +14,11 @@ const Chatbot = ({data}) => {
 
   const [isTyping, setIsTyping] = useState(true)
   const [isChatActive, setIsChatActive] = useState(null)
-  const [isQuestionAsked, setIsQuestionAsked] = useState(false)
+  // const [isQuestionAsked, setIsQuestionAsked] = useState(false)
   const [askedQuestion, setAskedQuestion] = useState('')
   const [isLastMessageUser, setIsLastMessageUser] = useState(false)
-  const [isTypedQuestion, setIsTypedQuestion] = useState(false)
+  // const [isTypedQuestion, setIsTypedQuestion] = useState(false)
+  const [sendingMessageTriggerType, setSendingMessageTriggerType] = useState('')
 
   const classNamesChatbot = classNames(classes.chatbot, {
     [classes.active]: isChatActive
@@ -59,53 +60,89 @@ const Chatbot = ({data}) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    setSendingMessageTriggerType('input')
     setIsLastMessageUser(true)
-
-    setIsQuestionAsked(true)
-    setIsTypedQuestion(true)
     setAskedQuestion(userQuestion)
   }
+
+  const contentList = faqs.map((faq) => {
+    return {
+      id: faq.id,
+      question: faq.question
+    }
+  })
 
   useEffect(() => {
     const printMessage = () => {
       let list = []
-      list = data.faqs.map((faq) => faq.question)
+      list = faqs.map((faq) => faq.question)
 
-      if (messages.length === 0) addMessage('bot', data.firstMessage, 'text')
+      if (messages.length === 0 && isChatActive) {
+        setIsTyping(true)
+        setTimeout(() => {
+          addMessage('bot', data.firstMessage, 'text')
+          console.log('test1')
+          setIsTyping(false)
+        }, 1000)
+      }
 
-      if (messages.length === 1) addMessage('bot', list, 'list')
+      if (messages.length === 1) {
+        setIsTyping(true)
+        setTimeout(() => {
+          addMessage('bot', list, 'list')
+          console.log('test2')
+          setIsTyping(false)
+        }, 1000)
+      }
 
       if (messages.length === 2) setIsTyping(false)
 
-      if (isQuestionAsked) {
+      if (isLastMessageUser) {
         addMessage('user', askedQuestion, 'text')
-        setIsQuestionAsked(false)
-      }
-
-      if (!isTypedQuestion && isLastMessageUser) {
-        faqs.forEach((faq) => {
-          if (faq.question === askedQuestion) {
-            addMessage('bot', faq.answer, 'text')
-          }
-        })
-        setIsQuestionAsked(false)
         setIsLastMessageUser(false)
       }
 
-      if (isTypedQuestion && isLastMessageUser) {
+      if (sendingMessageTriggerType === 'click' && isLastMessageUser) {
+        faqs.forEach((faq) => {
+          if (faq.question === askedQuestion) {
+            setIsTyping(true)
+            setTimeout(() => {
+              addMessage('bot', faq.answer, 'text')
+              console.log('test2')
+              setIsTyping(false)
+            }, 1000)
+
+          }
+        })
+        setIsLastMessageUser(false)
+      }
+
+      if (sendingMessageTriggerType === 'input' && isLastMessageUser) {
         const userKeywords = userQuestion.split(' ')
-        let link
+        let content
+        // let link     
         userKeywords.forEach((userKeyword) => {
           posts.forEach((post) => {
             const postKeywordString = post.keywords.join(' ')
             if (postKeywordString.includes(userKeyword)) {
-              console.log(`это слово ${userKeyword}, пост с id=${post.id}`)
-              link = `https://zenproject-ce905.web.app/posts/${post.id}`              
+              content = {
+                link: `https://zenproject-ce905.web.app/posts/${post.id}`,
+                imageSource: post.imageSource,
+                article: post.article,
+                title: post.title
+              } 
             }
           })
         })
 
-        addMessage('bot', link, 'text')
+        setIsTyping(true)
+        setTimeout(() => {
+          addMessage('bot', content, 'preview')
+          console.log('test2')
+          setIsTyping(false)
+        }, 1000)
+       
+        // addMessage('bot', link, 'text')
         setIsLastMessageUser(false)
       }
 
@@ -113,7 +150,7 @@ const Chatbot = ({data}) => {
       chatbotRef.current.scrollTo(0, scrollHeight, {behavior: 'smooth'})
     }
     printMessage()
-  }, [isChatActive, messages, scrollHeight, isQuestionAsked, askedQuestion, isLastMessageUser,])
+  }, [isChatActive, messages, scrollHeight, askedQuestion, isLastMessageUser,])
 
   return (
     <div className={classNamesChatbot}>
@@ -136,11 +173,13 @@ const Chatbot = ({data}) => {
             {messages.map((message) =>
               <Message
                 message={message}
-                setIsQuestionAsked={setIsQuestionAsked}
+                // setIsQuestionAsked={setIsQuestionAsked}
                 setAskedQuestion={setAskedQuestion}
                 setIsLastMessageUser={setIsLastMessageUser}
                 askedQuestion={askedQuestion}
-                setIsTypedQuestion={setIsTypedQuestion}
+                // setIsTypedQuestion={setIsTypedQuestion}
+                contentList={contentList}
+                setSendingMessageTriggerType={setSendingMessageTriggerType}
               />
             )}
           </div>
