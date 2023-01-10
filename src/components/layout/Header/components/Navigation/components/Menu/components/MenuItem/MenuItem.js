@@ -1,5 +1,6 @@
 import { scrollToSection } from 'utils/helpers'
 import classes from './MenuItem.module.scss'
+import {Link} from 'react-router-dom'
 
 const MenuItem = ({ menuItem, setIsMenuActive }) => {
 
@@ -9,10 +10,12 @@ const MenuItem = ({ menuItem, setIsMenuActive }) => {
     setIsMenuActive(false)
   }
 
+  console.log(menuItem)
+
   return (
     <li className={classes.item}>
-      <a onClick={handleMenuItemClick} href={menuItem.target}>
-        {menuItem.text && menuItem.text}
+      <a onClick={handleMenuItemClick} href={menuItem.target}>     
+        {menuItem.text && menuItem.text}       
       </a>
     </li>
   )

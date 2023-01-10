@@ -6,6 +6,7 @@ import LangProvider from './providers/LangProvider'
 import ModalProvider from './providers/ModalProvider'
 import SliderProvider from 'providers/SliderProvider'
 import PreviewProvider from 'providers/PreviewProvider'
+import {BrowserRouter} from 'react-router-dom'
 
 const $root = document.querySelector('#root')
 const root = createRoot($root)
@@ -16,11 +17,13 @@ root.render(
       <ModalProvider>
         <SliderProvider>
           <PreviewProvider>
-            <App />
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
           </PreviewProvider>
-      </SliderProvider>
-    </ModalProvider>
-  </ThemeProvider>
+        </SliderProvider>
+      </ModalProvider>
+    </ThemeProvider>
   </LangProvider >
 )
 
