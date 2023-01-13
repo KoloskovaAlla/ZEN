@@ -1,0 +1,39 @@
+Code-splitting - разделение кода, то есть функция, поддерживаемая многими сборщиками (в т.ч. Webpack), которая может создавать несколько файлов с js-кодом, называемых чанками, динамически загружаемых во время выполнения.
+
+Чанки (chunks) - фрагменты кода, которые загружаются и исполняются по требованию, что позволяет уменьшить размер исходного файла (main.js).
+
+Механизмы подгрузки контента (например, страниц) по необходимости (по запросу пользователя):
+- Async thunks
+- Code splitting
+- Lazy loading
+
+В React такая задача решается  с помощью функций: Lazy и Suspense
+
+---------------------
+
+// App.js
+
+import {lazy, Suspense} from 'react'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+
+const LazyHomePage = lazy(() => import('./pages/HomePage'))
+const LazyAboutPage = lazy(() => import('./pages/AboutPage'))
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route 
+            path='/' 
+            element={LazyHomePage}
+          />
+          <Route 
+            path='/about' 
+            element={LazyAboutPage}
+          />       
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
+  )
+}

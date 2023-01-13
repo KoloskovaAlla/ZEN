@@ -1,0 +1,5 @@
+1. Установка react-routing
+npm i react-router-dom@6
+
+mkdir - создать папку (make dir) 
+cd dir-name - зайти в папку (change directory)
