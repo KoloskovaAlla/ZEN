@@ -1,0 +1,2 @@
+1. Изучить кодовую базу архитектуры от createReactApp
+2. В документации почитать: JSX, React.createElement(), state, хук useState(), условный рендеринг

@@ -3,8 +3,6 @@ import { useDocumentTitle } from "hooks";
 import ThemeContext from "./contexts/ThemeContext";
 import LangContext from "./contexts/LangContext";
 import Header from "./components/layout/Header";
-import SectionBase from "./components/layout/SectionBase";
-import Cashback from "./components/layout/Cashback";
 import Clients from "./components/layout/Cllients";
 import Footer from "./components/layout/Footer";
 import Modal from "./components/layout/Modal";
@@ -15,13 +13,14 @@ import Modal from "./components/layout/Modal";
 import PreviewContext from "contexts/PreviewContext";
 import ModalSlider from "components/layout/ModalSlider";
 import Chatbot from "components/layout/Chatbot";
-import HomePage from "components/layout/HomePage";
+// import  from "pages/HomePage";
+// import {DownloadPage, HomePage, WarrantyPage} from "pages";
 import Posts from "components/layout/Posts/Posts";
 import Post from "components/layout/Post";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
-const App = () => {
+export const App = () => {
   useDocumentTitle("ZEN | Home");
   const { theme } = useContext(ThemeContext);
   const { lang } = useContext(LangContext);
@@ -44,40 +43,26 @@ const App = () => {
   const { previewDetails } = useContext(PreviewContext);
 
   // const LazyHomePage = lazy(() => import("components/layout/HomePage"));
-  const LazyHomePage = lazy(() => import("./components/layout/HomePage"));
+  const LazyHomePage = lazy(() => import("./pages/HomePage"));
+  const LazyDownloadPage = lazy(() => import("./pages/DownloadPage"));
+  const LazyWarrantyPage = lazy(() => import("./pages/WarrantyPage"));
+  const LazyCarePage = lazy(() => import("./pages/CarePage"));
+  const LazyCashbackPage = lazy(() => import("./pages/CashbackPage"));
+  const LazyClientsPage = lazy(() => import("./pages/ClientsPage"));
+  const LazyPostsPage = lazy(() => import('./pages/PostsPage'))
 
   return (
     <div className={`app ${theme}`}>
       {data?.header && <Header data={data.header} />}
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" element={LazyHomePage} />
-          <Route
-            path="/download"
-            element={data?.download && <SectionBase data={data.download} />}
-          />
-          <Route
-            path="/warranty"
-            element={
-              data?.warranty && <SectionBase data={data.warranty} reverse />
-            }
-          />
-          <Route
-            path="/care"
-            element={data?.care && <SectionBase data={data.care} />}
-          />
-          <Route
-            path="/cashback"
-            element={data?.cashback && <Cashback data={data.cashback} />}
-          />
-          <Route
-            path="/clients"
-            element={data?.clients && <Clients data={data.clients} />}
-          />
-          <Route
-            path="/posts"
-            element={data?.chatBot.posts && <Posts data={data.chatBot.posts} />}
-          ></Route>
+          <Route path="/" element={<LazyHomePage />} />
+          <Route path="/download" element={<LazyDownloadPage />} />
+          <Route path="/warranty" element={<LazyWarrantyPage />} />
+          <Route path="/care" element={<LazyCarePage />} />
+          <Route path="/cashback" element={<LazyCashbackPage />} />
+          <Route path="/clients" element={<LazyClientsPage />} />
+          <Route path="/posts" element={<LazyPostsPage />}></Route>
           <Route path="/posts/:id" element={<Post />} />
         </Routes>
       </Suspense>
@@ -89,8 +74,6 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
 
 // {!data && <Preloader />}
 // {data && <Progress />}

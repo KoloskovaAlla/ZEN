@@ -1,0 +1,47 @@
+Фазы react-компонента:
+1. mounting (появление)
+2. updating (обновление)
+3. unmounting (удаление)
+
+Во время монтирования выполняется функция react-компонента и возврат значения оператора return.
+Затем React обновляет DOM-дерево, создает ссылки для элементов 
+Происходят side-эффекты, и появляется возможность изменить состояние компонента
+
+Причины обновления компонента:
+1. поменялось состояние
+2. изменился контекст
+3. поменялся входящий props
+
+Пример:
+
+// SomeComponent.js 
+import { useEffect } from 'react'
+
+const SomeComponent = ({someProps}) => {
+  const [value, setValue] = useState(0)
+
+  useEffect(() => {}, [someProps])
+
+  return (
+    <div class="someClass">Some content</div>
+  )
+}
+
+// App.js
+
+const App = () => {
+  const [data, setData] = useState(null)
+  
+  useEffect(() => {
+    fetch('')
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch()
+  }, [])
+
+  return (
+    <div className="app">      
+      {data?.download && <Download data={data.download}/>}
+    </div>
+  )
+}

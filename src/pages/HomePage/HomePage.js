@@ -1,13 +1,13 @@
 import {useState, useEffect, useContext} from 'react'
-import Preloader from '../Preloader'
-import Header from '../Header'
-import SectionBase from '../SectionBase'
-import Cashback from '../Cashback'
-import Clients from '../Cllients/Clients'
-import Modal from '../Modal'
-import Footer from '../Footer'
-import ModalSlider from '../ModalSlider'
-import Chatbot from '../Chatbot'
+import Preloader from 'components/layout/Preloader'
+import Header from "components/layout/Header";
+import SectionBase from "components/layout/SectionBase";
+import Cashback from "components/layout/Cashback";
+import Clients from "components/layout/Cllients/Clients";
+import Modal from "components/layout/Modal";
+import Footer from "components/layout/Footer";
+// import ModalSlider from "components/layout/ModalSlider";
+import Chatbot from "components/layout/Chatbot";
 import ThemeContext from 'contexts/ThemeContext'
 import LangContext from 'contexts/LangContext'
 
@@ -15,6 +15,7 @@ const HomePage = () => {
   const {theme} = useContext(ThemeContext)
   const {lang} = useContext(LangContext)
   const [data, setData] = useState(null)
+
   useEffect(() => {
     fetch(`https://zenproject-ce905-default-rtdb.firebaseio.com/${lang}/.json`)
       .then((response) => response.json())
@@ -23,6 +24,7 @@ const HomePage = () => {
       })
       .catch()
   }, [lang])
+
   return (
     <div className={`app ${theme}`}>
       {!data && <Preloader />}
@@ -43,3 +45,5 @@ const HomePage = () => {
 }
 
 export default HomePage
+
+
