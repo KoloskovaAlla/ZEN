@@ -4,7 +4,6 @@ const Post = () => {
   const params = useParams();
   const { id } = params;
   return (
-    // <h1>Post</h1>
     <h1>{id}</h1>
   );
 };

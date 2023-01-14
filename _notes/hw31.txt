@@ -1,0 +1,37 @@
+1. Создаем компонент Preview (вместо статического Image). Preview - это кнопка.
+2. Во время отрисовки Preview записывает в context (например, в SliderContext) в массив slides информацию об изображениях (путь к картинке, описание картинки) в виде объекта. Каждая картинка - это объект.
+{
+  id: 1,
+  source: 'https...',
+  alternate: ''
+}
+3. Preview слушает событие click. При событии собирает информацию о самом себе относительно viewport и записывает эту информацию в PreviewContext объект previewDetails 
+{
+  y: 31221,
+  x: 313,
+  height: 320,
+  width: 320
+}
+
+4. Условный (или не условный) рендеринг и useEffect c изменением стилей
+
+import {useRef, useEffect} from 'react'
+
+const SomeComponent = () => {
+  const someComponentRef = useRef(null)
+
+  useEffect(() => {
+    if (!someComponentRef.current) return
+    someComponentRef.current.style.background = 'red'
+  }, [])
+  
+  return (
+    <div ref={someComponentRef}> 
+      Some Component 
+    </div>
+  )
+}
+
+
+
+стили Preview
