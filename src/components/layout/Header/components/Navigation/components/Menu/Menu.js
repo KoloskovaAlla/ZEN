@@ -1,34 +1,42 @@
-import MenuItem from './components/MenuItem/MenuItem'
-import {classNames} from 'utils/helpers'
-import {useContext} from 'react'
-import ThemeContext from 'contexts/ThemeContext'
-import classes from './Menu.module.scss'
-import {Routes, Route, Link} from 'react-router-dom'
-import Cashback from 'components/layout/Cashback'
-import Posts from 'components/layout/Posts/Posts'
+import MenuItem from "./components/MenuItem/MenuItem";
+import { classNames } from "utils/helpers";
+import { useContext } from "react";
+import ThemeContext from "contexts/ThemeContext";
+import classes from "./Menu.module.scss";
+import "./Menu.scss";
+import { Routes, Route, Link, NavLink } from "react-router-dom";
+import Cashback from "components/layout/Cashback";
+import Posts from "components/layout/Posts/Posts";
 
-const Menu = ({data, parentClassName, isMenuActive, setIsMenuActive}) => {
-  const {theme} = useContext(ThemeContext)
+const Menu = ({ data, parentClassName, isMenuActive, setIsMenuActive }) => {
+  const { theme } = useContext(ThemeContext);
 
-  const classNameMenu = classNames(classes.menu, {
-    [classes.active]: isMenuActive,
-    'dark': theme === 'dark'
-  }, [])
+  const classNameMenu = classNames(
+    classes.menu,
+    {
+      [classes.active]: isMenuActive,
+      dark: theme === "dark",
+    },
+    []
+  );
 
   return (
-    <ul className={classNameMenu} theme={theme} >
+    <ul className={classNameMenu} theme={theme}>
       {data.menuItems.length > 0 &&
-        data.menuItems.map((menuItem, index) =>
+        data.menuItems.map((menuItem, index) => (
           <li className={classes.item} key={index}>
-            <Link
-              to={`/${menuItem.target}`}      
+            <NavLink
+              to={`/${menuItem.target}`}
+              // activeStyle={{ textDecoration: "underline" }}
+              // className={"navLink"}
+              className={classes.navLink}
             >
               {menuItem.text}
-            </Link>
-          </li>      
-        )}
+            </NavLink>
+          </li>
+        ))}
     </ul>
-  )
+  );
 
   // return (
   //   <ul className={classNameMenu} theme={theme} >
@@ -44,7 +52,6 @@ const Menu = ({data, parentClassName, isMenuActive, setIsMenuActive}) => {
   //       )}
   //   </ul>
   // )
-
 
   // < ul className = {classNameMenu} theme = {theme} >
   // {
@@ -74,6 +81,6 @@ const Menu = ({data, parentClassName, isMenuActive, setIsMenuActive}) => {
   //     )
   // }
   // </ul >
-}
+};
 
-export default Menu
+export default Menu;
