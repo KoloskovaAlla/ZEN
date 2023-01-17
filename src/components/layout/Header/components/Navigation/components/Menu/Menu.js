@@ -29,7 +29,8 @@ const Menu = ({ data, parentClassName, isMenuActive, setIsMenuActive }) => {
               to={`/${menuItem.target}`}
               // activeStyle={{ textDecoration: "underline" }}
               // className={"navLink"}
-              className={classes.navLink}
+              // className={classes.navLink}
+              className={({ isActive }) => (isActive ? "active" : "inactive")}
             >
               {menuItem.text}
             </NavLink>
