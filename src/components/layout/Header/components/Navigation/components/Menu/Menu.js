@@ -6,7 +6,7 @@ import classes from "./Menu.module.scss";
 import "./Menu.scss";
 import { Routes, Route, Link, NavLink } from "react-router-dom";
 import Cashback from "components/layout/Cashback";
-import Posts from "components/layout/Posts/Posts";
+// import Posts from "components/layout/Posts/Posts";
 
 const Menu = ({ data, parentClassName, isMenuActive, setIsMenuActive }) => {
   const { theme } = useContext(ThemeContext);

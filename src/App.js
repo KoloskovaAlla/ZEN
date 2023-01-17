@@ -15,7 +15,6 @@ import ModalSlider from "components/layout/ModalSlider";
 import Chatbot from "components/layout/Chatbot";
 // import  from "pages/HomePage";
 // import {DownloadPage, HomePage, WarrantyPage} from "pages";
-import Posts from "components/layout/Posts/Posts";
 import Post from "components/layout/Post";
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
