@@ -5,12 +5,14 @@ import LangContext from "contexts/LangContext";
 const Posts = () => {
   const [data, setData] = useState(null);
   const { lang } = useContext(LangContext);
+  let imageSource;
 
   useEffect(() => {
     fetch(`https://zenproject-ce905-default-rtdb.firebaseio.com/${lang}/.json`)
       .then((response) => response.json())
       .then((data) => {
         setData(data);
+        imageSource = data.chatBot.posts[0].imageSource;
         console.log(data.chatBot.posts[0].article);
         console.log(data.chatBot.posts[0].imageSource);
         console.log(data.chatBot.posts[0].title);
@@ -25,7 +27,9 @@ const Posts = () => {
         <li>
           <Link to="/posts/1">
             <div>
-              Download
+              <button>
+                <img src={imageSource} alt="alternate img"></img>
+              </button>
               {/* <button><img src={content.imageSource} alt='alternate img'></img></button>
               <button className={classes.title}>{content.title}</button>
               <div>{content.article.slice(0, 100)}...</div>
