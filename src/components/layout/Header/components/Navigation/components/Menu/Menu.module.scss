@@ -59,31 +59,12 @@
       padding: 0;
     }
 
-    &:global.active {
-      border-bottom: 2px solid deeppink;
-    }
+    // &:global.active {
+    //   border-bottom: 2px solid deeppink;
+    // }
   }
 }
 
-// .navLink:active {
-//   text-decoration: underline;
-// }
-// .navLink.active {
-//   text-decoration: underline;
-// }
-// .navLink .active {
-//   text-decoration: underline;
-// }
-// .navLink {
-//   &.active {
-//     text-decoration: underline;
-//   }
-// }
-
-// .active {
-//   text-decoration: underline;
-// }
-
-// .item li a.active {
-//   border-bottom: 2px solid red;
-// }
+a:global.active {
+  border-bottom: 2px solid deeppink;
+}
