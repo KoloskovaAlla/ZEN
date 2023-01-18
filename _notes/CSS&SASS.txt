@@ -1,0 +1,2 @@
+css
+--title-fz: 26px;
