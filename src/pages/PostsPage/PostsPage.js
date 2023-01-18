@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import LangContext from "contexts/LangContext";
-import classes from './PostsPage.module.scss';
+import classes from "./PostsPage.module.scss";
 
 const Posts = () => {
   const [data, setData] = useState(null);
   const { lang } = useContext(LangContext);
-  const [dataWarranty, setDataWarranty] = useState(null);  
+  const [dataWarranty, setDataWarranty] = useState(null);
+  const [dataCare, setDataCare] = useState(null);
+  const [dataCashback, setDataCashback] = useState(null);
 
   useEffect(() => {
     fetch(`https://zenproject-ce905-default-rtdb.firebaseio.com/${lang}/.json`)
@@ -14,6 +16,8 @@ const Posts = () => {
       .then((data) => {
         setData(data.posts);
         setDataWarranty(data.posts.warranty);
+        setDataCare(data.posts.care);
+        setDataCashback(data.posts.cashback);
         // console.log(imageSource);
         // console.log(data.chatBot.posts[0].article);
         // console.log(data.chatBot.posts[0].imageSource);
@@ -23,38 +27,74 @@ const Posts = () => {
       .catch();
   }, [lang]);
 
-  
+  console.log(data);
+
+  const linkCare = `https://zenproject-ce905.web.app/posts/care`;
+  const linkWarranty = `https://zenproject-ce905.web.app/posts/warranty`;
+  const linkCashback = `https://zenproject-ce905.web.app/posts/cashback`;
+
   return (
     <div>
       {data && (
         <main>
           <ul>
             <li>
-              <Link to="/posts/1">
-                <div>
-                  <button>
+              <Link className={classes.post} to="/posts/warranty">
+                <div className={classes.preview}>
+                  <button className={classes.image}>
                     <img
                       src={dataWarranty.imageSource}
                       alt="alternate img"
                     ></img>
                   </button>
-                  <button className={classes.title}>
-                    {dataWarranty.title}
-                  </button>
-                  <div>{dataWarranty.article.slice(0, 100)}...</div>
-                  <button className={classes.link}>{dataWarranty.link}</button>
-                  {/* <button><img src={content.imageSource} alt='alternate img'></img></button>
-                    <button className={classes.title}>{content.title}</button>
-                    <div>{content.article.slice(0, 100)}...</div>
-                    <button className={classes.link}>{content.link}</button> */}
+                  <div className={classes.body}>
+                    <button className={classes.title}>
+                      {dataWarranty.title}
+                    </button>
+                    <div className={classes.article}>
+                      {dataWarranty.article.slice(0, 50)}...
+                    </div>
+                    <button className={classes.link}>Подробнее...</button>
+                  </div>
                 </div>
               </Link>
             </li>
             <li>
-              <Link to="/posts/2">Warranty</Link>
+              <Link to="/posts/care">
+                <div className={classes.preview}>
+                  <button className={classes.image}>
+                    <img src={dataCare.imageSource} alt="alternate img"></img>
+                  </button>
+                  <div className={classes.body}>
+                    <button className={classes.title}>{dataCare.title}</button>
+                    <div className={classes.article}>
+                      {dataCare.article.slice(0, 50)}...
+                    </div>
+                    <button className={classes.link}>Подробнее...</button>
+                  </div>
+                </div>
+              </Link>
             </li>
             <li>
-              <Link to="/posts/3">Care</Link>
+              <Link to="/posts/cashback">
+                <div className={classes.preview}>
+                  <button className={classes.image}>
+                    <img
+                      src={dataCashback.imageSource}
+                      alt="alternate img"
+                    ></img>
+                  </button>
+                  <div className={classes.body}>
+                    <button className={classes.title}>
+                      {dataCashback.title}
+                    </button>
+                    <div className={classes.article}>
+                      {dataCashback.article.slice(0, 50)}...
+                    </div>
+                    <button className={classes.link}>Подробнее...</button>
+                  </div>
+                </div>
+              </Link>
             </li>
           </ul>
         </main>
