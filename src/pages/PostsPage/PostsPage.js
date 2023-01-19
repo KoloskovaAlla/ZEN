@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import { useState, useEffect, useContext } from "react";
-import LangContext from "contexts/LangContext";
-// import classes from "./PostsPage.module.scss";
-import classes from "./PostsPage2.module.scss";
+import { Link } from 'react-router-dom';
+import { useState, useEffect, useContext } from 'react';
+import LangContext from 'contexts/LangContext';
+// import classes from './PostsPage.module.scss';
+import classes from './PostsPage2.module.scss';
 
 const Posts = () => {
   const [data, setData] = useState(null);
@@ -32,12 +32,12 @@ const Posts = () => {
         <main>
           <ul>
             <li>
-              <Link className={classes.post} to="/posts/warranty">
+              <Link className={classes.post} to='/posts/warranty'>
                 <div className={classes.preview}>
                   <button className={classes.image}>
                     <img
                       src={dataWarranty.imageSource}
-                      alt="alternate img"
+                      alt='alternate img'
                     ></img>
                   </button>
                   <div className={classes.body}>
@@ -53,10 +53,10 @@ const Posts = () => {
               </Link>
             </li>
             <li>
-              <Link to="/posts/care">
+              <Link to='/posts/care'>
                 <div className={classes.preview}>
                   <button className={classes.image}>
-                    <img src={dataCare.imageSource} alt="alternate img"></img>
+                    <img src={dataCare.imageSource} alt='alternate img'></img>
                   </button>
                   <div className={classes.body}>
                     <button className={classes.title}>{dataCare.title}</button>
@@ -69,12 +69,12 @@ const Posts = () => {
               </Link>
             </li>
             <li>
-              <Link to="/posts/cashback">
+              <Link to='/posts/cashback'>
                 <div className={classes.preview}>
                   <button className={classes.image}>
                     <img
                       src={dataCashback.imageSource}
-                      alt="alternate img"
+                      alt='alternate img'
                     ></img>
                   </button>
                   <div className={classes.body}>

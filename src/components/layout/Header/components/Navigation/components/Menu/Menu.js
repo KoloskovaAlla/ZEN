@@ -1,12 +1,9 @@
-import MenuItem from "./components/MenuItem/MenuItem";
-import { classNames } from "utils/helpers";
-import { useContext } from "react";
-import ThemeContext from "contexts/ThemeContext";
-import classes from "./Menu.module.scss";
-import "./Menu.scss";
-import { Routes, Route, Link, NavLink } from "react-router-dom";
-import Cashback from "components/layout/Cashback";
-// import Posts from "components/layout/Posts/Posts";
+import { classNames } from 'utils/helpers';
+import { useContext } from 'react';
+import ThemeContext from 'contexts/ThemeContext';
+import classes from './Menu.module.scss';
+import './Menu.scss';
+import { NavLink } from 'react-router-dom';
 
 const Menu = ({ data, parentClassName, isMenuActive, setIsMenuActive }) => {
   const { theme } = useContext(ThemeContext);
@@ -15,7 +12,7 @@ const Menu = ({ data, parentClassName, isMenuActive, setIsMenuActive }) => {
     classes.menu,
     {
       [classes.active]: isMenuActive,
-      dark: theme === "dark",
+      dark: theme === 'dark',
     },
     []
   );
@@ -30,7 +27,7 @@ const Menu = ({ data, parentClassName, isMenuActive, setIsMenuActive }) => {
               // activeStyle={{ textDecoration: "underline" }}
               // className={"navLink"}
               // className={classes.navLink}
-              className={({ isActive }) => (isActive ? "active" : "inactive")}
+              className={({ isActive }) => (isActive ? 'active' : 'inactive')}
             >
               {menuItem.text}
             </NavLink>
