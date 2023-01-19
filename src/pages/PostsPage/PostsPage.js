@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import LangContext from "contexts/LangContext";
-import classes from "./PostsPage.module.scss";
+// import classes from "./PostsPage.module.scss";
+import classes from "./PostsPage2.module.scss";
 
 const Posts = () => {
   const [data, setData] = useState(null);
@@ -18,20 +19,12 @@ const Posts = () => {
         setDataWarranty(data.posts.warranty);
         setDataCare(data.posts.care);
         setDataCashback(data.posts.cashback);
-        // console.log(imageSource);
-        // console.log(data.chatBot.posts[0].article);
-        // console.log(data.chatBot.posts[0].imageSource);
-        // console.log(data.chatBot.posts[0].title);
       })
 
       .catch();
   }, [lang]);
 
   console.log(data);
-
-  const linkCare = `https://zenproject-ce905.web.app/posts/care`;
-  const linkWarranty = `https://zenproject-ce905.web.app/posts/warranty`;
-  const linkCashback = `https://zenproject-ce905.web.app/posts/cashback`;
 
   return (
     <div>
