@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import LangContext from 'contexts/LangContext';
 // import classes from './PostsPage.module.scss';
 import classes from './PostsPage2.module.scss';
+import { API_BASE_URL } from 'constants/api';
 
 const Posts = () => {
   const [data, setData] = useState(null);
@@ -12,7 +13,7 @@ const Posts = () => {
   const [dataCashback, setDataCashback] = useState(null);
 
   useEffect(() => {
-    fetch(`https://zenproject-ce905-default-rtdb.firebaseio.com/${lang}/.json`)
+    fetch(`${API_BASE_URL}/${lang}/.json`)
       .then((response) => response.json())
       .then((data) => {
         setData(data.posts);
@@ -23,8 +24,6 @@ const Posts = () => {
 
       .catch();
   }, [lang]);
-
-  console.log(data);
 
   return (
     <div>

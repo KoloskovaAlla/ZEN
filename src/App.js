@@ -63,6 +63,7 @@ export const App = () => {
           <Route path='/posts/:id' element={<Post />} />
         </Routes>
       </Suspense>
+      
       {data?.footer && <Footer data={data.footer} />}
       {data?.modal && <Modal data={data.modal} />}
       {/* {previewDetails && <Slider />} */}
