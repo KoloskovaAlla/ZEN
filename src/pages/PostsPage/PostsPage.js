@@ -13,7 +13,8 @@ const Posts = () => {
   const [dataCashback, setDataCashback] = useState(null);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/${lang}/.json`)
+    // fetch(`${API_BASE_URL}/${lang}/.json`)
+    fetch(`https://zenproject-ce905-default-rtdb.firebaseio.com/${lang}/.json`)
       .then((response) => response.json())
       .then((data) => {
         setData(data.posts);
@@ -29,10 +30,10 @@ const Posts = () => {
     <div>
       {data && (
         <main>
-          <ul>
+          <ul className={classes.posts}>
             <li>
               <Link className={classes.post} to='/posts/warranty'>
-                <div className={classes.preview}>
+                <div className={classes.wrapper}>
                   <button className={classes.image}>
                     <img
                       src={dataWarranty.imageSource}
@@ -52,8 +53,8 @@ const Posts = () => {
               </Link>
             </li>
             <li>
-              <Link to='/posts/care'>
-                <div className={classes.preview}>
+              <Link className={classes.post} to='/posts/care'>
+                <div className={classes.wrapper}>
                   <button className={classes.image}>
                     <img src={dataCare.imageSource} alt='alternate img'></img>
                   </button>
@@ -68,8 +69,8 @@ const Posts = () => {
               </Link>
             </li>
             <li>
-              <Link to='/posts/cashback'>
-                <div className={classes.preview}>
+              <Link className={classes.post} to='/posts/cashback'>
+                <div className={classes.wrapper}>
                   <button className={classes.image}>
                     <img
                       src={dataCashback.imageSource}
