@@ -1,6 +1,5 @@
-import { scrollToSection } from "utils/helpers";
-import classes from "./MenuItem.module.scss";
-import { Link } from "react-router-dom";
+import { scrollToSection } from 'utils/helpers';
+import classes from './MenuItem.module.scss';
 
 const MenuItem = ({ menuItem, setIsMenuActive }) => {
   const handleMenuItemClick = (event) => {

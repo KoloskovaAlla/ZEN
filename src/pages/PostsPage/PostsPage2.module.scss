@@ -1,16 +1,14 @@
+// @import '../../../styles/settings/breakpoints';
 @import "styles/settings/breakpoints";
 
 .preview {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 5px;
+  display: flex;
   padding: 10px 15px;
+
   @media (min-width: $breakpoint_md) {
-    grid-template-columns: 25% 75%;
   }
 
   @media (min-width: $breakpoint_xl) {
-    grid-template-columns: 30% 70%;
   }
 }
 
@@ -18,6 +16,8 @@
   border-radius: 10px;
   border: 1px solid #aaaaaa;
   overflow: hidden;
+  width: 260px;
+  height: 35vw;
 
   img {
     width: 100%;
@@ -27,17 +27,18 @@
 
   @media (min-width: $breakpoint_md) {
     border: 1px solid red;
-    width: 200px;
+    width: 360px;
+    height: 27vw;
   }
 
   @media (min-width: $breakpoint_lg) {
     border: 1px solid green;
-    width: 250px;
+    height: 25vw;
   }
 
   @media (min-width: $breakpoint_xl) {
     border: 1px solid orange;
-    width: 400px;
+    height: 18vw;
   }
 }
 
@@ -46,6 +47,7 @@
   flex-direction: column;
   align-items: start;
   padding: 5px 0px;
+  margin-left: 10px;
 }
 
 .title {

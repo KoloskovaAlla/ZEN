@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
-import { useState, useEffect, useContext } from "react";
-import LangContext from "contexts/LangContext";
-import classes from "./PostsPage.module.scss";
+import { Link } from 'react-router-dom';
+import { useState, useEffect, useContext } from 'react';
+import LangContext from 'contexts/LangContext';
+// import classes from './PostsPage.module.scss';
+import classes from './PostsPage2.module.scss';
+import { API_BASE_URL } from 'constants/api';
 
 const Posts = () => {
   const [data, setData] = useState(null);
@@ -11,27 +13,17 @@ const Posts = () => {
   const [dataCashback, setDataCashback] = useState(null);
 
   useEffect(() => {
-    fetch(`https://zenproject-ce905-default-rtdb.firebaseio.com/${lang}/.json`)
+    fetch(`${API_BASE_URL}/${lang}/.json`)
       .then((response) => response.json())
       .then((data) => {
         setData(data.posts);
         setDataWarranty(data.posts.warranty);
         setDataCare(data.posts.care);
         setDataCashback(data.posts.cashback);
-        // console.log(imageSource);
-        // console.log(data.chatBot.posts[0].article);
-        // console.log(data.chatBot.posts[0].imageSource);
-        // console.log(data.chatBot.posts[0].title);
       })
 
       .catch();
   }, [lang]);
-
-  console.log(data);
-
-  const linkCare = `https://zenproject-ce905.web.app/posts/care`;
-  const linkWarranty = `https://zenproject-ce905.web.app/posts/warranty`;
-  const linkCashback = `https://zenproject-ce905.web.app/posts/cashback`;
 
   return (
     <div>
@@ -39,12 +31,12 @@ const Posts = () => {
         <main>
           <ul>
             <li>
-              <Link className={classes.post} to="/posts/warranty">
+              <Link className={classes.post} to='/posts/warranty'>
                 <div className={classes.preview}>
                   <button className={classes.image}>
                     <img
                       src={dataWarranty.imageSource}
-                      alt="alternate img"
+                      alt='alternate img'
                     ></img>
                   </button>
                   <div className={classes.body}>
@@ -60,10 +52,10 @@ const Posts = () => {
               </Link>
             </li>
             <li>
-              <Link to="/posts/care">
+              <Link to='/posts/care'>
                 <div className={classes.preview}>
                   <button className={classes.image}>
-                    <img src={dataCare.imageSource} alt="alternate img"></img>
+                    <img src={dataCare.imageSource} alt='alternate img'></img>
                   </button>
                   <div className={classes.body}>
                     <button className={classes.title}>{dataCare.title}</button>
@@ -76,12 +68,12 @@ const Posts = () => {
               </Link>
             </li>
             <li>
-              <Link to="/posts/cashback">
+              <Link to='/posts/cashback'>
                 <div className={classes.preview}>
                   <button className={classes.image}>
                     <img
                       src={dataCashback.imageSource}
-                      alt="alternate img"
+                      alt='alternate img'
                     ></img>
                   </button>
                   <div className={classes.body}>

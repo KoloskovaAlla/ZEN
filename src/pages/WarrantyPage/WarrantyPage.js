@@ -1,5 +1,5 @@
 const WarrantyPage = () => {
-  return <div>CarePage Title</div>;
-}
+  return <div>Warranty Page Title</div>;
+};
 
-export default WarrantyPage
+export default WarrantyPage;
