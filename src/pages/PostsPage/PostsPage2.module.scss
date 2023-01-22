@@ -1,37 +1,41 @@
 // @import '../../../styles/settings/breakpoints';
 @import 'styles/settings/breakpoints';
 .posts {
+  max-width: var(--container-max-width);
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+  padding: 20px 15px 10px 15px;
+
   @media (min-width: $breakpoint_md) {
-    grid-template-columns: repeat(2, 1fr);
+    // grid-template-columns: 50% 50%;    
+    grid-template-columns: 1fr 1fr 1fr;
+ 
+     padding:20px 0px 10px 0px;
+     gap: 20px;
   }
 
   @media (min-width: $breakpoint_lg) {
-    grid-template-columns: repeat(3, 1fr);
   }
 
   @media (min-width: $breakpoint_xl) {
-    grid-template-columns: repeat(4, 1fr);
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     gap: 30px;
   }
 }
 
 .post {
-  padding: 10px 15px;
-  display: flex;
-  justify-content: center;
-}
+  display: grid;
+  grid-template-columns: 45% 55%;
 
-.wrapper {
-  display: flex;
-  max-width: var(--container-max-width);
-  justify-content: center;
-  align-items: center;
-
+  margin-bottom: 10px;
+ 
   @media (min-width: $breakpoint_md) {
+    grid-template-columns: 1fr;
   }
 
   @media (min-width: $breakpoint_xl) {
+  
   }
 }
 
@@ -39,8 +43,6 @@
   border-radius: 10px;
   border: 1px solid #aaaaaa;
   overflow: hidden;
-  width: 260px;
-  height: 35vw;
 
   img {
     width: 100%;
@@ -50,18 +52,14 @@
 
   @media (min-width: $breakpoint_md) {
     border: 1px solid red;
-    width: 360px;
-    height: 27vw;
   }
 
   @media (min-width: $breakpoint_lg) {
     border: 1px solid green;
-    height: 25vw;
   }
 
   @media (min-width: $breakpoint_xl) {
     border: 1px solid orange;
-    height: 18vw;
   }
 }
 
@@ -78,15 +76,15 @@
   margin-bottom: 5px;
 
   @media (min-width: $breakpoint_md) {
-    font-size: 18px;
+
   }
 
   @media (min-width: $breakpoint_lg) {
-    font-size: 24px;
+   font-size: 20px;
   }
 
   @media (min-width: $breakpoint_xl) {
-    font-size: 32px;
+ 
   }
 }
 
@@ -94,15 +92,15 @@
   margin-bottom: 5px;
 
   @media (min-width: $breakpoint_md) {
-    font-size: 18px;
+   
   }
 
   @media (min-width: $breakpoint_lg) {
-    font-size: 24px;
+   font-size: 20px;
   }
 
   @media (min-width: $breakpoint_xl) {
-    font-size: 32px;
+ 
   }
 }
 
@@ -111,10 +109,10 @@
   text-align: left;
 
   @media (min-width: $breakpoint_md) {
-    font-size: 18px;
+  
   }
 
   @media (min-width: $breakpoint_lg) {
-    font-size: 24px;
+   font-size: 20px;
   }
 }

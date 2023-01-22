@@ -1,17 +1,44 @@
-@import "styles/settings/breakpoints";
+@import 'styles/settings/breakpoints';
 
 .page {
-  padding-top: 80px;
-  padding-bottom: 30px;
+  padding: 30px 15px;
+  @media (min-width: $breakpoint_md) {
+    padding: 30px 0px;
+  }
 }
 
 .wrapper {
   display: grid;
   margin: 0 auto;
   max-width: var(--container-max-width);
-  grid-template-columns: var(--container-template-columns);
-  gap: var(--container-gap);
+  grid-template-columns: 1fr;
+  gap: 60px;
+ 
 }
+
+.core,
+.into,
+.final {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: var(--container-template-columns);
+  gap: 15px;
+  @media (min-width: $breakpoint_md) {
+ gap: 30px;
+}
+}
+
+.core {
+  
+@media (min-width: $breakpoint_md) {
+  .body {
+    order: 1;
+  }
+}
+
+
+}
+
 
 .body {
   display: flex;
@@ -35,20 +62,26 @@
   }
 }
 
-@media (min-width: $breakpoint_md) {
-  .reverse {
-    order: 1;
-  }
-}
-
 .title {
   font-size: 30px;
   font-weight: 700;
+
+  @media (min-width: $breakpoint_md) {
+    font-size: 36px;
+  }
+
+  @media (min-width: $breakpoint_lg) {
+    font-size: 42px;
+  }
+
+  @media (min-width: $breakpoint_xl) {
+    font-size: 56px;
+  }
 }
 
 .titleCore,
 .titleFinal {
-  font-size: 26px;
+  font-size: var(--title-fz);
   font-weight: 400;
 }
 
@@ -65,19 +98,8 @@
   }
 }
 
-.links {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: $breakpoint_md) {
-    flex-direction: row;
-  }
-}
-
 .image {
-  margin-top: var(--image-margin-top);
-  height: 70vw;
+  // margin-top: var(--image-margin-top);
   height: var(--image-height);
   width: 100%;
   border-radius: 20px;
