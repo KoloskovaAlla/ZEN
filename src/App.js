@@ -16,6 +16,7 @@ import Chatbot from 'components/layout/Chatbot';
 import { Post } from './pages/Post';
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import { API_BASE_URL } from 'constants/api';
 
 export const App = () => {
   useDocumentTitle('ZEN | Home');
@@ -24,7 +25,8 @@ export const App = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`https://zenproject-ce905-default-rtdb.firebaseio.com/${lang}/.json`)
+    fetch(`${API_BASE_URL}/${lang}/.json`)
+    // fetch(`https://zenproject-ce905-default-rtdb.firebaseio.com/${lang}/.json`)
       .then((response) => response.json())
       .then((data) => {
         setData(data);
