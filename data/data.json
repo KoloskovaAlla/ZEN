@@ -347,7 +347,7 @@
     "modal": {
       "buttonText": "Submit",
       "connection": {
-        "label": "Connection",
+        "label": "CONNECTION",
         "options": [
           {
             "content": "WhatsApp",
@@ -500,7 +500,7 @@
         "article": "Our clients are companies all over the world! There are Allegro, Aliexpress, MediaMarkt, Booking.com. Join in and enjoy",
         "imageSource": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F1.jpg?alt=media&token=dac92c5e-ea63-4a55-83bb-19adb0820761"
       }
-  },
+    },
     "pages": {
       "care": {
         "intro": {

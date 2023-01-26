@@ -1,16 +1,20 @@
-import classes from './FieldName.module.scss'
-import {classNames} from 'utils/helpers'
+import classes from './FieldName.module.scss';
+import { classNames } from 'utils/helpers';
 
 const FieldName = ({
   placeholder,
   name,
   onNameChange,
   isValidName,
-  setName
+  setName,
 }) => {
-  const className = classNames(classes.name, {
-    [classes.succes]: isValidName  
-  }, [])
+  const className = classNames(
+    classes.name,
+    {
+      [classes.succes]: isValidName,
+    },
+    []
+  );
 
   return (
     <label className={className}>
@@ -22,7 +26,7 @@ const FieldName = ({
       />
       {!isValidName && name && <span>Некорректное имя</span>}
     </label>
-  )
-}
+  );
+};
 
-export default FieldName
+export default FieldName;
