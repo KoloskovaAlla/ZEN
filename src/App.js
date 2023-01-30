@@ -21,15 +21,16 @@ import { useSelector } from 'react-redux';
 
 export const App = () => {
   useDocumentTitle('ZEN | Home');
-  const { theme } = useContext(ThemeContext);
+  // const { theme } = useContext(ThemeContext);
   // const { lang } = useContext(LangContext);
-   const {lang} = useSelector((state) => state.langReducer);
+  const { theme } = useSelector((state) => state.themeReducer);
+  const { lang } = useSelector((state) => state.langReducer);
 
   const [data, setData] = useState(null);
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/${lang}/.json`)
-    // fetch(`https://zenproject-ce905-default-rtdb.firebaseio.com/${lang}/.json`)
+      // fetch(`https://zenproject-ce905-default-rtdb.firebaseio.com/${lang}/.json`)
       .then((response) => response.json())
       .then((data) => {
         setData(data);
@@ -68,7 +69,7 @@ export const App = () => {
           <Route path='/posts/:id' element={<Post />} />
         </Routes>
       </Suspense>
-      
+
       {data?.footer && <Footer data={data.footer} />}
       {data?.modal && <Modal data={data.modal} />}
       {/* {previewDetails && <Slider />} */}

@@ -1,3 +1,4 @@
-import {langReducer} from './langSlice'
+import { langReducer } from './langSlice';
+import { themeReducer } from './themeSlice';
 
-export {langReducer}
+export { langReducer, themeReducer };

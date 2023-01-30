@@ -4,9 +4,11 @@ import ThemeContext from 'contexts/ThemeContext';
 import classes from './Menu.module.scss';
 import './Menu.scss';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Menu = ({ data, parentClassName, isMenuActive, setIsMenuActive }) => {
-  const { theme } = useContext(ThemeContext);
+  // const { theme } = useContext(ThemeContext);
+  const { theme } = useSelector((state) => state.themeReducer);
 
   const classNameMenu = classNames(
     classes.menu,
