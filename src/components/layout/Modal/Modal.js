@@ -4,12 +4,17 @@ import Title from './components/Title'
 import Form from './components/Form'
 import { classNames } from 'utils/helpers'
 import { useContext, useState } from 'react'
-import ModalContext from 'contexts/ModalContext'
+// import ModalContext from 'contexts/ModalContext'
+import { useDispatch, useSelector } from 'react-redux'
+import { setIsModalActive } from 'reducers/modalSlice'
 
 
 const Modal = ({ data }) => {
-  const { isModalActive, setIsModalActive } = useContext(ModalContext)
+  // const { isModalActive, setIsModalActive } = useContext(ModalContext)
 
+  const dispatch = useDispatch()
+
+  const {isModalActive} = useSelector((state) => state.modalReducer)
  
   const [isDataSent, setIsDataSent] = useState(false)
   // const className = 'modal'
@@ -20,7 +25,7 @@ const Modal = ({ data }) => {
   });
 
   const handleModalClick = () => {
-    setIsModalActive(false)
+    dispatch(setIsModalActive(false))
   }
 
   const handleBodyClick = (event) => {
