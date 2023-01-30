@@ -17,11 +17,14 @@ import { Post } from './pages/Post';
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { API_BASE_URL } from 'constants/api';
+import { useSelector } from 'react-redux';
 
 export const App = () => {
   useDocumentTitle('ZEN | Home');
   const { theme } = useContext(ThemeContext);
-  const { lang } = useContext(LangContext);
+  // const { lang } = useContext(LangContext);
+   const {lang} = useSelector((state) => state.langReducer);
+
   const [data, setData] = useState(null);
 
   useEffect(() => {

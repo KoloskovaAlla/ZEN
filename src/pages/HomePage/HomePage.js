@@ -9,11 +9,13 @@ import Footer from "components/layout/Footer";
 // import ModalSlider from "components/layout/ModalSlider";
 import Chatbot from "components/layout/Chatbot";
 import ThemeContext from 'contexts/ThemeContext'
-import LangContext from 'contexts/LangContext'
+// import LangContext from 'contexts/LangContext'
+import { useSelector } from 'react-redux';
 
 const HomePage = () => {
   const {theme} = useContext(ThemeContext)
-  const {lang} = useContext(LangContext)
+  // const {lang} = useContext(LangContext)
+   const {lang} = useSelector((state) => state.langReducer);
   const [data, setData] = useState(null)
 
   useEffect(() => {

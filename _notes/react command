@@ -1,1 +1,8 @@
 npx create-react-app@latest .
+
+npm i node-sass
+
+npm install react-router-dom@6
+
+- react-redux (npm i react-redux)
+- redux-toolkit (npm i @reduxjs/toolkit)

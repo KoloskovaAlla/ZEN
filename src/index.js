@@ -7,12 +7,14 @@ import ModalProvider from './providers/ModalProvider'
 import SliderProvider from 'providers/SliderProvider'
 import PreviewProvider from 'providers/PreviewProvider'
 import {BrowserRouter} from 'react-router-dom'
+import { Provider } from 'react-redux'
+import {store} from 'store'
 
 const $root = document.querySelector('#root')
 const root = createRoot($root)
 
 root.render(
-  <LangProvider>
+  <Provider store={store}>
     <ThemeProvider>
       <ModalProvider>
         <SliderProvider>
@@ -24,6 +26,6 @@ root.render(
         </SliderProvider>
       </ModalProvider>
     </ThemeProvider>
-  </LangProvider >
+  </Provider >
 )
 
