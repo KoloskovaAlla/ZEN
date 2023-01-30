@@ -1,14 +1,21 @@
-import classes from './Policy.module.scss'
+import classes from './Policy.module.scss';
 
 const Policy = ({ inputPolicy, parentClassName, isChecked, setIsChecked }) => {
-  const { url, content, type } = inputPolicy
+  const { url, content, type } = inputPolicy;
+  console.log(type);
 
   return (
     <label className={classes.policy}>
-      <input type={type} checked={isChecked} onChange={() => { setIsChecked(!isChecked) }} />
+      <input
+        type={type}
+        checked={isChecked}
+        onChange={() => {
+          setIsChecked(!isChecked);
+        }}
+      />
       <a href={url}>{content}</a>
     </label>
-  )
-}
+  );
+};
 
-export default Policy
+export default Policy;
