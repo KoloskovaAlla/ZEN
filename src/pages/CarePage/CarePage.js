@@ -5,9 +5,12 @@ import Title from "components/common/Title";
 import Image from "components/common/Image";
 import LangContext from "contexts/LangContext";
 
+
+
 const CarePage = () => {
   const [data, setData] = useState(null);
   const { lang } = useContext(LangContext);
+
 
   useEffect(() => {
     fetch(
@@ -27,61 +30,76 @@ const CarePage = () => {
       {data && (
         <main className={classes.page}>
           <div className={classes.wrapper}>
-            <div className={classes.body}>
-              {data.intro.title && (
-                <Title
-                  className={classes.title}
-                  priority={data.intro.title.priority}
-                >
-                  {data.intro.title.content}
-                </Title>
+            <div className={classes.into}>
+              <div className={classes.body}>
+                {data.intro.title && (
+                  <Title
+                    className={classes.title}
+                    priority={data.intro.title.priority}
+                  >
+                    {data.intro.title.content}
+                  </Title>
+                )}
+
+                {data.intro.texts?.length > 0 &&
+                  data.intro.texts.map((text, index) => (
+                    <Text
+                      text={text}
+                      className={classes.copy}
+                      key={`${index}`}
+                    />
+                  ))}
+              </div>
+              {data.intro.image && (
+                <Image className={classes.image} imageData={data.intro.image} />
               )}
-
-              {data.intro.texts?.length > 0 &&
-                data.intro.texts.map((text, index) => (
-                  <Text text={text} className={classes.copy} key={`${index}`} />
-                ))}
             </div>
 
-            {data.intro.image && (
-              <Image className={classes.image} imageData={data.intro.image} />
-            )}
+            <div className={classes.core}>
+              <div className={classes.body}>
+                <Title
+                  className={classes.titleCore}
+                  priority={data.core.title.priority}
+                >
+                  {data.core.title.content}
+                </Title>
 
-            {data.core.image && (
-              <Image className={classes.image} imageData={data.core.image} />
-            )}
-
-            <div className={classes.body}>
-              <Title
-                className={classes.titleCore}
-                priority={data.core.title.priority}
-              >
-                {data.core.title.content}
-              </Title>
-
-              {data.core.texts?.length > 0 &&
-                data.core.texts.map((text, index) => (
-                  <Text text={text} className={classes.copy} key={`${index}`} />
-                ))}
+                {data.core.texts?.length > 0 &&
+                  data.core.texts.map((text, index) => (
+                    <Text
+                      text={text}
+                      className={classes.copy}
+                      key={`${index}`}
+                    />
+                  ))}
+              </div>
+              {data.core.image && (
+                <Image className={classes.image} imageData={data.core.image} />
+              )}
             </div>
 
-            <div className={classes.body}>
-              <Title
-                className={classes.titleFinal}
-                priority={data.final.title.priority}
-              >
-                {data.final.title.content}
-              </Title>
+            <div className={classes.final}>
+              <div className={classes.body}>
+                <Title
+                  className={classes.titleFinal}
+                  priority={data.final.title.priority}
+                >
+                  {data.final.title.content}
+                </Title>
 
-              {data.final.texts?.length > 0 &&
-                data.final.texts.map((text, index) => (
-                  <Text text={text} className={classes.copy} key={`${index}`} />
-                ))}
+                {data.final.texts?.length > 0 &&
+                  data.final.texts.map((text, index) => (
+                    <Text
+                      text={text}
+                      className={classes.copy}
+                      key={`${index}`}
+                    />
+                  ))}
+              </div>
+              {data.final.image && (
+                <Image className={classes.image} imageData={data.final.image} />
+              )}
             </div>
-
-            {data.final.image && (
-              <Image className={classes.image} imageData={data.final.image} />
-            )}
 
             {/* <Preview imageData={data.image} /> */}
           </div>
