@@ -8,13 +8,16 @@ import Submit from './components/Submit'
 import { useState } from 'react'
 import classes from './Form.module.scss'
 import { validateName, validateTel, validateEmail, validateConnect } from 'utils/helpers'
-import ModalContext from 'contexts/ModalContext'
+// import ModalContext from 'contexts/ModalContext'
 import { useContext } from 'react'
+import { useDispatch } from 'react-redux'
+import { setIsModalActive } from 'reducers/modalSlice'
 
 const date = new Date().toLocaleString()
 console.log(date)
 
 const Form = ({ form, isDataSent, setIsDataSent }) => {
+  const dispatch = useDispatch()
   const [name, setName] = useState('')
   const [isValidName, setIsValidName] = useState(true)
 
@@ -31,7 +34,7 @@ const Form = ({ form, isDataSent, setIsDataSent }) => {
 
   const [isChecked, setIsChecked] = useState(false)
 
-  const { setIsModalActive } = useContext(ModalContext)
+  // const { setIsModalActive } = useContext(ModalContext)
 
   const {
     inputName,
@@ -104,7 +107,7 @@ const Form = ({ form, isDataSent, setIsDataSent }) => {
         if (response.ok) {
           setIsDataSent(true)
           setTimeout(() => {
-            setIsModalActive(false)
+            dispatch(setIsModalActive(false))
             setIsDataSent(false)
           }, 3000)
         }

@@ -16,7 +16,7 @@ const root = createRoot($root);
 root.render(
   <Provider store={store}>
     {/* <ThemeProvider> */}
-    <ModalProvider>
+    {/* <ModalProvider> */}
       <SliderProvider>
         <PreviewProvider>
           <BrowserRouter>
@@ -24,7 +24,7 @@ root.render(
           </BrowserRouter>
         </PreviewProvider>
       </SliderProvider>
-    </ModalProvider>
+    {/* </ModalProvider> */}
     {/* </ThemeProvider> */}
   </Provider>
 );
