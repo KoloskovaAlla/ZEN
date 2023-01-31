@@ -2,10 +2,12 @@ import PreviewContext from 'contexts/PreviewContext'
 import { useContext, useRef } from 'react'
 import { useDescription } from 'hooks'
 import classes from './Description.module.scss'
+import {useSelector} from 'react-redux'
 
 const Decription = () => {
   const descriptionRef = useRef(null)
-  const { previewDetails } = useContext(PreviewContext)
+  // const { previewDetails } = useContext(PreviewContext)
+  const previewDetails = useSelector((state) => state.previewReducer)
   const { description } = previewDetails
   console.log(description)
 

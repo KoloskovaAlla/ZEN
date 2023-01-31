@@ -4,10 +4,11 @@ import PreviewContext from 'contexts/PreviewContext';
 import classes from './Preview.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSlides } from 'reducers/sliderSlice';
+import { setIsDarkClicked, setPreviewDetails } from 'reducers/previewSlice';
 
 const Preview = ({ imageData }) => {
-  const { setIsDarkClicked } = useContext(PreviewContext);
-
+  // const { setIsDarkClicked } = useContext(PreviewContext);
+  
   // const slide = {
   //   id: imageData.id,
   //   source: imageData.source,
@@ -23,10 +24,10 @@ const Preview = ({ imageData }) => {
     dispatch(setSlides(imageData));
   }, [imageData, setSlides]);
 
-  const { setPreviewDetails } = useContext(PreviewContext);
+  // const { setPreviewDetails } = useContext(PreviewContext);
 
   const handlePreviewClick = (event) => {
-    setIsDarkClicked(false);
+    dispatch(setIsDarkClicked(false));
     const details = event.currentTarget.getBoundingClientRect();
 
     const x = details.left;
@@ -38,14 +39,14 @@ const Preview = ({ imageData }) => {
     const description = imageData.alternate;
     const id = imageData.id;
 
-    setPreviewDetails({
+    dispatch(setPreviewDetails({
       x,
       y,
       width,
       height,
       description,
       id,
-    });
+    }));
   };
 
   return (
