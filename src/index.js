@@ -15,18 +15,16 @@ const root = createRoot($root);
 
 root.render(
   <Provider store={store}>
-    {/* <LangProvider> */}
-      {/* <ThemeProvider> */}
-        {/* <ModalProvider> */}
-          <SliderProvider>
-            <PreviewProvider>
-              <BrowserRouter>
-                <App />
-              </BrowserRouter>
-            </PreviewProvider>
-          </SliderProvider>
-        {/* </ModalProvider> */}
-      {/* </ThemeProvider> */}
-    {/* </LangProvider> */}
+    {/* <ThemeProvider> */}
+    {/* <ModalProvider> */}
+      <SliderProvider>
+        <PreviewProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </PreviewProvider>
+      </SliderProvider>
+    {/* </ModalProvider> */}
+    {/* </ThemeProvider> */}
   </Provider>
 );
