@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   slides: [],
+  sliderDescription: null,
 };
 
 export const sliderSlice = createSlice({
@@ -11,9 +12,12 @@ export const sliderSlice = createSlice({
     setSlides: (state, action) => {
       state.slides = [...state.slides, action.payload];
     },
+    setSliderDescription: (state, action) => {
+      state.sliderDescription = action.payload;
+    },
   },
 });
 
 export const { reducer: sliderReducer } = sliderSlice;
 
-export const { setSlides } = sliderReducer.actions;
+export const { setSlides, setSliderDescription } = sliderSlice.actions;

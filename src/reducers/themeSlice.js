@@ -17,13 +17,3 @@ export const themeSlice = createSlice({
 export const { reducer: themeReducer } = themeSlice;
 
 export const { setTheme } = themeSlice.actions;
-
-export const langSlice = createSlice({
-  name: 'language',
-  initialState,
-  reducers: {
-    setLang: (state, action) => {
-      state.lang = action.payload;
-    },
-  },
-});
