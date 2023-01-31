@@ -1,12 +1,14 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { langReducer } from 'reducers';
 import { themeReducer } from 'reducers';
-import {modalReducer} from 'reducers'
+import { modalReducer } from 'reducers';
+import { sliderReducer } from 'reducers';
 
 const rootReducer = combineReducers({
   langReducer,
   themeReducer,
-  modalReducer
+  modalReducer,
+  sliderReducer,
 });
 
 export const store = configureStore({
