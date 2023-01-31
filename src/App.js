@@ -43,9 +43,10 @@ export const App = () => {
   //   return () => window.removeEventListener('scroll', handleWindowScroll)
   // }, [])
 
-  const { previewDetails } = useContext(PreviewContext);
+  // const { previewDetails } = useContext(PreviewContext);
+  const { previewDetails } = useSelector((state) => state.previewReducer)
 
-  // const LazyHomePage = lazy(() => import("components/layout/HomePage"));
+
   const LazyHomePage = lazy(() => import('./pages/HomePage'));
   const LazyDownloadPage = lazy(() => import('./pages/DownloadPage'));
   const LazyWarrantyPage = lazy(() => import('./pages/WarrantyPage'));

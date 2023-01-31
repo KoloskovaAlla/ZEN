@@ -3,12 +3,15 @@ import PreviewContext from 'contexts/PreviewContext'
 import Description from './components/Description'
 import Slider from './components/Slider'
 import classes from './ModalSlider.module.scss'
+import { setIsDarkClicked } from 'reducers/previewSlice'
+import { useDispatch } from 'react-redux'
 
 const ModalSlider = () => {
-  const {setIsDarkClicked} = useContext(PreviewContext)
+  // const {setIsDarkClicked} = useContext(PreviewContext)
+  const dispatch = useDispatch()
 
   const handleModalSliderClick = () => {  
-    setIsDarkClicked(true)
+    dispatch(setIsDarkClicked(true))
   }
 
   return (
