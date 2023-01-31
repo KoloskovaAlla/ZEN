@@ -17,13 +17,13 @@ root.render(
   <Provider store={store}>
     {/* <ThemeProvider> */}
     {/* <ModalProvider> */}
-      <SliderProvider>
-        <PreviewProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </PreviewProvider>
-      </SliderProvider>
+    {/* <SliderProvider> */}
+    <PreviewProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </PreviewProvider>
+    {/* </SliderProvider> */}
     {/* </ModalProvider> */}
     {/* </ThemeProvider> */}
   </Provider>
