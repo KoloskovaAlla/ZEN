@@ -89,16 +89,18 @@ const Slider = () => {
     sliderRef.current.style.left = `${previewDetails.x}px`;
 
     setTimeout(() => {
-      setPreviewDetails(null);
+      dispatch(setPreviewDetails(null));
     }, 800);
   };
+
+  console.log(isDarkClicked)
 
   if (isDarkClicked === true) {
     sliderRef.current.style.top = `${previewDetails.y}px`;
     sliderRef.current.style.left = `${previewDetails.x}px`;
 
     setTimeout(() => {
-      setPreviewDetails(null);
+      dispatch(setPreviewDetails(null));
     }, 800);
   }
 

@@ -10,7 +10,7 @@ export const previewSlice = createSlice({
   initialState,
   reducers: {
     setPreviewDetails: (state, action) => {state.previewDetails = action.payload},
-    setIsDarkClicked: () => {},
+    setIsDarkClicked: (state, action) => {state.isDarkClicked = action.payload},
   },
 });
 

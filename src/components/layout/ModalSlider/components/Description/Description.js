@@ -9,7 +9,6 @@ const Decription = () => {
   // const { previewDetails } = useContext(PreviewContext)
   const { previewDetails } = useSelector((state) => state.previewReducer);
   const { description } = previewDetails;
-  console.log(previewDetails);
 
   useDescription(description, previewDetails, descriptionRef, classes);
 
