@@ -6,17 +6,20 @@ import { ReactComponent as ArrowLeft } from './assets/arrowleft.svg';
 import { ReactComponent as ArrowRight } from './assets/arrowright.svg';
 import { classNames } from 'utils/helpers';
 import { setSliderDescription } from 'reducers/sliderSlice';
+import { setPreviewDetails } from 'reducers/previewSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Slider = () => {
   const dispatch = useDispatch();
   const { slides } = useSelector((state) => state.sliderReducer);
-  const { isDarkClicked } = useContext(PreviewContext);
+  // const { isDarkClicked } = useContext(PreviewContext);
+  const { isDarkClicked } = useSelector((state) => state.previewReducer);
   const sliderRef = useRef(null);
   const slidesRef = useRef(null);
   // const { setSlideDescription } = useContext(SliderContext);
 
-  const { previewDetails, setPreviewDetails } = useContext(PreviewContext);
+  // const { previewDetails, setPreviewDetails } = useContext(PreviewContext);
+  const { previewDetails } = useSelector((state) => state.previewReducer);
 
   const [resize, setResize] = useState(false);
 
