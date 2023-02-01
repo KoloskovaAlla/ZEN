@@ -1,27 +1,24 @@
-import PreviewContext from 'contexts/PreviewContext'
-import { useContext, useRef } from 'react'
-import { useDescription } from 'hooks'
-import classes from './Description.module.scss'
-import {useSelector} from 'react-redux'
+import PreviewContext from 'contexts/PreviewContext';
+import { useContext, useRef } from 'react';
+import { useDescription } from 'hooks';
+import classes from './Description.module.scss';
+import { useSelector } from 'react-redux';
 
 const Decription = () => {
-  const descriptionRef = useRef(null)
+  const descriptionRef = useRef(null);
   // const { previewDetails } = useContext(PreviewContext)
-  const previewDetails = useSelector((state) => state.previewReducer)
-  const { description } = previewDetails
-  console.log(description)
+  const { previewDetails } = useSelector((state) => state.previewReducer);
+  const { description } = previewDetails;
+  console.log(previewDetails);
 
+  useDescription(description, previewDetails, descriptionRef, classes);
 
-  useDescription(description, previewDetails, descriptionRef, classes)
-
-  return (
-    <p ref={descriptionRef} className={classes.description} />
-  )
+  return <p ref={descriptionRef} className={classes.description} />;
 
   // const print = () => {
-  //   const togglePrintMode = () => {     
-  //     printMode = letter === ' ' && descriptionMaxWidth - spanWidth < 90 
-  //       ? 'newString' 
+  //   const togglePrintMode = () => {
+  //     printMode = letter === ' ' && descriptionMaxWidth - spanWidth < 90
+  //       ? 'newString'
   //       : 'currentString'
   //   }
 
@@ -62,7 +59,7 @@ const Decription = () => {
   // const print = () => {
   //   // console.log({ word })
   //   const togglePrintMode = () => {
-  //     // console.log(descriptionMaxWidth - spanWidth)   
+  //     // console.log(descriptionMaxWidth - spanWidth)
   //     // printMode = letter === ' ' && descriptionMaxWidth - spanWidth < 90
   //     //   // printMode = letter === ' '
   //     //   ? 'newString'
@@ -93,8 +90,6 @@ const Decription = () => {
   //     console.log(descriptionMaxWidth - spanWidth)
   //   }
 
-
-
   //   if (index < description.length) {
 
   //     letter = description[index]
@@ -113,7 +108,7 @@ const Decription = () => {
   //       stringNode.className = `${classes.cursor}`
   //       $description.append(stringNode)
   //       spanWidth = stringNode.offsetWidth
-  //       // console.log(stringNode.offsetWidth / word.length)   
+  //       // console.log(stringNode.offsetWidth / word.length)
   //       word = ''
   //       word += letter// Это можно убрать
   //       index++
@@ -124,7 +119,6 @@ const Decription = () => {
   //       let i = 0
 
   //       // stringNode.textContent += word[i]
-
 
   //       // const wordAdd = () => {
 
@@ -171,6 +165,6 @@ const Decription = () => {
   //     }
   //   }
   // }
-}
+};
 
-export default Decription
+export default Decription;

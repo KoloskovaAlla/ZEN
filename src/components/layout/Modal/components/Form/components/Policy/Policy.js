@@ -2,7 +2,6 @@ import classes from './Policy.module.scss';
 
 const Policy = ({ inputPolicy, parentClassName, isChecked, setIsChecked }) => {
   const { url, content, type } = inputPolicy;
-  console.log(type);
 
   return (
     <label className={classes.policy}>
