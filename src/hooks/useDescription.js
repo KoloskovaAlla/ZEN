@@ -23,8 +23,7 @@ export const useDescription = (
   };
 
   useEffect(() => {
-    const words = description.split(' ');
-    console.log(words);
+    const words = description.split(' '); 
     const TIME_PER_LETTER = 100;
     const $description = descriptionRef.current;
     const DESCRIPTION_MAX_WIDTH = previewDetails.width;

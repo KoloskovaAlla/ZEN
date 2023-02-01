@@ -12,6 +12,7 @@ const ModalSlider = () => {
 
   const handleModalSliderClick = () => {  
     dispatch(setIsDarkClicked(true))
+    console.log('test')
   }
 
   return (
