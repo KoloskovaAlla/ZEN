@@ -21,5 +21,21 @@ git pull origin feature
 13. Выполнить сборку проекта (npm run build)
 14. Деплой на хостинг 
 15. Переключиться на ветку разработки чат-бота и продолжить разработку
-
+--------
 git pull origin branch_name
+
+
+
+-----------
+если надо удалить commit, то 
+git revert 4a866d887beb1b3730fbb43a01f0058a823bb937
+и потом:
+git add .
+git commit -m "about commit"
+git push origin HEAD:main
+
+--------
+Если надо на другом компе сохранить проект, то
+git clone https://github.com/KoloskovaAlla/ZEN.git . -b feature
+
+И все! Без разворачивания реакт-приложения, git init, git remote и т.д. Но для запуска npm install
