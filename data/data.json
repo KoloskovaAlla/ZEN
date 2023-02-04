@@ -472,6 +472,10 @@
       ]
     },
     "posts": {
+      "title": {
+        "content": "Blog",
+        "priority": 2
+      },
       "warranty": {
         "id": 1,
         "title": "Warranty",
@@ -563,6 +567,53 @@
           "title": {
             "content": "1-year warranty boost",
             "priority": 2
+          }
+        },
+        "core": {
+          "image": {
+            "alternate": "We can help with making your shopping experience and money management more ZEN.",
+            "id": 1,
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F1.jpg?alt=media&token=dac92c5e-ea63-4a55-83bb-19adb0820761"
+          },
+          "texts": [
+            "See how we can help with making your shopping experience and money management more ZEN."
+          ],
+          "title": {
+            "content": "Peaceful shopping mindful money with our Warranty",
+            "priority": 3
+          }
+        },
+        "final": {
+          "image": {
+            "alternate": "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing. ",
+            "id": 2,
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F2.jpg?alt=media&token=3703da7c-3f50-4ba6-ae95-3a829dd1c4fa"
+          },
+          "texts": [
+            "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing after the standard warranty ends, which is pretty common.",
+            "When you buy any electronics with your ZEN shopping Mastercard, their warranty gets extended by one year. How does it work? It simply does. Automatically."
+          ],
+          "title": {
+            "content": "ZEN Care",
+            "priority": 3
+          }
+        }
+      },
+      "cashback": {
+        "intro": {
+          "image": {
+            "alternate": "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing. ",
+            "id": 2,
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F2.jpg?alt=media&token=3703da7c-3f50-4ba6-ae95-3a829dd1c4fa"
+          },
+          "texts": [
+            "It saves a little bit of money while you’re shopping, but in many cases it takes ages to get anything out of it.",
+            "We gave it a thought and made cashback way more friendly.",
+            "Up to 14% of what you spend using ZEN Mastercard ® will materialize on your account right after the purchase."
+          ],
+          "title": {
+            "content": "Cashback!",
+            "priority": 1
           }
         },
         "core": {
