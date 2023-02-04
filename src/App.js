@@ -72,8 +72,8 @@ export const App = () => {
           <Route path='/posts/:id' element={<Post />} />
         </Routes>
       </Suspense>
-      {data?.clients && <Clients data={data.clients} />}
       {data?.posts && <Posts data={data.posts}/>}
+      {data?.clients && <Clients data={data.clients} />}
       {data?.footer && <Footer data={data.footer} />}
       {data?.modal && <Modal data={data.modal} />}
       {/* {previewDetails && <Slider />} */}

@@ -36,8 +36,7 @@ const HomePage = () => {
       {data?.download && <SectionBase data={data.download} />}
       {data?.warranty && <SectionBase data={data.warranty} reverse />}
       {data?.care && <SectionBase data={data.care} />}
-      {data?.cashback && <Cashback data={data.cashback} />}
-      {data?.clients && <Clients data={data.clients} />}
+      {data?.cashback && <Cashback data={data.cashback} />} 
       {data?.modal && <Modal data={data.modal} />}
       {/* {data?.footer && <Footer data={data.footer} />} */}
 
