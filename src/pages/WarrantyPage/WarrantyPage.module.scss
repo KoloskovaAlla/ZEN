@@ -1,0 +1,114 @@
+@import 'styles/settings/breakpoints';
+
+.page {
+  padding: 30px 15px;
+  @media (min-width: $breakpoint_md) {
+    padding: 30px 0px;
+  }
+}
+
+.wrapper {
+  display: grid;
+  margin: 0 auto;
+  max-width: var(--container-max-width);
+  grid-template-columns: 1fr;
+  gap: 60px;
+ 
+}
+
+.core,
+.into,
+.final {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: var(--container-template-columns);
+  gap: 15px;
+  @media (min-width: $breakpoint_md) {
+ gap: 30px;
+}
+}
+
+.core {
+  
+@media (min-width: $breakpoint_md) {
+  .body {
+    order: 1;
+  }
+}
+
+
+}
+
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    font-size: 30px;
+
+    @media (min-width: $breakpoint_md) {
+      font-size: 36px;
+    }
+
+    @media (min-width: $breakpoint_lg) {
+      font-size: 42px;
+    }
+
+    @media (min-width: $breakpoint_xl) {
+      font-size: 56px;
+    }
+  }
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+
+  @media (min-width: $breakpoint_md) {
+    font-size: 36px;
+  }
+
+  @media (min-width: $breakpoint_lg) {
+    font-size: 42px;
+  }
+
+  @media (min-width: $breakpoint_xl) {
+    font-size: 56px;
+  }
+}
+
+.titleCore,
+.titleFinal {
+  font-size: var(--title-fz);
+  font-weight: 400;
+}
+
+.copy {
+  margin-top: var(--copy-margin-top);
+  font-size: var(--copy-font-size);
+
+  &:first-of-type {
+    margin-top: 20px;
+
+    @media (min-width: $breakpoint_xl) {
+      margin-top: 30px;
+    }
+  }
+}
+
+.image {
+  // margin-top: var(--image-margin-top);
+  height: var(--image-height);
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

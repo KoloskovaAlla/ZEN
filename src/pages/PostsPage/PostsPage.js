@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect, useContext } from 'react';
-import LangContext from 'contexts/LangContext';
+import { useState, useEffect} from 'react';
+// import LangContext from 'contexts/LangContext';
 // import classes from './PostsPage.module.scss';
 import classes from './PostsPage2.module.scss';
 import { API_BASE_URL } from 'constants/api';
+import { useSelector } from 'react-redux';
 
 const Posts = () => {
   const [data, setData] = useState(null);
-  const { lang } = useContext(LangContext);
+  // const { lang } = useContext(LangContext);
+  const {lang} = useSelector((state) => state.langReducer)
   const [dataWarranty, setDataWarranty] = useState(null);
   const [dataCare, setDataCare] = useState(null);
   const [dataCashback, setDataCashback] = useState(null);

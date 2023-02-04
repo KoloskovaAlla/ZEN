@@ -32,14 +32,14 @@ const HomePage = () => {
     <div className={`app ${theme}`}>
       {!data && <Preloader />}
       {/* {data && <Progress />} */}
-      {data?.header && <Header data={data.header} />}
+      {/* {data?.header && <Header data={data.header} />} */}
       {data?.download && <SectionBase data={data.download} />}
       {data?.warranty && <SectionBase data={data.warranty} reverse />}
       {data?.care && <SectionBase data={data.care} />}
       {data?.cashback && <Cashback data={data.cashback} />}
       {data?.clients && <Clients data={data.clients} />}
       {data?.modal && <Modal data={data.modal} />}
-      {data?.footer && <Footer data={data.footer} />}
+      {/* {data?.footer && <Footer data={data.footer} />} */}
 
       {/* {previewDetails && <ModalSlider />} */}
       {data?.chatBot && <Chatbot data={data.chatBot} />}

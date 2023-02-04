@@ -9,7 +9,7 @@ const Clients = ({ data }) => {
   const { theme } = useSelector((state) => state.themeReducer);
 
   return (
-    <section id={data.name} className={classes.clients}>
+    <section className={classes.clients}>
       <div className={classes.wrapper}>
         <ul className={classes.list}>
           {theme === 'light'

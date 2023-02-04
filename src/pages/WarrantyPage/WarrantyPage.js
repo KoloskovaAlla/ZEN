@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import SectionBase from 'components/layout/SectionBase';
 import { useSelector } from 'react-redux';
-import classes from './Warranty.module.scss';
+import classes from './WarrantyPage.module.scss';
 
-const CarePage = () => {
+const WarrantyPage = () => {
   const [data, setData] = useState(null); 
   const { lang } = useSelector((state) => state.langReducer);
 
@@ -35,4 +35,4 @@ const CarePage = () => {
   );
 };
 
-export default CarePage;
+export default WarrantyPage;
