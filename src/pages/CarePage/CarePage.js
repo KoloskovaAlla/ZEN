@@ -20,8 +20,6 @@ const CarePage = () => {
       .catch();
   }, [lang]);
 
-  console.log(data);
-
   return (
     <main>
       {data?.intro && <SectionBase className={classes.into} data={data.intro} />}

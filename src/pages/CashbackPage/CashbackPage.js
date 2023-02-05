@@ -18,8 +18,6 @@ const CashbackPage = () => {
       .catch();
   }, [lang]);
 
-  console.log(data);
-
   return (
     <main>
       {data?.intro && (
