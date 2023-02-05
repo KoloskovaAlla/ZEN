@@ -4,13 +4,15 @@ import { themeReducer } from 'reducers';
 import { modalReducer } from 'reducers';
 import { sliderReducer } from 'reducers';
 import {previewReducer} from 'reducers'
+import { currentPageReducer } from 'reducers';
 
 const rootReducer = combineReducers({
   langReducer,
   themeReducer,
   modalReducer,
   sliderReducer,
-  previewReducer
+  previewReducer,
+  currentPageReducer
 });
 
 export const store = configureStore({

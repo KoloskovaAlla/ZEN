@@ -3,11 +3,15 @@ import { useEffect, useState} from 'react';
 import SectionBase from 'components/layout/SectionBase';
 // import LangContext from "contexts/LangContext";
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setCurrentPage } from 'reducers/currentPageSlice';
 
 const CarePage = () => {
   const [data, setData] = useState(null);
   // const { lang } = useContext(LangContext);
   const { lang } = useSelector((state) => state.langReducer);
+  const {currentPage} = useSelector((state) => state.currentPageReducer)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     fetch(
@@ -19,6 +23,10 @@ const CarePage = () => {
       })
       .catch();
   }, [lang]);
+
+  useEffect(() => {
+    dispatch(setCurrentPage('carePage'))
+  }, [])
 
   return (
     <main>

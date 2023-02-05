@@ -1,6 +1,6 @@
 import classes from './Posts.module.scss';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Button from './components/Button';
 import Title from '../../common/Title';
 
@@ -15,7 +15,10 @@ const Posts = ({ data }) => {
   // console.log(currentUrl)
   const [currentUrl, setCurrentUrl] = useState(null);
   const [isIncludePosts, setIsIncludePosts] = useState(false);
-  
+
+  const params = useParams()
+  console.log(params)
+
   useEffect(() => {
     setCurrentUrl(window.location.href);
   }, []);
