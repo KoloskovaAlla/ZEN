@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useState, useEffect} from 'react';
 // import LangContext from 'contexts/LangContext';
 // import classes from './PostsPage.module.scss';

@@ -46,8 +46,8 @@
   }
 
   @media (min-width: $breakpoint_xl) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 30px;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    // gap: 30px;
   }
 }
 
@@ -81,11 +81,11 @@
   }
 
   @media (min-width: $breakpoint_lg) {
-    border: 1px solid green;
+    // border: 1px solid green;
   }
 
   @media (min-width: $breakpoint_xl) {
-    border: 1px solid orange;
+    // border: 1px solid orange;
   }
 }
 

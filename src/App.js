@@ -68,7 +68,7 @@ export const App = () => {
           <Route path='/care' element={<LazyCarePage />} />
           <Route path='/cashback' element={<LazyCashbackPage />} />
           {/* <Route path='/clients' element={<LazyClientsPage />} /> */}
-          {/* <Route path='/posts' element={<LazyPostsPage />}></Route> */}
+          <Route path='/posts' element={<LazyPostsPage />}></Route>
           <Route path='/posts/:id' element={<Post />} />
         </Routes>
       </Suspense>
