@@ -2,12 +2,13 @@ import { Link, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 // import LangContext from 'contexts/LangContext';
 // import classes from './PostsPage.module.scss';
-import classes from './PostsPage2.module.scss';
+import classes from './PostsPage.module.scss';
 import { API_BASE_URL } from 'constants/api';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setCurrentPage } from 'reducers/currentPageSlice';
 import { Item } from './components/Item';
+import Title from 'components/common/Title'
 
 const Posts = () => {
   const [data, setData] = useState(null);
@@ -17,6 +18,7 @@ const Posts = () => {
   const [dataCare, setDataCare] = useState(null);
   const [dataCashback, setDataCashback] = useState(null);
   const [dataClients, setDataClients] = useState(null);
+  const [dataTitle, setDataTitle] = useState(null)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,6 +31,7 @@ const Posts = () => {
         setDataCare(data.posts.care);
         setDataCashback(data.posts.cashback);
         setDataClients(data.posts.clients);
+        setDataTitle(data.posts.title)
       })
 
       .catch();
@@ -39,9 +42,15 @@ const Posts = () => {
   }, []);
 
   return (
-    <div>
+    <div className={classes.wrapper}>
       {data && (
         <main>
+          {dataTitle && (
+            <Title className={classes.title} priority={dataTitle.priority}>
+              {dataTitle.content}
+            </Title>
+          )}
+
           <ul className={classes.posts}>
             <Item data={dataCare} />
             <Item data={dataWarranty} />

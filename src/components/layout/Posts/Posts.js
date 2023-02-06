@@ -89,22 +89,8 @@ const Posts = ({ data }) => {
                   </div>
                 </Link>
               </li>
-              {/* <li>
-              <Link className={classes.post} to='/posts/clients'>
-                <button className={classes.image}>
-                  <img src={dataClients.imageSource} alt='alternate img'></img>
-                </button>
-                <div className={classes.body}>
-                  <button className={classes.title}>{dataClients.title}</button>
-                  <div className={classes.article}>
-                    {dataClients.article.slice(0, 60)}...
-                  </div>
-                  <button className={classes.link}>Read more...</button>
-                </div>
-              </Link>
-            </li> */}
-              <Button buttonText='more posts' />
             </ul>
+              <Button buttonText='more posts' />
           </div>
         </section>
       )}
