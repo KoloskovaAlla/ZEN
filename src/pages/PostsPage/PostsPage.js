@@ -1,19 +1,22 @@
 import { Link, useParams } from 'react-router-dom';
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 // import LangContext from 'contexts/LangContext';
 // import classes from './PostsPage.module.scss';
 import classes from './PostsPage2.module.scss';
 import { API_BASE_URL } from 'constants/api';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setCurrentPage } from 'reducers/currentPageSlice';
 
 const Posts = () => {
   const [data, setData] = useState(null);
   // const { lang } = useContext(LangContext);
-  const {lang} = useSelector((state) => state.langReducer)
+  const { lang } = useSelector((state) => state.langReducer);
   const [dataWarranty, setDataWarranty] = useState(null);
   const [dataCare, setDataCare] = useState(null);
   const [dataCashback, setDataCashback] = useState(null);
   const [dataClients, setDataClients] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/${lang}/.json`)
@@ -29,6 +32,10 @@ const Posts = () => {
 
       .catch();
   }, [lang]);
+
+  useEffect(() => {
+    dispatch(setCurrentPage('postsPage'));
+  }, []);
 
   return (
     <div>
@@ -119,7 +126,7 @@ const Posts = () => {
                 <div className={classes.body}>
                   <button className={classes.title}>{dataCare.title}</button>
                   <div className={classes.article}>
-                    {dataCare.article.slice(0,50)}...
+                    {dataCare.article.slice(0, 50)}...
                   </div>
                   <button className={classes.link}>Read more...</button>
                 </div>

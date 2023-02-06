@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Button from './components/Button';
 import Title from '../../common/Title';
+import { useSelector } from 'react-redux';
 
 const Posts = ({ data }) => {
   const dataWarranty = data.warranty;
@@ -10,22 +11,16 @@ const Posts = ({ data }) => {
   const dataClients = data.clients;
   const dataCashback = data.cashback;
 
-  console.log(window.location.href);
   // const currentUrl = window.location.href;
   // console.log(currentUrl)
   const [currentUrl, setCurrentUrl] = useState(null);
   const [isIncludePosts, setIsIncludePosts] = useState(false);
-
-  const params = useParams()
-  console.log(params)
+  const { currentPage } = useSelector((state) => state.currentPageReducer);
 
   useEffect(() => {
-    setCurrentUrl(window.location.href);
-  }, []);
-
-  useEffect(() => {
-    setIsIncludePosts(window.location.href.includes('posts'));
-  }, []);
+    // setIsIncludePosts(currentPage.includes('postsPage'));
+    setIsIncludePosts(currentPage === 'postsPage');
+  }, [currentPage]);
 
   return (
     <div>
