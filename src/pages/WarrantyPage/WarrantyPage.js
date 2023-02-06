@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import SectionBase from 'components/layout/SectionBase';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import classes from './WarrantyPage.module.scss';
+import { setCurrentPage } from 'reducers/currentPageSlice';
 
 const WarrantyPage = () => {
-  const [data, setData] = useState(null); 
+  const [data, setData] = useState(null);
   const { lang } = useSelector((state) => state.langReducer);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch(
@@ -18,7 +20,9 @@ const WarrantyPage = () => {
       .catch();
   }, [lang]);
 
-  console.log(data);
+  useEffect(() => {
+    dispatch(setCurrentPage('warrantyPage'));
+  }, []);
 
   return (
     <main>

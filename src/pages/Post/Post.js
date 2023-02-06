@@ -1,6 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import classes from './Post.module.scss';
+import { useDispatch } from 'react-redux';
+import { setCurrentPage } from 'reducers/currentPageSlice';
 
 export const Post = () => {
   const params = useParams();
@@ -8,6 +10,7 @@ export const Post = () => {
 
   const lang = 'en';
   const [data, setData] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch(
@@ -20,6 +23,10 @@ export const Post = () => {
       })
       .catch();
   }, [lang, id]);
+
+  useEffect(() => {
+    dispatch(setCurrentPage('postPage'));
+  }, []);
 
   return (
     <div>

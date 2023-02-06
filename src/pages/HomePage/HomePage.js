@@ -8,9 +8,10 @@ import Modal from 'components/layout/Modal';
 import Footer from 'components/layout/Footer';
 // import ModalSlider from "components/layout/ModalSlider";
 import Chatbot from 'components/layout/Chatbot';
-import ThemeContext from 'contexts/ThemeContext';
+// import ThemeContext from 'contexts/ThemeContext';
 // import LangContext from 'contexts/LangContext'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setCurrentPage } from 'reducers/currentPageSlice';
 
 const HomePage = () => {
   // const {theme} = useContext(ThemeContext)
@@ -18,6 +19,7 @@ const HomePage = () => {
   const { theme } = useSelector((state) => state.themeReducer);
   const { lang } = useSelector((state) => state.langReducer);
   const [data, setData] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch(`https://zenproject-ce905-default-rtdb.firebaseio.com/${lang}/.json`)
@@ -28,6 +30,10 @@ const HomePage = () => {
       .catch();
   }, [lang]);
 
+  useEffect(() => {
+    dispatch(setCurrentPage('homePage'));
+  }, []);
+
   return (
     <div className={`app ${theme}`}>
       {!data && <Preloader />}
@@ -36,7 +42,7 @@ const HomePage = () => {
       {data?.download && <SectionBase data={data.download} />}
       {data?.warranty && <SectionBase data={data.warranty} reverse />}
       {data?.care && <SectionBase data={data.care} />}
-      {data?.cashback && <Cashback data={data.cashback} />} 
+      {data?.cashback && <Cashback data={data.cashback} />}
       {data?.modal && <Modal data={data.modal} />}
       {/* {data?.footer && <Footer data={data.footer} />} */}
 
