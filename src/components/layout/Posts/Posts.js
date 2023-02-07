@@ -10,21 +10,22 @@ const Posts = ({ data }) => {
   const dataCare = data.care;
   const dataClients = data.clients;
   const dataCashback = data.cashback;
+  const { buttonText } = data;
 
   // const currentUrl = window.location.href;
   // console.log(currentUrl)
-  const [currentUrl, setCurrentUrl] = useState(null);
-  const [isIncludePosts, setIsIncludePosts] = useState(false);
+
+  const [hiddenPosts, setHiddenPosts] = useState(false);
   const { currentPage } = useSelector((state) => state.currentPageReducer);
 
   useEffect(() => {
     // setIsIncludePosts(currentPage.includes('postsPage'));
-    setIsIncludePosts(currentPage === 'postsPage');
+    setHiddenPosts(currentPage === 'postsPage');
   }, [currentPage]);
 
   return (
     <div>
-      {!isIncludePosts && (
+      {!hiddenPosts && (
         <section className={classes.posts}>
           <div className={classes.wrapper}>
             {data.title && (
@@ -90,7 +91,7 @@ const Posts = ({ data }) => {
                 </Link>
               </li>
             </ul>
-              <Button buttonText='more posts' />
+            <Button buttonText={buttonText} />
           </div>
         </section>
       )}

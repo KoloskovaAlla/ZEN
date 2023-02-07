@@ -4,7 +4,7 @@ import ThemeContext from './contexts/ThemeContext';
 import LangContext from './contexts/LangContext';
 import Header from './components/layout/Header';
 import Clients from 'components/layout/Cllients/Clients';
-import Posts from 'components/layout/Posts/'
+import Posts from 'components/layout/Posts/';
 // import Clients from './components/layout/Cllients';
 import Footer from './components/layout/Footer';
 import Modal from './components/layout/Modal';
@@ -46,8 +46,7 @@ export const App = () => {
   // }, [])
 
   // const { previewDetails } = useContext(PreviewContext);
-  const { previewDetails } = useSelector((state) => state.previewReducer)
-
+  const { previewDetails } = useSelector((state) => state.previewReducer);
 
   const LazyHomePage = lazy(() => import('./pages/HomePage'));
   const LazyDownloadPage = lazy(() => import('./pages/DownloadPage'));
@@ -67,12 +66,12 @@ export const App = () => {
           <Route path='/warranty' element={<LazyWarrantyPage />} />
           <Route path='/care' element={<LazyCarePage />} />
           <Route path='/cashback' element={<LazyCashbackPage />} />
-          {/* <Route path='/clients' element={<LazyClientsPage />} /> */}
+          <Route path='/clients' element={<LazyClientsPage />} />
           <Route path='/posts' element={<LazyPostsPage />}></Route>
           <Route path='/posts/:id' element={<Post />} />
         </Routes>
       </Suspense>
-      {data?.posts && <Posts data={data.posts}/>}
+      {data?.posts && <Posts data={data.posts} />}
       {data?.clients && <Clients data={data.clients} />}
       {data?.footer && <Footer data={data.footer} />}
       {data?.modal && <Modal data={data.modal} />}
