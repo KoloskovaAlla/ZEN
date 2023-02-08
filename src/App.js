@@ -20,6 +20,7 @@ import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { API_BASE_URL } from 'constants/api';
 import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
 export const App = () => {
   useDocumentTitle('ZEN | Home');

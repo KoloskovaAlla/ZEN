@@ -19,11 +19,15 @@ const Menu = ({ data, parentClassName, isMenuActive, setIsMenuActive }) => {
     []
   );
 
+    const handleItemClick = () => {
+      isMenuActive ? setIsMenuActive(false) : setIsMenuActive(true);
+    };
+
   return (
     <ul className={classNameMenu} theme={theme}>
       {data.menuItems.length > 0 &&
         data.menuItems.map((menuItem, index) => (
-          <li className={classes.item} key={index}>
+          <li onClick={handleItemClick}className={classes.item} key={index}>
             <NavLink
               to={`/${menuItem.target}`}
               // activeStyle={{ textDecoration: "underline" }}
