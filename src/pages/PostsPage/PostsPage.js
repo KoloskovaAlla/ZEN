@@ -51,15 +51,15 @@ const Posts = () => {
             </Title>
           )}
 
-          <ul className={classes.posts}>
-            <Item data={dataCare} />
-            <Item data={dataWarranty} />
-            <Item data={dataCashback} />
-            <Item data={dataClients} />
-            <Item data={dataCare} />
-            <Item data={dataWarranty} />
-            <Item data={dataCashback} />
-            <Item data={dataClients} />
+          <ul className={classes.posts}>         
+            <Item data={dataCare} post='care' />
+            <Item data={dataWarranty} post='warranty' />
+            <Item data={dataCashback} post='cashback' />
+            <Item data={dataClients} post='clients' />
+            <Item data={dataCare} post='care' />
+            <Item data={dataWarranty} post='warranty' />
+            <Item data={dataCashback} post='cashback' />
+            <Item data={dataClients} post='clients' />
           </ul>
         </main>
       )}

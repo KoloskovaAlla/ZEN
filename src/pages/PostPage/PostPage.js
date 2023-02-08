@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import classes from './Post.module.scss';
+import classes from './PostPage.module.scss';
 import { useDispatch } from 'react-redux';
 import { setCurrentPage } from 'reducers/currentPageSlice';
 
-export const Post = () => {
+export const PostPage = () => {
   const params = useParams();
   const { id } = params;
 
@@ -27,6 +27,8 @@ export const Post = () => {
   useEffect(() => {
     dispatch(setCurrentPage('postPage'));
   }, []);
+
+  if (data) console.log(data)
 
   return (
     <div>

@@ -2,6 +2,14 @@
   padding: 30px 15px;
 }
 
+.wrapper {
+  display: grid;
+  margin: 0 auto;
+  max-width: var(--container-max-width);
+  grid-template-columns: var(--container-template-columns);
+  gap: var(--container-gap);
+}
+
 .title {
   margin-bottom: 10px;
   font-size: 24px;

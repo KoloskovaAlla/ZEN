@@ -15,7 +15,7 @@ import Modal from './components/layout/Modal';
 import PreviewContext from 'contexts/PreviewContext';
 import ModalSlider from 'components/layout/ModalSlider';
 import Chatbot from 'components/layout/Chatbot';
-import { Post } from './pages/Post';
+import { PostPage } from './pages/PostPage';
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { API_BASE_URL } from 'constants/api';
@@ -68,11 +68,11 @@ export const App = () => {
           <Route path='/cashback' element={<LazyCashbackPage />} />
           <Route path='/clients' element={<LazyClientsPage />} />
           <Route path='/posts' element={<LazyPostsPage />}></Route>
-          <Route path='/posts/:id' element={<Post />} />
+          <Route path='/posts/:id' element={<PostPage />} />
         </Routes>
       </Suspense>
       {data?.posts && <Posts data={data.posts} />}
-      {data?.clients && <Clients data={data.clients} />}
+      {data?.clients && <Clients data={data.clients}/>}
       {data?.footer && <Footer data={data.footer} />}
       {data?.modal && <Modal data={data.modal} />}
       {/* {previewDetails && <Slider />} */}

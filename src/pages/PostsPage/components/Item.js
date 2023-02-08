@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import classes from './Item.module.scss';
 
-export const Item = ({ data }) => {
+export const Item = ({ data, post }) => {
+  console.log(`posts/${post}`);
   return (
     <li>
-      <Link className={classes.post} to='/posts/warranty'>
+      <Link className={classes.post} to={`/posts/${post}`}>
         <button className={classes.image}>
           <img src={data.imageSource} alt='alternate img'></img>
         </button>
