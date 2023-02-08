@@ -1,0 +1,61 @@
+@import 'styles/settings/breakpoints';
+
+.wrapper {
+  margin: 0 auto;
+  max-width: var(--container-max-width);
+  padding: 30px 15px;
+}
+
+.title { 
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+
+  @media (min-width: $breakpoint_md) {
+    font-size: 36px;
+  }
+
+  @media (min-width: $breakpoint_lg) {
+    font-size: 42px;
+  }
+
+  @media (min-width: $breakpoint_xl) {
+    font-size: 56px;
+  }
+}
+
+.clients {
+  padding: 30px 15px;
+
+  @media (min-width: $breakpoint_md) {
+    padding: 30px 0;
+  }
+
+  @media (min-width: $breakpoint_lg) {
+    padding: 40px 0;
+  }
+
+  @media (min-width: $breakpoint_xl) {
+    padding: 50px 0;
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  @media (min-width: $breakpoint_md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: $breakpoint_lg) {
+    gap: 40px;
+  }
+
+  @media (min-width: $breakpoint_xl) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px
+  }
+}

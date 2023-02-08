@@ -1,0 +1,19 @@
+@import 'styles/settings/breakpoints'; 
+
+.link {
+  height: 44px;
+  margin-top: 15px;
+
+  @media (min-width: $breakpoint_md) {
+    margin-top: 0;
+    margin-left: 20px;
+  }
+
+  &:first-of-type {
+    opacity: 1;
+
+    @media (min-width: $breakpoint_md) {
+      margin-left: 0;
+    }
+  }
+}
