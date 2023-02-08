@@ -23,6 +23,11 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 export const App = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   useDocumentTitle('ZEN | Home');
   // const { theme } = useContext(ThemeContext);
   // const { lang } = useContext(LangContext);
@@ -73,7 +78,7 @@ export const App = () => {
         </Routes>
       </Suspense>
       {data?.posts && <Posts data={data.posts} />}
-      {data?.clients && <Clients data={data.clients}/>}
+      {data?.clients && <Clients data={data.clients} />}
       {data?.footer && <Footer data={data.footer} />}
       {data?.modal && <Modal data={data.modal} />}
       {/* {previewDetails && <Slider />} */}
