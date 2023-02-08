@@ -28,7 +28,7 @@ export const PostPage = () => {
     dispatch(setCurrentPage('postPage'));
   }, []);
 
-  if (data) console.log(data)
+  if (data) console.log(data);
 
   return (
     <div>
