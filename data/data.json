@@ -1194,6 +1194,283 @@
           "answer": "Можно совершать транзакции в пределах своего баланса. В редких случаях баланс может быть отрицательным, в этом случае разница будет покрыта следующим депозитом."
         }
       ]
+    },
+    "posts": {
+      "title": {
+        "content": "Блог",
+        "priority": 2
+      },
+      "warranty": {
+        "id": 1,
+        "title": "Гарантийные сроки",
+        "keywords": ["электроника", "устройства"],
+        "article": "Карты ZEN имеют очень удобную функцию, которая поможет вам всякий раз, когда ваши электронные устройства начнут выходить из строя после окончания срок гарантии от производителя, что довольно распространено. Когда вы покупаете любую электронику с помощью карты ZEN shopping Mastercard, гарантия на нее продлевается на один год. Как это происходит? Автоматически!",
+        "imageSource": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F2.jpg?alt=media&token=3703da7c-3f50-4ba6-ae95-3a829dd1c4fa"
+      },
+      "cashback": {
+        "id": 2,
+        "title": "Кэшбек",
+        "keywords": ["экономить", "покупка", "кэшбек"],
+        "article": "Обычный кэшбек немного экономит деньги, пока вы ходите по магазинам, но во многих случаях требуется целая вечность, чтобы его дождаться. Мы подумали об этом и сделали кэшбек намного более удобным. До 14% от того, что вы потратите с помощью ZEN Mastercard ® , будет зачислено на ваш счет сразу после покупки.",
+        "imageSource": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F1.jpg?alt=media&token=dac92c5e-ea63-4a55-83bb-19adb0820761"
+      },
+      "care": {
+        "id": 3,
+        "title": "Забота",
+        "keywords": ["вернуть", "бракованный", "товар"],
+        "article": "Вы можете вернуть бракованный товар, и мы вернем вам деньги",
+        "imageSource": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F3.jpg?alt=media&token=85414255-0e38-49bf-bbc7-7d4e21a51e97"
+      },
+      "clients": {
+        "id": 4,
+        "title": "Наши клиенты",
+        "keywords": ["клиенты", "алиэкспресс"],
+        "article": "Нашими клиентами являются успешные компании, работающие по всему миру. Присоединяйтесь!",
+        "imageSource": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F1.jpg?alt=media&token=dac92c5e-ea63-4a55-83bb-19adb0820761"
+      },
+      "buttonText": "больше постов"
+    },
+    "pages": {
+      "care": {
+        "intro": {
+          "image": {
+            "alternate": "Until something you buy, proves to be faulty, missing or a totally wrong item, you’re in for long product return",
+            "id": 3,
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F3.jpg?alt=media&token=85414255-0e38-49bf-bbc7-7d4e21a51e97"
+          },
+          "texts": [
+            "Shopping online is usually a delightful experience. Until it's not.",
+            "Until something you buy, proves to be faulty, missing or a totally wrong item, you’re in for long product return procedures.",
+            "But, here comes ZEN Care: a free, built-in shopping protection."
+          ],
+          "title": {
+            "content": "ZEN Care",
+            "priority": 1
+          }
+        },
+        "core": {
+          "image": {
+            "alternate": "We can help with making your shopping experience and money management more ZEN.",
+            "id": 1,
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F1.jpg?alt=media&token=dac92c5e-ea63-4a55-83bb-19adb0820761"
+          },
+          "texts": [
+            "See how we can help with making your shopping experience and money management more ZEN."
+          ],
+          "title": {
+            "content": "Peaceful shopping mindful money with our Care",
+            "priority": 2
+          }
+        },
+        "final": {
+          "image": {
+            "alternate": "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing. ",
+            "id": 2,
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F2.jpg?alt=media&token=3703da7c-3f50-4ba6-ae95-3a829dd1c4fa"
+          },
+          "texts": [
+            "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing after the standard warranty ends, which is pretty common.",
+            "When you buy any electronics with your ZEN shopping Mastercard, their warranty gets extended by one year. How does it work? It simply does. Automatically."
+          ],
+          "title": {
+            "content": "ZEN Care",
+            "priority": 2
+          }
+        }
+      },
+      "warranty": {
+        "intro": {
+          "image": {
+            "alternate": "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing. ",
+            "id": 2,
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F2.jpg?alt=media&token=3703da7c-3f50-4ba6-ae95-3a829dd1c4fa"
+          },
+          "texts": [
+            "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing after the standard warranty ends, which is pretty common.",
+            "When you buy any electronics with your ZEN shopping Mastercard, their warranty gets extended by one year. How does it work? It simply does. Automatically."
+          ],
+          "title": {
+            "content": "1-year warranty boost",
+            "priority": 1
+          }
+        },
+        "core": {
+          "image": {
+            "alternate": "We can help with making your shopping experience and money management more ZEN.",
+            "id": 1,
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F1.jpg?alt=media&token=dac92c5e-ea63-4a55-83bb-19adb0820761"
+          },
+          "texts": [
+            "See how we can help with making your shopping experience and money management more ZEN."
+          ],
+          "title": {
+            "content": "Peaceful shopping mindful money with our Warranty",
+            "priority": 2
+          }
+        },
+        "final": {
+          "image": {
+            "alternate": "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing. ",
+            "id": 2,
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F2.jpg?alt=media&token=3703da7c-3f50-4ba6-ae95-3a829dd1c4fa"
+          },
+          "texts": [
+            "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing after the standard warranty ends, which is pretty common.",
+            "When you buy any electronics with your ZEN shopping Mastercard, their warranty gets extended by one year. How does it work? It simply does. Automatically."
+          ],
+          "title": {
+            "content": "Warranty",
+            "priority": 2
+          }
+        }
+      },
+      "cashback": {
+        "intro": {
+          "image": {
+            "alternate": "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing. ",
+            "id": 2,
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F2.jpg?alt=media&token=3703da7c-3f50-4ba6-ae95-3a829dd1c4fa"
+          },
+          "texts": [
+            "It saves a little bit of money while you’re shopping, but in many cases it takes ages to get anything out of it.",
+            "We gave it a thought and made cashback way more friendly.",
+            "Up to 14% of what you spend using ZEN Mastercard ® will materialize on your account right after the purchase."
+          ],
+          "title": {
+            "content": "Cashback!",
+            "priority": 1
+          }
+        },
+        "core": {
+          "image": {
+            "alternate": "We can help with making your shopping experience and money management more ZEN.",
+            "id": 1,
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F1.jpg?alt=media&token=dac92c5e-ea63-4a55-83bb-19adb0820761"
+          },
+          "texts": [
+            "See how we can help with making your shopping experience and money management more ZEN."
+          ],
+          "title": {
+            "content": "Peaceful shopping mindful money with Cashback",
+            "priority": 2
+          }
+        },
+        "final": {
+          "image": {
+            "alternate": "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing. ",
+            "id": 2,
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F2.jpg?alt=media&token=3703da7c-3f50-4ba6-ae95-3a829dd1c4fa"
+          },
+          "texts": [
+            "ZEN cards have a very neat feature that will help you whenever your electronic devices start failing after the standard warranty ends, which is pretty common.",
+            "When you buy any electronics with your ZEN shopping Mastercard, their warranty gets extended by one year. How does it work? It simply does. Automatically."
+          ],
+          "title": {
+            "content": "Cashback",
+            "priority": 2
+          }
+        }
+      },
+      "download": {
+        "image": {
+          "alternate": "We can help with making your shopping experience and money management more ZEN.",
+          "id": 1,
+          "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/images%2F1.jpg?alt=media&token=dac92c5e-ea63-4a55-83bb-19adb0820761"
+        },
+        "links": [
+          {
+            "name": "apple",
+            "url": "https://apple.com"
+          },
+          {
+            "name": "google",
+            "url": "https://google.com"
+          }
+        ],
+        "name": "download",
+        "texts": [
+          "See how we can help with making your shopping experience and money management more ZEN."
+        ],
+        "title": {
+          "content": "Peaceful shopping mindful money",
+          "priority": 1
+        }
+      },
+      "clients": {
+        "darkThemeClients": [
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F1.svg?alt=media&token=f9b39015-6f77-4a42-b4e7-c5c5f7a783b1"
+          },
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F2.svg?alt=media&token=4b5fac14-7cac-4ee9-89ef-8f000191c8ca"
+          },
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F3.svg?alt=media&token=e15ac5cd-2654-4861-8eaa-64d7a7ee5066"
+          },
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F4.svg?alt=media&token=b96fb3e2-6bf4-4776-8eb3-13eaecce78b4"
+          },
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F5.svg?alt=media&token=b090dd89-f5e5-4fa6-a585-91d6f82f3632"
+          },
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F6.svg?alt=media&token=8938de39-cee2-4daa-8eb7-863bb6d1365c"
+          },
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F7.svg?alt=media&token=05c1e365-7eb3-4c11-9e9c-e51411eb99fe"
+          },
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Fdark-theme%2F8.svg?alt=media&token=c12b1a8c-9126-4112-8edb-e16a6badf300"
+          }
+        ],
+        "lightThemeClients": [
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F1.svg?alt=media&token=c916619f-8d50-4a57-84f7-1b1057af18c5"
+          },
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F2.svg?alt=media&token=9104abf8-bd76-4d84-878b-7cd175cd92a3"
+          },
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F3.svg?alt=media&token=9c207280-3d34-4969-905f-945c199b54df"
+          },
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F4.svg?alt=media&token=d92b6e80-7cf3-41c4-a887-f4abcf37e372"
+          },
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F5.svg?alt=media&token=9ea46f26-7620-4531-b7de-28e0d6d7b70e"
+          },
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F6.svg?alt=media&token=bc0e6336-a9e9-4619-bbf7-af93a2a11412"
+          },
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F7.svg?alt=media&token=3e09734a-6920-4798-b72b-af3bc58fc913"
+          },
+          {
+            "alternate": "some description image",
+            "source": "https://firebasestorage.googleapis.com/v0/b/zenproject-ce905.appspot.com/o/icons%2Fclients%2Flight-theme%2F8.svg?alt=media&token=ad18f91f-4563-4780-ac1e-d5da046f58e1"
+          }
+        ],
+        "name": "clients",
+        "title": {
+          "content": "Our partners trust us!",
+          "priority": 1
+        }
+      }
     }
   }
 }
