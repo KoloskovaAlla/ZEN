@@ -24,6 +24,7 @@ import { useLocation } from 'react-router-dom';
 
 export const App = () => {
   const { pathname } = useLocation();
+  console.log(useLocation())
   console.log(pathname)
   useEffect(() => {
     window.scrollTo(0, 0);

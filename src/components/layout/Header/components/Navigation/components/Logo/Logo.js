@@ -2,6 +2,7 @@
 import { scrollToTop } from '../../../../../../../utils/helpers'
 import { ReactComponent as LogoIcon } from './assets/logo.svg'
 import classes from './Logo.module.scss'
+import { Link } from 'react-router-dom'
 
 const Logo = () => {
   const handleLogoClick = () => {
@@ -9,13 +10,10 @@ const Logo = () => {
   }
 
   return (
-    <div
-      onClick={handleLogoClick}
-      className={classes.logo}
-    >
+    <Link to='/' onClick={handleLogoClick} className={classes.logo}>      
       <LogoIcon />
-    </div>
-  )
+    </Link>
+  );
 }
 
 export default Logo
