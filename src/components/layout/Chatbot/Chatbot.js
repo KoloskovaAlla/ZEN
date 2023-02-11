@@ -168,9 +168,17 @@ const Chatbot = ({ data }) => {
     setIsChatActive(false);
   };
 
+  const handleChatbotClick = () => {
+    setIsChatActive(false);
+  };
+
+  const handleBodyClick = (event) => {
+    event.stopPropagation();
+  };
+
   return (
-    <div className={classNamesChatbot}>
-      <div>
+    <div className={classNamesChatbot} onClick={handleChatbotClick}>
+      <div onClick={handleBodyClick}>
         <button
           onClick={() => {
             setIsChatActive(true);
