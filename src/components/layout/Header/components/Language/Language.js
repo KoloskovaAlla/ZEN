@@ -4,15 +4,22 @@ import LangContext from 'contexts/LangContext';
 // import {classNames} from 'utils/helpers'
 import './Language.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { setLang } from 'reducers/langSlice';
+// import { setLang } from 'reducers/langSlice';
+import {useLang} from 'hooks/useLang'
 
 const Language = ({ languages }) => {
   // const { lang, toggleLang } = useContext(LangContext)
-  const { lang } = useSelector((state) => state.langReducer);
+  // const { lang } = useSelector((state) => state.langReducer);
+  const {lang} = useLang()
+  const {setLang} = useLang()
 
-  useEffect(() => {
-    localStorage.setItem('lang', lang);
-  }, [lang]);
+  // console.log(useLang());
+  console.log(lang)
+
+
+  // useEffect(() => {
+  //   localStorage.setItem('lang', lang);
+  // }, [lang]);
 
   const className = 'language';
 
