@@ -103,7 +103,6 @@ const Chatbot = ({ data }) => {
         setIsTyping(true);
         setTimeout(() => {
           addMessage('bot', list, 'list');
-          console.log('test2');
           setIsTyping(false);
         }, 1000);
       }
@@ -131,11 +130,11 @@ const Chatbot = ({ data }) => {
 
       if (sendingMessageTriggerType === 'input' && isLastMessageUser) {
         const userKeywords = userQuestion.split(' ');
-        let content;
+        let content=null;
         // let link
         userKeywords.forEach((userKeyword) => {
           posts.forEach((post) => {
-            const postKeywordString = post.keywords.join(' ');
+            const postKeywordString = post.keywords.join(' ');           
             if (postKeywordString.includes(userKeyword)) {
               content = {
                 link: `https://zenproject-ce905.web.app/posts/${post.id}`,
@@ -146,11 +145,13 @@ const Chatbot = ({ data }) => {
             }
           });
         });
-
+        console.log(content)
+        if (!content) {content={
+          text: 'Наш сотрудник скоро свяжется с вами и ответ на все ваши вопросы'
+        }}
         setIsTyping(true);
         setTimeout(() => {
           addMessage('bot', content, 'preview');
-          console.log('test2');
           setIsTyping(false);
         }, 1000);
 

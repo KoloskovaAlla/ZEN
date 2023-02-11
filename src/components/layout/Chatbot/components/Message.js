@@ -41,12 +41,25 @@ const Message = ({message, setIsQuestionAsked, setAskedQuestion, setIsLastMessag
   if (type==='preview') {   
     return (
       <div className={classNamesMessage}>
-        <button><img src={content.imageSource} alt='alternate img'></img></button>
-        <button className={classes.title}>{content.title}</button>
-        <div>{content.article.slice(0,100)}...</div>
-        <button className={classes.link}>{content.link}</button>     
+        {content?.imageSource && (
+          <button>
+            <img src={content.imageSource} alt='alternate img'></img>
+          </button>
+        )}
+        {content?.title && (
+          <button className={classes.title}>{content.title}</button>
+        )}
+        {content?.article && (
+          <div>{content.article.slice(0, 100)}...</div>
+        )}
+        {content?.link && (
+        <button className={classes.link}>{content.link}</button>
+        )}
+        {content?.text && (
+          <div>{content.text}</div>
+        )}
       </div>
-    )
+    );
   }
 }
 
