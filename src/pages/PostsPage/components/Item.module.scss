@@ -4,7 +4,6 @@
 .post {
   display: grid;
   grid-template-columns: 45% 55%;
-
   margin-bottom: 10px;
 
   @media (min-width: $breakpoint_md) {

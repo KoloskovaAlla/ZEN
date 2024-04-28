@@ -21,6 +21,7 @@ import { lazy, Suspense } from 'react';
 import { API_BASE_URL } from 'constants/api';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { distanceBetweenTwoPoints } from 'test/test';
 
 export const App = () => {
   const { pathname } = useLocation();

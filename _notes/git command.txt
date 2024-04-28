@@ -4,6 +4,7 @@ git push origin HEAD:main
 
 git pull origin branch_name
 git pull origin feature
+git pull origin main
 
 
 1. Создать удаленный репозиторий для проекта ZEN по сценарию занятия
@@ -39,3 +40,6 @@ git push origin HEAD:main
 git clone https://github.com/KoloskovaAlla/ZEN.git . -b feature
 
 И все! Без разворачивания реакт-приложения, git init, git remote и т.д. Но для запуска npm install
+
+-----------------------
+

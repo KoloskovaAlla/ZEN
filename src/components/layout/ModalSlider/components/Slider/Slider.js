@@ -93,7 +93,7 @@ const Slider = () => {
     }, 800);
   };
 
-  console.log(isDarkClicked)
+  console.log(slides[0])
 
   if (isDarkClicked === true) {
     sliderRef.current.style.top = `${previewDetails.y}px`;

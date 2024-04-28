@@ -54,8 +54,6 @@ const Chatbot = ({ data }) => {
   //   //         setIsTyping(false)
   //   //       }, 2000)
 
-  let scrollHeight;
-
   const addMessage = (author, content, type) => {
     setMessages((messages) => [
       ...messages,
@@ -87,6 +85,7 @@ const Chatbot = ({ data }) => {
 
   useEffect(() => {
     const printMessage = () => {
+      let scrollHeight;
       let list = [];
       list = faqs.map((faq) => faq.question);
 
@@ -130,11 +129,11 @@ const Chatbot = ({ data }) => {
 
       if (sendingMessageTriggerType === 'input' && isLastMessageUser) {
         const userKeywords = userQuestion.split(' ');
-        let content=null;
+        let content = null;
         // let link
         userKeywords.forEach((userKeyword) => {
           posts.forEach((post) => {
-            const postKeywordString = post.keywords.join(' ');           
+            const postKeywordString = post.keywords.join(' ');
             if (postKeywordString.includes(userKeyword)) {
               content = {
                 link: `https://zenproject-ce905.web.app/posts/${post.id}`,
@@ -145,10 +144,12 @@ const Chatbot = ({ data }) => {
             }
           });
         });
-        console.log(content)
-        if (!content) {content={
-          text: 'Наш сотрудник скоро свяжется с вами и ответ на все ваши вопросы'
-        }}
+        console.log(content);
+        if (!content) {
+          content = {
+            text: 'Наш сотрудник скоро свяжется с вами и ответ на все ваши вопросы',
+          };
+        }
         setIsTyping(true);
         setTimeout(() => {
           addMessage('bot', content, 'preview');
@@ -163,7 +164,7 @@ const Chatbot = ({ data }) => {
       chatbotRef.current.scrollTo(0, scrollHeight, { behavior: 'smooth' });
     };
     printMessage();
-  }, [isChatActive, messages, scrollHeight, askedQuestion, isLastMessageUser]);
+  }, [isChatActive, messages, askedQuestion, isLastMessageUser, data, faqs, sendingMessageTriggerType, posts, userQuestion]);
 
   const handleCloseClick = () => {
     setIsChatActive(false);

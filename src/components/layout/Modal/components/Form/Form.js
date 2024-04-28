@@ -17,6 +17,7 @@ const date = new Date().toLocaleString()
 console.log(date)
 
 const Form = ({ form, isDataSent, setIsDataSent }) => {
+  console.log(form);
   const dispatch = useDispatch()
   const [name, setName] = useState('')
   const [isValidName, setIsValidName] = useState(true)
